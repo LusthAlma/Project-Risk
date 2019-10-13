@@ -1,0 +1,142 @@
+== Use Case Template
+
+Version 1.20
+
+*Instructions for removing the ‘Hints, Guidelines and Examples’ from
+this document*
+
+After you have completed the Use Case document, you may want to remove
+the hints and guidelines provided in the document.
+
+To remove the hints: (This procedure applies to Microsoft Word XP and
+higher)
+
+[arabic]
+. Click on any text formatted as Hint.
+. Then, click the right mouse button.
+. A pop-up menu will appear, choose ‘Select text with similar
+formatting’
+. All Hint text will now be selected in the document.
+. *Ensure that none of the text that you have entered is in the
+selection.*
+. Press the _Delete_ key to remove the _Hints , Guidelines and
+examples._.
+
+=== Revision History +
+
+[cols=",,",options="header",]
+|===
+|Date |Author |Description of change
+| | |
+| | |
+| | |
+| | |
+| | |
+| | |
+| | |
+|===
+
+Use Case Template. Copyright (c) 2004-2005 TechnoSolutions Corporation
+
+(Learn more about “TopTeam for Use Cases” at
+http://www.technosolutions.com[[.underline]#www.technosolutions.com#])
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this document and its associated documentation, to use the
+document on their projects for any commercial or non-commercial purpose.
+However you may not publish, distribute, sublicense, and/or sell copies
+of this document.
+
+THE DOCUMENT IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+DOCUMENT OR THE USE OR OTHER DEALINGS IN THE DOCUMENT. TECHNOSOLUTIONS
+CORPORATION MAKES NO REPRESENTATIONS ABOUT THE SUITABILITY OF THIS
+DOCUMENT FOR ANY PURPOSE. +
+*Use Case:* Donner territoires
+
+*Id*: UC-1.4
+
+*Description*
+
+Distribuer toutes les cartes territoires entre tous les joueurs
+
+*Level:* <Enter Use Case Goal Level here>
+
+<Enter the goal level of this Use Case. Specify whether the Use Case
+level is - High Level Summary, Summary, User Goal, Sub-Function, Low
+Level>
+
+*Primary Actor*
+
+Tous les joueurs
+
+*Supporting Actors*
+
+Le jeu
+
+*Stakeholders and Interests*
+
+*Pre-Conditions*
+
+<List Pre-Conditions here>
+
+Les joueurs n'ont pas de cartes territoires.
+La pioche est pleine.
+
+*Post Conditions*
+
+[.underline]#Success end condition#
+
+<List success end condition here>
+
+Chaque joueur a le même nombre de cartes territoires à 1 carte près.
+La pioche est vide et toutes les cartes ont été distribuées.
+
+
+[.underline]#Failure end condition#:
+
+Toutes les cartes n'ont pas été distribuées.
+Tous les joueurs n'ont pas le même nombre de cartes territoires à une carte près.
+
+
+[.underline]#Minimal Guarantee#
+
+*Trigger*
+
+Début de partie : fin du Use Case Donner unités (UC-1.3)
+
+=== Main Success Scenario
+
+[arabic]
+. Le jeu donne une carte territoire au joueur i
+. Le jeu donne une carte territoire au joueur i+1
+. On recommence cette étape jusqu'à ce que toutes les cartes de la pioche soient épuisées
+
+
+=== Extensions
+
+
+
+=== Variations
+
+
+
+*Assumptions*
+
+
+=== Special Requirements 
+
+
+=== Issues 
+
+
+
+=== To do
+
+[arabic]
+. {blank} Compléter Extension/Variations/Special Requirements/Issues
+

@@ -1,0 +1,146 @@
+== Use Case Template
+
+Version 1.20
+
+*Instructions for removing the ‘Hints, Guidelines and Examples’ from
+this document*
+
+After you have completed the Use Case document, you may want to remove
+the hints and guidelines provided in the document.
+
+To remove the hints: (This procedure applies to Microsoft Word XP and
+higher)
+
+[arabic]
+. Click on any text formatted as Hint.
+. Then, click the right mouse button.
+. A pop-up menu will appear, choose ‘Select text with similar
+formatting’
+. All Hint text will now be selected in the document.
+. *Ensure that none of the text that you have entered is in the
+selection.*
+. Press the _Delete_ key to remove the _Hints , Guidelines and
+examples._.
+
+=== Revision History +
+
+[cols=",,",options="header",]
+|===
+|Date |Author |Description of change
+| | |
+| | |
+| | |
+| | |
+| | |
+| | |
+| | |
+|===
+
+Use Case Template. Copyright (c) 2004-2005 TechnoSolutions Corporation
+
+(Learn more about “TopTeam for Use Cases” at
+http://www.technosolutions.com[[.underline]#www.technosolutions.com#])
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this document and its associated documentation, to use the
+document on their projects for any commercial or non-commercial purpose.
+However you may not publish, distribute, sublicense, and/or sell copies
+of this document.
+
+THE DOCUMENT IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+DOCUMENT OR THE USE OR OTHER DEALINGS IN THE DOCUMENT. TECHNOSOLUTIONS
+CORPORATION MAKES NO REPRESENTATIONS ABOUT THE SUITABILITY OF THIS
+DOCUMENT FOR ANY PURPOSE. +
+*Use Case:* Déploiement des unités.
+
+
+*Id*: UC-1.5
+
+
+
+*Description* Chaque joeurs choisit de placer un nombre d'unité strictement supérieur à 1 sur chacun
+de ses territoires jusqu'à qu'il n'ait plus d'unités en sa possession.
+
+*Level:* <Enter Use Case Goal Level here>
+
+<Enter the goal level of this Use Case. Specify whether the Use Case
+level is - High Level Summary, Summary, User Goal, Sub-Function, Low
+Level>
+
+*Primary Actor*
+
+Tous les joueurs
+
+*Supporting Actors*
+
+Aucun
+
+*Stakeholders and Interests*
+
+Aucun
+
+*Pre-Conditions*
+
+Chaque joueur doit avoir le nombre maximal d'unité qui lui ont été accordées en sa possession.
+Il ne doit y avoir aucune unité de placée sur le plateau de jeu.
+
+*Post Conditions*
+
+[.underline]#Success end condition#
+
+Toutes les unités de tout les joueurs ont été placées sur le plateau.
+Il y a au minimum une unité de placée sur chaque territoire.
+
+
+[.underline]#Failure end condition#:
+
+<List failure end condition here>
+
+Il y a un territoire où aucune unité n'est présente.
+Il reste des unités non placées à un joueur
+
+[.underline]#Minimal Guarantee#
+
+
+
+*Trigger*
+
+Début de la partie : Fin du Use Case Donner territoires ( UC 1.4)
+
+
+=== Main Success Scenario
+
+[arabic]
+. Joueur i pose un nombre d'unité supérieur à 1 sur un de ses territoires où il n'a pas encore d'armée
+. Le joueur i+1 fait de même
+. On continue jusqu'à ce que tous les territoires soient occupés par une unité au moins, et que plus aucun joueurs n'aient d'unités en sa possession
+
+
+=== Extensions
+
+
+
+=== Variations
+
+
+
+=== Special Requirements 
+
+
+
+=== Issues 
+
+[arabic]
+. {blank}
+
+
+=== To do
+
+[arabic]
+. {blank} Find possible Extensions/Variations/Special Requirements/Issues for this Use Case
+
