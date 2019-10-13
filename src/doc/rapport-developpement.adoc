@@ -6,10 +6,10 @@
 [options="header"]
 |===
 | Nom       | Adresse 
-| Auteur_1 | auteur_1@etu.univ-nantes.fr
-| Auteur_2 | auteur_2@etu.univ-nantes.fr
-| Auteur_3 | auteur_3@etu.univ-nantes.fr
-| Auteur_4 | auteur_4@etu.univ-nantes.fr
+| Josselin Enet | josselin.enet@etu.univ-nantes.fr
+| Kévin Roy | kevin.roy2@etu.univ-nantes.fr
+| Tristan Lenormand | tristan.lenormand@etu.univ-nantes.fr
+| Soline Lecomte | soline.lecomte@etu.univ-nantes.fr
 |===
 
 == Introduction
@@ -17,6 +17,12 @@
 Description du projet
 
 == Organisation du document
+
+. Analyse du domaine
+. Exigences
+. Conception préliminaire
+. Conception détaillée
+. Conclusion
 
 // Chapters:
 
