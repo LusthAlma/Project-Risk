@@ -1,33 +1,11 @@
 == Use Case Template
 
-Version 1.20
-
-*Instructions for removing the ‘Hints, Guidelines and Examples’ from
-this document*
-
-After you have completed the Use Case document, you may want to remove
-the hints and guidelines provided in the document.
-
-To remove the hints: (This procedure applies to Microsoft Word XP and
-higher)
-
-[arabic]
-. Click on any text formatted as Hint.
-. Then, click the right mouse button.
-. A pop-up menu will appear, choose ‘Select text with similar
-formatting’
-. All Hint text will now be selected in the document.
-. *Ensure that none of the text that you have entered is in the
-selection.*
-. Press the _Delete_ key to remove the _Hints , Guidelines and
-examples._.
-
 === Revision History +
 
 [cols=",,",options="header",]
 |===
 |Date |Author |Description of change
-| 13/10/19| Kévin ROY| Initialisation du document
+| 16/10/19| Soline LECOMTE| Initialisation du document
 | | |
 | | |
 | | |
@@ -56,15 +34,13 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 DOCUMENT OR THE USE OR OTHER DEALINGS IN THE DOCUMENT. TECHNOSOLUTIONS
 CORPORATION MAKES NO REPRESENTATIONS ABOUT THE SUITABILITY OF THIS
 DOCUMENT FOR ANY PURPOSE. +
+*Use Case:* Initialisation du jeu
 
-*Use Case:* Donner Mission A Un Joueur
-
-*Id*: UC-1.2.1
+*Id*: UC-1
 
 *Description*
 
-Le Jeu donne une mission à un joueur
-
+Le jeu initialise la partie en mettant en place la préparation (Distribution des armées, Gestion des territoires, Distribution des missions, Placement des unités)
 
 *Level:* <Enter Use Case Goal Level here>
 
@@ -74,68 +50,78 @@ Level>
 
 *Primary Actor*
 
-Le Jeu
+Le jeu
 
 *Supporting Actors*
 
-Aucun
-
+Les joueurs
 
 *Stakeholders and Interests*
 
-Joueur
+Les joueurs n'intéragissent le jeu que pour déployer leur armées, mais c'est à eux que toute la phase profitera, puisque c'est grâce à cela qu'ils pourront commencer à jouer.
+
 
 *Pre-Conditions*
 
-La mission existe.
+Au moins 3 joueurs sont connectés sur le jeu.
 
 *Post Conditions*
 
 [.underline]#Success end condition#
 
-Le joueur a bien la mission.
+L'initialisation du jeu est terminée et les joueurs peuvent alors commencer la partie.
 
 [.underline]#Failure end condition#:
 
-Le joueur n'a pas de mission, ou a une mission differente.
+<List failure end condition here>
+
+Le jeu n'a pas tout initialisé correctement : 
+	- La distribution des armées n'est pas faite ou pas correctement
+OU	- Les territoires ne sont pas distribués
+OU	- Les missions n'ont pas été distribuées
+OU	- Les unités n'ont pas été placées
 
 [.underline]#Minimal Guarantee#
+
+<List minimal guarantee here>
 
 
 *Trigger*
 
-Donner Mission Tous Les Joueurs
+Les joueurs commandent le lancement d'une partie.
 
 === Main Success Scenario
 
 [arabic]
-. Le jeu a une mission.
-. Le jeu a un joueur.
-. Le jeu defini la mission du joueur par celle qu'il a.
-. Se termine quand le jeu a bien donné la mission au joueur.
-
+. Le jeu attribue une couleur à chaque Joueur (UC 1.1)
+. Le jeu distribue une mission à chaque joueur (UC 1.2)
+. Le jeu distribue les unités aux joueurs (UC 1.3)
+. Le jeu distribue les territoires aux joueurs (UC 1.4)
+. Le jeu laisse les joueurs déployer leurs unités (UC 1.5)
 
 === Extensions
 
 
-
 === Variations
 
+*Frequency:* 
+
+Une fois par partie
 
 
 === Special Requirements 
 
 
-
 === Issues 
 
+[arabic]
+. {blank}
 
 
 === To do
 
 [arabic]
-. Implémenter le cas d'utilisation.
+. {blank} 
+Find possible Extensions/Variations/Special Requirements/Issues for this Use Case
+Gérer le level du UC
 
-
-To learn more about “TopTeam Analyst for Use Cases” visit
-http://www.technosolutions.com[[.underline]#www.technosolutions.com#]
