@@ -1,0 +1,86 @@
+=== Revision History +
+
+[cols=",,",options="header",]
+|===
+|Date |Author |Description of change
+|20/10/19| Josselin Enet|Création du use case
+| | |
+| | |
+| | |
+| | |
+| | |
+| | |
+|===
+
+
+*Use Case:* Attributier les couleurs
+
+*Id*: UC-1.1
+
+
+*Description*
+
+Le jeu attribue à chaque joueur une couleur différente. Les unités et territoires de chaque joueur sont de couleur correspondante.
+
+*Level:* <Enter Use Case Goal Level here>
+
+
+*Primary Actor*
+
+Le jeu
+
+*Supporting Actors*
+
+Les joueurs
+
+
+*Pre-Conditions*
+
+La partie doit être lancée avec un nombre défini de joueurs, compris entre 2 et 6. Aucune unité ou territoire n'est attribué.
+
+
+*Post Conditions*
+
+[.underline]#Success end condition#
+
+Chaque joueur se voit attribuer une couleur. Une couleur n'est pas affectée à 2 joueurs différents.
+
+[.underline]#Failure end condition#
+
+Un ou plusieurs joueurs n'ont pas de couleur attribuée. 
+
+
+*Trigger*
+
+La partie est lancée.
+
+=== Main Success Scenario
+
+[arabic]
+. Plusieurs joueurs se connectent et lancent une partie.
+. Le jeu attribue une couleur à chaque joueur.
+
+
+=== Extensions
+
+
+=== Variations
+
+<Enter variations here>
+
+
+*Frequency:* Une fois par partie.
+
+
+=== Special Requirements 
+
+[.underline]#Interface#
+
+. Chaque joueur doit pouvoir visualiser sa couleur ainsi que celle des autres joueurs.
+
+
+=== To do
+
+[arabic]
+. Trouver le niveau du use case.
+. Identifier des variations ou cas d'erreur.
