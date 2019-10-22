@@ -1,40 +1,52 @@
 [.small]
 [width="100%",cols="34%,33%,33%",]
 |===
-|*Term* 
-|*Short Description* 
-|*Meaning*
+|*Terme* 
+|*Description* 
+|*Sens*
 
-| [[port, Port]] Port 
-| a 
-| ax
+| [[joueur, Joueur]] Joueur 
+| Personne jouant une partie.
+| Uniquement de réelles personnes, pas de bot.
 
-| [[publication,Publication]] Publication  
-| Activity
-| Registers a Service with a DNS Responder.
+| [[attaque, Attaque]] Attaque
+| Déplacement d'unités depuis un territoire contrôlé par un joueur A vers un territoire contrôlé par un joueur B.
+| Il doit rester au moins une nuité dans le territoire de l'attaquant.
 
-| Registration
-|
-| See <<publication>>
+| [[victoire, Victoire]] Victoire
+| Un joueur est déclaré vainqueur lorsqu'il remplit sa mission. Cela met fin à la partie.
+| La partie ne s'achève pas tant qu'un joueur n'est pas victorieux.
 
-| Package
-|
-| Minimum size = 9,000 bytes
+| [[défaite, Défaite]] Défaite
+| Un joueur est en situation de défaite s'il ne possède plus aucun territoire. Il ne peut plus effectuer d'actions.
+| 
 
-| ((One-Shot Multicast DNS Queries))
-| bla
-| bla
+| [[mission, Mission]] Mission
+| Un ou plusieurs objectifs qu'un joueur doit remplir pour remporter la partie.
+| Une mission par joueur, distribuée au début de la partie.
 
-| ((Continuous Multicast DNS Querying))
-| bla
-| bla
+| [[territoire, Territoire]] Territoire
+| Partie du terrain de jeu. Les joueurs peuvent y placer des unités. Ils sont sous le contrôle du joueur dont les unités sont placées dessus.
+| Chaque territoire fait partie d'un continent. Il y a une notion d'adjacence entre certains territoires.
 
-| [[service-instance-name, Service Instance Name]] Service Instance Name
-| a
-| a
+| [[continent, Continent]] Continent
+| Partie du terrain de jeu comprenant plusieurs territoires.
+| Il existe 6 continents : Europe, Afrique, Amérique du Nord, Amérique du Sud, Asie et Océanie.
 
-| [[service-type, Service Type]] Service Type 
-| bla
-| bla
+| [[unité, Unité]] Unité
+| Pièce représentant une force armée. Chaque joueur possède ses propres unités, qu'il peut déplacer sur ses territoires.
+| 
+
+| [[tour, Tour]] Tour
+| Lors d'un tour, un joueur peut effectuer une série d'actions sans être interrompu par un autre joueur. Il peut y mettre fin quand il souhaite.
+| Les joueurs prennent leur tour de manière alternée, toujours dans le même ordre.
+
+| [[attaque, Attaque]] Attaque
+| Déplacement d'unités depuis un territoire contrôlé par un joueur A vers un territoire contrôlé par un joueur B.
+| Il doit rester au moins une nuité dans le territoire de l'attaquant.
+
+| [[renforts, Renforts]] Renforts
+| Unités étant données à un joueur au début de sont tour, qu'il peut placer à sa guise sur ses territoires.
+| Le nombre de renforts dépend du nombre de territoires possédés par le joueur. Des renforts supplémentaires sont accordés si le joueur possède tous les territoires d'un continent.
 
 |===
