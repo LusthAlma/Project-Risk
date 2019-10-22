@@ -11,7 +11,7 @@
 
 | [[attaque, Attaque]] Attaque
 | Déplacement d'unités depuis un territoire contrôlé par un joueur A vers un territoire contrôlé par un joueur B.
-| Il doit rester au moins une nuité dans le territoire de l'attaquant.
+| Il doit rester au moins une unité dans le territoire de l'attaquant.
 
 | [[victoire, Victoire]] Victoire
 | Un joueur est déclaré vainqueur lorsqu'il remplit sa mission. Cela met fin à la partie.
@@ -43,10 +43,10 @@
 
 | [[attaque, Attaque]] Attaque
 | Déplacement d'unités depuis un territoire contrôlé par un joueur A vers un territoire contrôlé par un joueur B.
-| Il doit rester au moins une nuité dans le territoire de l'attaquant.
+| Il doit rester au moins une unité dans le territoire de l'attaquant.
 
 | [[renforts, Renforts]] Renforts
-| Unités étant données à un joueur au début de sont tour, qu'il peut placer à sa guise sur ses territoires.
+| Unités étant données à un joueur au début de son tour, qu'il peut placer à sa guise sur ses territoires.
 | Le nombre de renforts dépend du nombre de territoires possédés par le joueur. Des renforts supplémentaires sont accordés si le joueur possède tous les territoires d'un continent.
 
 |===
