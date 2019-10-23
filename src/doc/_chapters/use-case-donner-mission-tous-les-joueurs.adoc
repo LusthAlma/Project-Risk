@@ -28,7 +28,7 @@ examples._.
 |===
 |Date |Author |Description of change
 | 13/10/19| Kévin ROY| Initialisation du document
-| | |
+| 23/10/19 | Kévin ROY | Précision sur le scénario de succès. (UC-1.2.1)
 | | |
 | | |
 | | |
@@ -112,7 +112,7 @@ Initialisation
 
 [arabic]
 . Le jeu a la liste des missions.
-. Il attribut une des missions de la liste au joueur 1 puis retire cette mission de la liste
+. Il attribut une des missions de la liste au joueur 1 puis retire cette mission de la liste (UC-1.2.1)
 . Il répète l'instruction précédente pour tous les autres joueurs.
 . Il se termine si tous les joueurs ont reçu une mission différente
 
@@ -136,7 +136,7 @@ Initialisation
 === To do
 
 [arabic]
-. Implémenter le cas d'utilisation.
+. Ajouter le level du use case
 
 
 To learn more about “TopTeam Analyst for Use Cases” visit

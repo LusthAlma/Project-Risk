@@ -27,7 +27,7 @@ examples._.
 [cols=",,",options="header",]
 |===
 |Date |Author |Description of change
-| 13/10/19| Kévin ROY| Initialisation du document
+| 23/10/19 | Kévin Roy | Initialisation du document
 | | |
 | | |
 | | |
@@ -56,15 +56,15 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 DOCUMENT OR THE USE OR OTHER DEALINGS IN THE DOCUMENT. TECHNOSOLUTIONS
 CORPORATION MAKES NO REPRESENTATIONS ABOUT THE SUITABILITY OF THIS
 DOCUMENT FOR ANY PURPOSE. +
+*Use Case:* Jouer un tour
 
-*Use Case:* Donner Mission A Un Joueur
 
-*Id*: UC-1.2.1
+*Id*: UC-2
+
 
 *Description*
 
-Le Jeu donne une mission à un joueur
-
+Un joueur joue sont tour, il effectue son renforts pour gagner des unités, ensuite il peut se battre autant de fois qu'il le souhaite, puis il peut déplacer ses unités même s'il n'a pas combattu ce tour ci.
 
 *Level:* <Enter Use Case Goal Level here>
 
@@ -74,53 +74,74 @@ Level>
 
 *Primary Actor*
 
-Le Jeu
+Joueur
 
 *Supporting Actors*
 
-Aucun
+Le Jeu
 
+e.g. Customer, Store Manager>
 
 *Stakeholders and Interests*
 
-Joueur
+Autres Joueurs
 
 *Pre-Conditions*
 
-La mission existe.
+<List Pre-Conditions here>
+
+< List the system state/conditions which must be true before this Use
+Case can be executed.
+
+e.g. Store Clerk must be logged in to system.>
 
 *Post Conditions*
 
 [.underline]#Success end condition#
 
-Le joueur a bien la mission.
+Le joueur à obtenu ses renforts, il a pu combattre s'il le souhaitait, et a pu se déplacer s'il le souhaitait aussi.
 
 [.underline]#Failure end condition#:
 
-Le joueur n'a pas de mission, ou a une mission differente.
+- le joueur n'a pas eu ses renforts.
+- le joueur ne pouvait pas combattre alors qu'il le peut normalement dans sa situation.
+- il a été incapable de se déplacer alors que dans sa situation il le peut normalement.
 
 [.underline]#Minimal Guarantee#
+
+<List minimal guarantee here>
 
 
 *Trigger*
 
-Donner Mission Tous Les Joueurs
+<List Use Case trigger here>
+
+<The event that starts this Use Case.
+
+Example
+
+For _Rent Video_ Use Case - Customer brings the Video to the sales
+counter.
+
+For _Withdraw Cash_ Use Case - Customer inserts the bank card into the
+ATM machine.>
 
 === Main Success Scenario
 
 [arabic]
-. Le jeu a une mission.
-. Le jeu a un joueur.
-. Le jeu defini la mission du joueur par celle qu'il a.
-. Se termine quand le jeu a bien donné la mission au joueur.
+. Le Jeu donne au joueur ses renfort. (UC-2.1)
+. Le Joueur peut combattre autant de fois qu'il le veut. (UC-2.2)
+. Le Joueur peut déplacer ses unités. (UC-2.3)
+. Le Joueur passe son tour. (UC-2.4)
+
 
 
 === Extensions
 
 
 
-=== Variations
 
+=== Variations
 
 
 === Special Requirements 
@@ -136,6 +157,3 @@ Donner Mission Tous Les Joueurs
 [arabic]
 . Ajouter le level du use case.
 
-
-To learn more about “TopTeam Analyst for Use Cases” visit
-http://www.technosolutions.com[[.underline]#www.technosolutions.com#]
