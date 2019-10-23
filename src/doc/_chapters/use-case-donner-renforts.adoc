@@ -1,0 +1,98 @@
+
+=== Revision History +
+
+[cols=",,",options="header",]
+|===
+|Date |Author |Description of change
+| 24/10/19| Josselin Enet|Création du Use Case
+| | |
+| | |
+| | |
+| | |
+| | |
+| | |
+|===
+
+
+*Use Case:* Donner les renforts
+
+*Id*: UC-2.1
+
+*Description*
+
+Un joueur débute son tour. Un nombre de nouvelles unités lui sont attribuées, suivant le total de territoires qu'il possède. Des unités supplémentaires sont attribuées si ce joueur possède tous les territoires d'un ou plusieurs continents. Le joueur doit placer ces unités sur les territoires qu'il contrôle de son choix avant de pouvoir effectuer une autre action.
+
+*Level:* 
+
+*Primary Actor*
+
+Le jeu.
+
+*Supporting Actors*
+
+Le joueur dont le tour vient de commencer.
+
+*Stakeholders and Interests*
+
+Les autres joueurs.
+
+*Pre-Conditions*
+
+Le joueur ne doit pas être éliminé.
+
+*Post Conditions*
+
+[.underline]#Success end condition#
+
+Le joueur a reçu un nombre d'unités correct et les a placées sur ses territoires.
+
+[.underline]#Failure end condition#:
+
+Le joueur ne reçoit pas le nombre correct d'unités.
+Un autre joueur que celui dont le tour est en cours se voit attribuer des renforts.
+Le joueur a placé des renforts sur un territoire ne lui appartenant pas.
+Le joueur a reçu un nombre correct d'unités mais il en a disposé un nombre différent sur ses territoires.
+
+[.underline]#Minimal Guarantee#
+
+Le tour du joueur n'est pas terminé.
+
+*Trigger*
+
+Le tour d'un joueur commence.
+
+=== Main Success Scenario
+
+[arabic]
+
+. Le tour du joueur commence.
+. Le jeu distribue à ce joueur un nombre d'unités égal à ⌊t/3⌋, où t est le nombre de territoires possédés par le joueur.
+. Le joueur pose chacune de ses unités de renfort sur un des territoires qu'il contrôle.
+
+=== Extensions
+
+2a. Le joueur possède tous les territoires d'un continent.
+
+{empty}1. Le joueur reçoit des renforts supplémentaires en fonction des continents qu'il contrôle :
+
+* Afrique : 3
+* Amérique du Nord : 5
+* Amérique du Sud : 2
+* Asie : 7
+* Europe : 5
+* Océanie : 2
+
+Ces renforts sont cumulables.
+
+=== Variations
+
+2'. Si le joueur doit recevoir moins de 3 unités de renfort, alors 3 unités de renfort lui sont attribuées.
+
+*Frequency:* Une fois au début de chaque tour.
+
+
+=== Special Requirements 
+
+Interface
+
+{empty}1. Le nombre d'unités reçues par le joueur doit être clairement visible par tous les joueurs. Le placement des renforts sur les territoires doit également faire l'objet d'un affichage.
