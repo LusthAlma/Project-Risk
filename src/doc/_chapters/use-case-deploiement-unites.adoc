@@ -1,0 +1,91 @@
+=== Modifications
+
+[cols=",,",options="header",]
+|===
+|Date |Auteur |Description
+| | |
+| 26/10/19| Josselin Enet|Correction de l'orthographe
+| | |
+| | |
+| | |
+| | |
+| | |
+|===
+
+*Use Case:* Déploiement des unités.
+
+*Id*: UC-1.5
+
+*Description* 
+
+Chaque joueur choisit de placer un nombre d'unités strictement supérieur à 1 sur chacun
+de ses territoires jusqu'à qu'il n'ait plus d'unités en sa possession.
+
+*Niveau:* 
+
+*Acteur Principal*
+
+Tous les joueurs.
+
+*Acteurs Secondaires*
+
+Aucun.
+
+*Parties Prenantes*
+
+Aucun.
+
+*Pre-Conditions*
+
+Chaque joueur doit avoir le nombre maximal d'unités qui lui ont été accordées en sa possession.
+Il ne doit y avoir aucune unité de placée sur le plateau de jeu.
+
+*Post-Conditions*
+
+[.underline]#Condition de fin avec succès#
+
+Toutes les unités de tous les joueurs ont été placées sur le plateau.
+Il y a au minimum une unité de placée sur chaque territoire.
+
+
+[.underline]#Condition de fin avec échec#
+
+Il y a un territoire où aucune unité n'est présente.
+Il reste des unités non placées à un joueur.
+
+*Déclenchement*
+
+Début de la partie : Fin du Use Case Donner territoires ( UC 1.4).
+
+
+=== Scénario principal de succès
+
+[arabic]
+. Joueur i pose un nombre d'unités supérieur à 1 sur un de ses territoires où il n'a pas encore d'armée
+. Le joueur i+1 fait de même
+. On continue jusqu'à ce que tous les territoires soient occupés par une unité au moins, et que plus aucun joueur n'ait d'unités en sa possession
+
+
+=== Extensions
+
+
+
+=== Variations
+
+
+
+=== Special Requirements 
+
+
+
+=== Issues 
+
+[arabic]
+. {blank}
+
+
+=== To do
+
+[arabic]
+. {blank} Find possible Extensions/Variations/Special Requirements/Issues for this Use Case
+

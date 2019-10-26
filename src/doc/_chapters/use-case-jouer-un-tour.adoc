@@ -1,34 +1,10 @@
-== Use Case Template
-
-Version 1.20
-
-*Instructions for removing the ‘Hints, Guidelines and Examples’ from
-this document*
-
-After you have completed the Use Case document, you may want to remove
-the hints and guidelines provided in the document.
-
-To remove the hints: (This procedure applies to Microsoft Word XP and
-higher)
-
-[arabic]
-. Click on any text formatted as Hint.
-. Then, click the right mouse button.
-. A pop-up menu will appear, choose ‘Select text with similar
-formatting’
-. All Hint text will now be selected in the document.
-. *Ensure that none of the text that you have entered is in the
-selection.*
-. Press the _Delete_ key to remove the _Hints , Guidelines and
-examples._.
-
-=== Revision History +
+=== Modifications
 
 [cols=",,",options="header",]
 |===
-|Date |Author |Description of change
+|Date |Auteur |Description
 | 23/10/19 | Kévin Roy | Initialisation du document
-| | |
+| 26/10/19| Josselin Enet|Correction de l'orthographe
 | | |
 | | |
 | | |
@@ -36,97 +12,47 @@ examples._.
 | | |
 |===
 
-Use Case Template. Copyright (c) 2004-2005 TechnoSolutions Corporation
-
-(Learn more about “TopTeam for Use Cases” at
-http://www.technosolutions.com[[.underline]#www.technosolutions.com#])
-
-Permission is hereby granted, free of charge, to any person obtaining a
-copy of this document and its associated documentation, to use the
-document on their projects for any commercial or non-commercial purpose.
-However you may not publish, distribute, sublicense, and/or sell copies
-of this document.
-
-THE DOCUMENT IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-DOCUMENT OR THE USE OR OTHER DEALINGS IN THE DOCUMENT. TECHNOSOLUTIONS
-CORPORATION MAKES NO REPRESENTATIONS ABOUT THE SUITABILITY OF THIS
-DOCUMENT FOR ANY PURPOSE. +
 *Use Case:* Jouer un tour
-
 
 *Id*: UC-2
 
-
 *Description*
 
-Un joueur joue sont tour, il effectue son renforts pour gagner des unités, ensuite il peut se battre autant de fois qu'il le souhaite, puis il peut déplacer ses unités même s'il n'a pas combattu ce tour ci.
+Un joueur joue son tour, il reçoit ses renforts pour gagner des unités, ensuite il peut se battre autant de fois qu'il le souhaite, puis il peut déplacer ses unités même s'il n'a pas combattu ce tour-ci.
 
-*Level:* <Enter Use Case Goal Level here>
+*Niveau:* 
 
-<Enter the goal level of this Use Case. Specify whether the Use Case
-level is - High Level Summary, Summary, User Goal, Sub-Function, Low
-Level>
+*Acteur Principal*
 
-*Primary Actor*
+Joueur.
 
-Joueur
-
-*Supporting Actors*
+*Acteurs Secondaires*
 
 Le Jeu
 
-e.g. Customer, Store Manager>
-
-*Stakeholders and Interests*
+*Parties Prenantes*
 
 Autres Joueurs
 
 *Pre-Conditions*
 
-<List Pre-Conditions here>
 
-< List the system state/conditions which must be true before this Use
-Case can be executed.
+*Post-Conditions*
 
-e.g. Store Clerk must be logged in to system.>
+[.underline]#Condition de fin avec succès#
 
-*Post Conditions*
+Le joueur a obtenu ses renforts, il a pu combattre s'il le souhaitait, et a pu se déplacer s'il le souhaitait aussi.
 
-[.underline]#Success end condition#
-
-Le joueur à obtenu ses renforts, il a pu combattre s'il le souhaitait, et a pu se déplacer s'il le souhaitait aussi.
-
-[.underline]#Failure end condition#:
+[.underline]#Condition de fin avec échec#
 
 - le joueur n'a pas eu ses renforts.
 - le joueur ne pouvait pas combattre alors qu'il le peut normalement dans sa situation.
 - il a été incapable de se déplacer alors que dans sa situation il le peut normalement.
 
-[.underline]#Minimal Guarantee#
-
-<List minimal guarantee here>
+*Déclenchement*
 
 
-*Trigger*
-
-<List Use Case trigger here>
-
-<The event that starts this Use Case.
-
-Example
-
-For _Rent Video_ Use Case - Customer brings the Video to the sales
-counter.
-
-For _Withdraw Cash_ Use Case - Customer inserts the bank card into the
-ATM machine.>
-
-=== Main Success Scenario
+=== Scénario principal de succès
 
 [arabic]
 . Le Jeu donne au joueur ses renfort. (UC-2.1)
@@ -134,11 +60,7 @@ ATM machine.>
 . Le Joueur peut déplacer ses unités. (UC-2.3)
 . Le Joueur passe son tour. (UC-2.4)
 
-
-
 === Extensions
-
-
 
 
 === Variations
@@ -156,4 +78,5 @@ ATM machine.>
 
 [arabic]
 . Ajouter le level du use case.
+. Mettre un trigger.
 

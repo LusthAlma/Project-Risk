@@ -1,61 +1,16 @@
-== Use Case Template
-
-Version 1.20
-
-*Instructions for removing the ‘Hints, Guidelines and Examples’ from
-this document*
-
-After you have completed the Use Case document, you may want to remove
-the hints and guidelines provided in the document.
-
-To remove the hints: (This procedure applies to Microsoft Word XP and
-higher)
-
-[arabic]
-. Click on any text formatted as Hint.
-. Then, click the right mouse button.
-. A pop-up menu will appear, choose ‘Select text with similar
-formatting’
-. All Hint text will now be selected in the document.
-. *Ensure that none of the text that you have entered is in the
-selection.*
-. Press the _Delete_ key to remove the _Hints , Guidelines and
-examples._.
-
-=== Revision History +
+=== Modifications
 
 [cols=",,",options="header",]
 |===
-|Date |Author |Description of change
+|Date |Auteur |Description
 | 13/10/19| Kévin ROY| Initialisation du document
 | 23/10/19 | Kévin ROY | Précision sur le scénario de succès. (UC-1.2.1)
-| | |
+|26/10/19 | Josselin Enet|Correction de l'orthographe
 | | |
 | | |
 | | |
 | | |
 |===
-
-Use Case Template. Copyright (c) 2004-2005 TechnoSolutions Corporation
-
-(Learn more about “TopTeam for Use Cases” at
-http://www.technosolutions.com[[.underline]#www.technosolutions.com#])
-
-Permission is hereby granted, free of charge, to any person obtaining a
-copy of this document and its associated documentation, to use the
-document on their projects for any commercial or non-commercial purpose.
-However you may not publish, distribute, sublicense, and/or sell copies
-of this document.
-
-THE DOCUMENT IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-DOCUMENT OR THE USE OR OTHER DEALINGS IN THE DOCUMENT. TECHNOSOLUTIONS
-CORPORATION MAKES NO REPRESENTATIONS ABOUT THE SUITABILITY OF THIS
-DOCUMENT FOR ANY PURPOSE. +
 
 *Use Case:* Donner Mission Tous Les Joueurs
 
@@ -63,58 +18,50 @@ DOCUMENT FOR ANY PURPOSE. +
 
 *Description*
 
-Le jeu attribut des missions aux joueurs,
+Le jeu attribue des missions aux joueurs,
 chaque joueur se retrouve donc avec une et une seule carte mission,
-le reste des cartes missions est enlevé.
+le reste des cartes Mission est enlevé.
 
 
-*Level:* <Enter Use Case Goal Level here>
+*Niveau:* 
 
-<Enter the goal level of this Use Case. Specify whether the Use Case
-level is - High Level Summary, Summary, User Goal, Sub-Function, Low
-Level>
+*Acteur Principal*
 
-*Primary Actor*
+Le Jeu.
 
-Le Jeu
+*Acteurs Secondaires*
 
-*Supporting Actors*
+Aucun.
 
-Aucun
+*Parties Prenantes*
 
-
-*Stakeholders and Interests*
-
-Joueurs
+Joueurs.
 
 *Pre-Conditions*
 
-Toutes les missions possibles on été chargés.
+Toutes les missions possibles on été chargées.
 
-*Post Conditions*
+*Post-Conditions*
 
-[.underline]#Success end condition#
+[.underline]#Condition de fin avec succès#
 
-Tous les joueurs ont réçu une et une seule carte mission unique.
+Tous les joueurs ont reçu une et une seule carte mission unique.
 
-[.underline]#Failure end condition#:
+[.underline]#Condition de fin avec échec#
 
 Un ou plusieurs joueurs n'ont pas de mission, ou deux joueurs ont la même mission.
 
-[.underline]#Minimal Guarantee#
-
-
-*Trigger*
+*Déclenchement*
 
 Initialisation
 
-=== Main Success Scenario
+=== Scénario principal de succès
 
 [arabic]
 . Le jeu a la liste des missions.
-. Il attribut une des missions de la liste au joueur 1 puis retire cette mission de la liste (UC-1.2.1)
+. Il attribue une des missions de la liste au joueur 1 puis retire cette mission de la liste (UC-1.2.1)
 . Il répète l'instruction précédente pour tous les autres joueurs.
-. Il se termine si tous les joueurs ont reçu une mission différente
+. Il se termine si tous les joueurs ont reçu une mission différente.
 
 
 === Extensions
@@ -138,6 +85,3 @@ Initialisation
 [arabic]
 . Ajouter le level du use case
 
-
-To learn more about “TopTeam Analyst for Use Cases” visit
-http://www.technosolutions.com[[.underline]#www.technosolutions.com#]

@@ -1,12 +1,10 @@
-== Use Case Template
-
 === Revision History +
 
 [cols=",,",options="header",]
 |===
-|Date |Author |Description of change
+|Date |Auteur |Description
 | 16/10/19| Soline LECOMTE| Initialisation du document
-| | |
+| 26/10/19| Josselin Enet|Correction de l'orthographe
 | | |
 | | |
 | | |
@@ -14,66 +12,39 @@
 | | |
 |===
 
-Use Case Template. Copyright (c) 2004-2005 TechnoSolutions Corporation
-
-(Learn more about “TopTeam for Use Cases” at
-http://www.technosolutions.com[[.underline]#www.technosolutions.com#])
-
-Permission is hereby granted, free of charge, to any person obtaining a
-copy of this document and its associated documentation, to use the
-document on their projects for any commercial or non-commercial purpose.
-However you may not publish, distribute, sublicense, and/or sell copies
-of this document.
-
-THE DOCUMENT IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-DOCUMENT OR THE USE OR OTHER DEALINGS IN THE DOCUMENT. TECHNOSOLUTIONS
-CORPORATION MAKES NO REPRESENTATIONS ABOUT THE SUITABILITY OF THIS
-DOCUMENT FOR ANY PURPOSE. +
 *Use Case:* Initialisation du jeu
 
 *Id*: UC-1
 
 *Description*
 
-Le jeu initialise la partie en mettant en place la préparation (Distribution des armées, Gestion des territoires, Distribution des missions, Placement des unités)
+Le jeu initialise la partie en mettant en place la préparation (Distribution des armées, Gestion des territoires, Distribution des missions, Placement des unités).
 
-*Level:* <Enter Use Case Goal Level here>
+*Niveau:* 
 
-<Enter the goal level of this Use Case. Specify whether the Use Case
-level is - High Level Summary, Summary, User Goal, Sub-Function, Low
-Level>
+*Acteur Principal*
 
-*Primary Actor*
+Le jeu.
 
-Le jeu
+*Acteurs Secondaires*
 
-*Supporting Actors*
+Les joueurs.
 
-Les joueurs
+*Parties Prenantes*
 
-*Stakeholders and Interests*
-
-Les joueurs n'intéragissent le jeu que pour déployer leur armées, mais c'est à eux que toute la phase profitera, puisque c'est grâce à cela qu'ils pourront commencer à jouer.
-
+Les joueurs n'interagissent avec le jeu que pour déployer leur armées, mais c'est à eux que toute la phase profitera, puisque c'est grâce à cela qu'ils pourront commencer à jouer.
 
 *Pre-Conditions*
 
-Au moins 3 joueurs sont connectés sur le jeu.
+Au moins 2 joueurs sont connectés sur le jeu.
 
 *Post Conditions*
 
-[.underline]#Success end condition#
+[.underline]#Condition de fin avec succès#
 
 L'initialisation du jeu est terminée et les joueurs peuvent alors commencer la partie.
 
-[.underline]#Failure end condition#:
-
-<List failure end condition here>
+[.underline]#Condition de fin avec échec#
 
 Le jeu n'a pas tout initialisé correctement : 
 	- La distribution des armées n'est pas faite ou pas correctement
@@ -81,16 +52,11 @@ OU	- Les territoires ne sont pas distribués
 OU	- Les missions n'ont pas été distribuées
 OU	- Les unités n'ont pas été placées
 
-[.underline]#Minimal Guarantee#
-
-<List minimal guarantee here>
-
-
-*Trigger*
+*Déclenchement*
 
 Les joueurs commandent le lancement d'une partie.
 
-=== Main Success Scenario
+=== Scénario principal de succès
 
 [arabic]
 . Le jeu attribue une couleur à chaque Joueur (UC 1.1)
@@ -104,10 +70,7 @@ Les joueurs commandent le lancement d'une partie.
 
 === Variations
 
-*Frequency:* 
-
-Une fois par partie
-
+*Fréquence:* Une fois par partie.
 
 === Special Requirements 
 

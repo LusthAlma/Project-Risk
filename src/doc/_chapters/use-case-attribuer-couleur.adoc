@@ -1,10 +1,10 @@
-=== Revision History +
+=== Modifications
 
 [cols=",,",options="header",]
 |===
-|Date |Author |Description of change
-|20/10/19| Josselin Enet|Création du use case
-| | |
+|Date |Auteur |Description
+|20/10/19| Josselin Enet|Création du Use Case
+|26/10/19 | Josselin Enet|Correction de l'orthographe
 | | |
 | | |
 | | |
@@ -13,7 +13,7 @@
 |===
 
 
-*Use Case:* Attributier les couleurs
+*Use Case:* Attribuer les couleurs
 
 *Id*: UC-1.1
 
@@ -22,57 +22,45 @@
 
 Le jeu attribue à chaque joueur une couleur différente. Les unités et territoires de chaque joueur sont de couleur correspondante.
 
-*Level:* <Enter Use Case Goal Level here>
+*Niveau:* <Enter Use Case Goal Level here>
 
+*Acteur Principal*
 
-*Primary Actor*
+Le jeu.
 
-Le jeu
+*Acteurs secondaires*
 
-*Supporting Actors*
-
-Les joueurs
-
+Les joueurs.
 
 *Pre-Conditions*
 
 La partie doit être lancée avec un nombre défini de joueurs, compris entre 2 et 6. Aucune unité ou territoire n'est attribué.
 
+*Post-Conditions*
 
-*Post Conditions*
-
-[.underline]#Success end condition#
+[.underline]#Condition de fin avec succès#
 
 Chaque joueur se voit attribuer une couleur. Une couleur n'est pas affectée à 2 joueurs différents.
 
-[.underline]#Failure end condition#
+[.underline]#Condition de fin avec échec#
 
-Un ou plusieurs joueurs n'ont pas de couleur attribuée. 
+Un ou plusieurs joueurs n'ont pas de couleur attribuée.
+Des joueurs ont la même couleur.
 
 
-*Trigger*
+*Déclenchement*
 
 La partie est lancée.
 
-=== Main Success Scenario
+=== Scénario principal de succès
 
 [arabic]
 . Plusieurs joueurs se connectent et lancent une partie.
 . Le jeu attribue une couleur à chaque joueur.
 
+*Fréquence:* Une fois au début de chaque partie.
 
-=== Extensions
-
-
-=== Variations
-
-<Enter variations here>
-
-
-*Frequency:* Une fois par partie.
-
-
-=== Special Requirements 
+=== Besoins spéciaux
 
 [.underline]#Interface#
 
@@ -83,4 +71,4 @@ La partie est lancée.
 
 [arabic]
 . Trouver le niveau du use case.
-. Identifier des variations ou cas d'erreur.
+

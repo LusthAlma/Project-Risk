@@ -1,61 +1,16 @@
-== Use Case Template
-
-Version 1.20
-
-*Instructions for removing the ‘Hints, Guidelines and Examples’ from
-this document*
-
-After you have completed the Use Case document, you may want to remove
-the hints and guidelines provided in the document.
-
-To remove the hints: (This procedure applies to Microsoft Word XP and
-higher)
-
-[arabic]
-. Click on any text formatted as Hint.
-. Then, click the right mouse button.
-. A pop-up menu will appear, choose ‘Select text with similar
-formatting’
-. All Hint text will now be selected in the document.
-. *Ensure that none of the text that you have entered is in the
-selection.*
-. Press the _Delete_ key to remove the _Hints , Guidelines and
-examples._.
-
-=== Revision History +
+=== Modifications
 
 [cols=",,",options="header",]
 |===
-|Date |Author |Description of change
+|Date |Auteur |Description
 | 13/10/19| Kévin ROY| Initialisation du document
-| | |
+|26/10/19 | Josselin Enet|Correction de l'orthographe
 | | |
 | | |
 | | |
 | | |
 | | |
 |===
-
-Use Case Template. Copyright (c) 2004-2005 TechnoSolutions Corporation
-
-(Learn more about “TopTeam for Use Cases” at
-http://www.technosolutions.com[[.underline]#www.technosolutions.com#])
-
-Permission is hereby granted, free of charge, to any person obtaining a
-copy of this document and its associated documentation, to use the
-document on their projects for any commercial or non-commercial purpose.
-However you may not publish, distribute, sublicense, and/or sell copies
-of this document.
-
-THE DOCUMENT IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-DOCUMENT OR THE USE OR OTHER DEALINGS IN THE DOCUMENT. TECHNOSOLUTIONS
-CORPORATION MAKES NO REPRESENTATIONS ABOUT THE SUITABILITY OF THIS
-DOCUMENT FOR ANY PURPOSE. +
 
 *Use Case:* Donner Mission A Un Joueur
 
@@ -63,25 +18,19 @@ DOCUMENT FOR ANY PURPOSE. +
 
 *Description*
 
-Le Jeu donne une mission à un joueur
+Le Jeu donne une mission à un joueur.
 
+*Niveau:* 
 
-*Level:* <Enter Use Case Goal Level here>
+*Acteur Principal*
 
-<Enter the goal level of this Use Case. Specify whether the Use Case
-level is - High Level Summary, Summary, User Goal, Sub-Function, Low
-Level>
+Le Jeu.
 
-*Primary Actor*
+*Acteurs Secondaires*
 
-Le Jeu
+Aucun.
 
-*Supporting Actors*
-
-Aucun
-
-
-*Stakeholders and Interests*
+*Parties Prenantes*
 
 Joueur
 
@@ -89,29 +38,26 @@ Joueur
 
 La mission existe.
 
-*Post Conditions*
+*Post-Conditions*
 
-[.underline]#Success end condition#
+[.underline]#Condition de fin avec succès#
 
 Le joueur a bien la mission.
 
-[.underline]#Failure end condition#:
+[.underline]#Condition de fin avec échec#
 
-Le joueur n'a pas de mission, ou a une mission differente.
+Le joueur n'a pas de mission, ou a une mission différente.
 
-[.underline]#Minimal Guarantee#
+*Déclenchement*
 
+Donner Mission Tous Les Joueurs.
 
-*Trigger*
-
-Donner Mission Tous Les Joueurs
-
-=== Main Success Scenario
+=== Scénario principal de succès
 
 [arabic]
 . Le jeu a une mission.
 . Le jeu a un joueur.
-. Le jeu defini la mission du joueur par celle qu'il a.
+. Le jeu définit la mission du joueur par celle qu'il a.
 . Se termine quand le jeu a bien donné la mission au joueur.
 
 
@@ -126,16 +72,7 @@ Donner Mission Tous Les Joueurs
 === Special Requirements 
 
 
-
-=== Issues 
-
-
-
 === To do
 
 [arabic]
 . Ajouter le level du use case.
-
-
-To learn more about “TopTeam Analyst for Use Cases” visit
-http://www.technosolutions.com[[.underline]#www.technosolutions.com#]

@@ -1,34 +1,10 @@
-== Use Case Template
-
-Version 1.20
-
-*Instructions for removing the ‘Hints, Guidelines and Examples’ from
-this document*
-
-After you have completed the Use Case document, you may want to remove
-the hints and guidelines provided in the document.
-
-To remove the hints: (This procedure applies to Microsoft Word XP and
-higher)
-
-[arabic]
-. Click on any text formatted as Hint.
-. Then, click the right mouse button.
-. A pop-up menu will appear, choose ‘Select text with similar
-formatting’
-. All Hint text will now be selected in the document.
-. *Ensure that none of the text that you have entered is in the
-selection.*
-. Press the _Delete_ key to remove the _Hints , Guidelines and
-examples._.
-
-=== Revision History +
+=== Modifications
 
 [cols=",,",options="header",]
 |===
-|Date |Author |Description of change
+|Date |Auteur |Description
 | 16/10/19| Soline LECOMTE| Initialisation du document
-| | |
+| 26/16/19| Josselin Enet| Correction de l'orthographe
 | | |
 | | |
 | | |
@@ -36,28 +12,8 @@ examples._.
 | | |
 |===
 
-Use Case Template. Copyright (c) 2004-2005 TechnoSolutions Corporation
 
-(Learn more about “TopTeam for Use Cases” at
-http://www.technosolutions.com[[.underline]#www.technosolutions.com#])
-
-Permission is hereby granted, free of charge, to any person obtaining a
-copy of this document and its associated documentation, to use the
-document on their projects for any commercial or non-commercial purpose.
-However you may not publish, distribute, sublicense, and/or sell copies
-of this document.
-
-THE DOCUMENT IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-DOCUMENT OR THE USE OR OTHER DEALINGS IN THE DOCUMENT. TECHNOSOLUTIONS
-CORPORATION MAKES NO REPRESENTATIONS ABOUT THE SUITABILITY OF THIS
-DOCUMENT FOR ANY PURPOSE. +
-
-*Use Case:* Distribution des unités
+*Use Case:* Distribuer des unités
 
 *Id*: UC-1.3
 
@@ -65,43 +21,36 @@ DOCUMENT FOR ANY PURPOSE. +
 
 Le jeu distribue des unités à chaque joueur.
 
-*Level:* <Enter Use Case Goal Level here>
+*Niveau:* 
 
-<Enter the goal level of this Use Case. Specify whether the Use Case
-level is - High Level Summary, Summary, User Goal, Sub-Function, Low
-Level>
+*Acteur Principal*
 
-*Primary Actor*
+Le jeu.
 
-Le jeu
-
-
-*Stakeholders and Interests*
+*Parties Prenantes*
 
 Ce cas d'utilisation permettra aux joueurs de pouvoir déployer leurs unités et d'ensuite commencer la partie.
 
 *Pre-Conditions*
 
-Au moins 3 joueurs sont connectés sur le jeu.
+Au moins 2 joueurs sont connectés sur le jeu.
 
-*Post Conditions*
+*Post-Conditions*
 
-[.underline]#Success end condition#
+[.underline]#Condition de fin avec succès#
 
 Le jeu a distribué le bon nombre d'unités à chaque joueur.
 
-[.underline]#Failure end condition#:
+[.underline]#Condition de fin avec échec#
 
-Le jeu a distribué le mauvis nombre d'unités aux joueurs.
+Le jeu a distribué le mauvais nombre d'unités aux joueurs.
 
-[.underline]#Minimal Guarantee#
-
-*Trigger*
+*Déclenchement*
 
 Le jeu a distribué une mission à chaque joueur, l'initialisation de la partie continue avec ce cas d'utilisation.
 
 
-=== Main Success Scenario
+=== Scénario principal de succès
 
 [arabic]
 . En fonction du nombre de joueurs, le jeu distribue un nombre identique d'armées à chaque joueur.
@@ -111,32 +60,21 @@ Le jeu a distribué une mission à chaque joueur, l'initialisation de la partie 
 
 Extension du step 1 : 
 
-1a. Si il y a 3 joueurs :
-		- Le jeu distribue 35 armées à chacun
-1b. Si il y a 4 joueurs :
-		- Le jeu distribue 30 armées à chacun
-1c. Si il y a 5 joueurs :
-		- Le jeu distribue 25 armées à chacun
-1d. Si il y a 6 joueurs :
-		- Le jeu distribue 20 armées à chacun
-
-
-=== Variations
-
-
-*Frequency:* Une fois par partie
-
-*Assumptions*
-
-
-=== Special Requirements 
+1a. S'il y a 3 joueurs :
+		- Le jeu distribue 35 armées à chacun.
+1b. S'il y a 4 joueurs :
+		- Le jeu distribue 30 armées à chacun.
+1c. S'il y a 5 joueurs :
+		- Le jeu distribue 25 armées à chacun.
+1d. S'il y a 6 joueurs :
+		- Le jeu distribue 20 armées à chacun.
 
 
 
-=== Issues 
+*Fréquence:* Une fois par partie.
 
-[arabic]
-. {blank}
+
+=== Besoins spéciaux
 
 
 === To do
