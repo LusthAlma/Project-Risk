@@ -1,0 +1,83 @@
+=== Revision History +
+
+[cols=",,",options="header",]
+|===
+|Date |Author |Description of change
+|Josselin Enet | 26/10/19|Création du Use Case
+| | |
+| | |
+| | |
+| | |
+| | |
+| | |
+|===
+
+*Use Case:* Déplacer des unités
+
+*Id*: UC-2.3
+
+<Enter a unique numeric identifier for the Use Case. e.g. UC-113>
+
+*Description*
+
+Un joueur décide de déplacer certaines de ses unités depuis un de ses territoires vers un autre.
+
+*Level:* 
+
+*Primary Actor*
+
+Le joueur en train d'effectuer son tour.
+
+*Supporting Actors*
+
+Les autres joueurs.
+
+*Pre-Conditions*
+
+Le joueur n'est pas éliminé.
+Le territoire de départ possède plus d'une unité.
+Le territoire de départ et celui d'arrivée appartiennent au joueur dont le tour est en cours.
+
+*Post Conditions*
+
+[.underline]#Success end condition#
+
+Le joueur a pu déplacer ses unités vers le territoire souhaité.
+
+[.underline]#Failure end condition#:
+
+Le joueur a déplacé ses unités vers un territoire avec lequel il ne devrait pas pouvoir interagir.
+Il ne reste aucune unité sur le territoire de départ.
+Le nombre d'unités enlevées au territoire de départ est différent de celui ajouté au territoire d'arrivée.
+
+*Trigger*
+
+Le joueur choisit certaines de ses unités qu'il souhaite déplacer.
+
+=== Main Success Scenario
+
+[arabic]
+. Le joueur choisit des unités qui se situent sur un des territoires qu'il contrôle.
+. Il sélectionne un autre de ses territoires.
+. Les unités sont retirées au total des unités sur le territoire de départ et ajoutées au total de celui d'arrivée.
+
+
+*Frequency:* Autant de fois que souhaité par le joueur chaque tour.
+
+
+=== Special Requirements 
+
+Interface
+
+{empty}1. Chaque déplacement d'unités d'un territoire vers un autre doit être visible par l'ensemble des joueurs.
+
+{empty}2. Si plusieurs unités sont sélectionnées lors d'un même déplacement, alors une seule animation sera effectuée en affichant clairement le nombre d'unités déplacées.
+
+=== Issues 
+
+[arabic]
+
+
+1. Est-ce qu'on dit qu'on peut se déplacer vers un territoire adverse et dans ce cas on déclenche une attaque ou on sépare les deux?
+2. Où est-ce qu'on dit qu'on peut effectuer plusieurs déplacement dans un tour? Ici ou dans le UC joueur un tour? 
+
