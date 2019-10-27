@@ -56,11 +56,37 @@ include::use-case-deplacement.adoc[leveloffset=+2]
 [plantuml, domain-classes, png]
 ----
 @startuml
-Class01 <|-- Class02
-Class03 *-- Class04
-Class05 o-- Class06
-Class07 .. Class08
-Class09 -- Class10
+Class Joueur {
+        nom : String
+        couleur : String
+        void obtenirRenforts()
+}
+
+Class Unite {
+        void deplacer(Territoire)
+        void attaquer(Territoire)
+}
+
+Class Continent {
+        nom : String
+        renfortsBonus : Integer
+}
+
+Class Territoire {
+        nom : String
+}
+
+Class Mission {
+        objectif : String
+        boolean reussie()
+}
+
+Joueur "1" *-- "*" Unite : controle
+Joueur "0..1" o-- "1" Mission : aMission
+Unite "0..*" o-- "1" Territoire : estPositionnee
+Continent "1" *-- "*" Territoire : estCompose
+Territoire "1..n" o-- "1..*" Territoire : estVoisin
+
 @enduml
 ----
 
@@ -68,14 +94,19 @@ Class09 -- Class10
 
 [source,ocl]
 ----
-context Etudiant::age() : Integer
-post correct: result = (today - naissance).years()
+context Continent inv: 
+        renfortsBonus>=0
 
-context Typename::operationName(param1: type1, ...): Type
-post: result = ...
+context Joueur::obtenirRenforts() : Integer
+post: result>=3
 
-context Typename::operationName(param1: type1, ...): Type
-post resultOk: result = ...
+context Unite::attaquer(arrivee : Territoire)
+pre: self.territoire <> arrivee
+
+context Unite::deplacer(arrivee : Territoire)
+def: depart : Territoire = self.territoire
+pre: depart <> arrivee
+post: self.territoire = arrivee 
 ----
 
 
