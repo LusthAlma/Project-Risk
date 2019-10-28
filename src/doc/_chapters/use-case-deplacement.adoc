@@ -71,10 +71,11 @@ Le joueur choisit certaines de ses unités qu'il souhaite déplacer.
 
 === Instantané
 
-Résultat d'un déplacement d'unités de puis le Congo vers l'Afrique du Nord.
+Résultat d'un déplacement d'unités depuis le Congo vers l'Afrique du Nord.
 
+
+[.underline]#Début:#
 [plantuml, deplacement-snap-start, png]
-
 ----
 @startuml
 
@@ -112,6 +113,7 @@ terrDepart -- terrArrivee : estVoisin
 @enduml
 ----
 
+[.underline]#Fin:#
 [plantuml, deplacement-snap-end, png]
 ----
 @startuml
