@@ -30,7 +30,49 @@ Présentation de l'interface en UML (ou HUTN).
 Description du comportement de chaque opération. 
 Spécification éventuelle des pré-conditions en OCL.
 
+[plantuml, interface-gameserver-a, png]
+----
+@startuml
+
+left to right direction
+
+Component WebClient
+Component GameServer
+
+seConnecter -- GameServer
+WebClient ..> seConnecter
+
+deployerUnite -- GameServer
+WebClient ..> deployerUnite
+
+@enduml
+----
+
 ==== Spécification de l'interface B 
+
+[plantuml, interface-gameserver-b, png]
+----
+@startuml
+
+left to right direction
+
+Component WebClient
+Component GameServer
+
+deplacer -- GameServer
+WebClient ..> deplacer
+
+attaquer -- GameServer
+WebClient ..> attaquer
+
+placerRenforts -- GameServer
+WebClient ..> placerRenforts
+
+finirTour -- GameServer
+WebClient ..> finirTour
+
+@enduml
+----
 
 == Le composant `Web Client`
 
@@ -44,8 +86,55 @@ Présentation de l'interface en UML (ou HUTN).
 Description du comportement de chaque opération. 
 Spécification éventuelle des pré-conditions en OCL.
 
+[plantuml, interface-webclient-a, png]
+----
+@startuml
+
+left to right direction
+
+Component WebClient
+Component GameServer
+
+attribuerCouleur -- WebClient
+GameServer ..> attribuerCouleur
+
+attribuerMission -- WebClient
+GameServer ..> attribuerMission
+
+attribuerTerritoire -- WebClient
+GameServer ..> attribuerTerritoire
+
+attribuerUnite -- WebClient
+GameServer ..> attribuerUnite
+
+@enduml
+----
+
 ==== Spécification de l'interface B 
 
+[plantuml, interface-webclient-b, png]
+----
+@startuml
+
+left to right direction
+
+Component WebClient
+Component GameServer
+
+debuterTour -- WebClient
+GameServer ..> debuterTour
+
+donnerRenforts -- WebClient
+GameServer ..> donnerRenforts
+
+resultatCombat -- WebClient
+GameServer ..> resultatCombat
+
+mettreAJour -- WebClient
+GameServer ..> mettreAJour
+
+@enduml
+----
 
 == Interactions
 

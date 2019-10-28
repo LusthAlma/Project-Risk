@@ -27,7 +27,6 @@ Description du projet
 // Chapters:
 
 include::{includedir}/analyse-domaine.adoc[leveloffset=+1]
-include::{includedir}/exigences.adoc[leveloffset=+1]
 include::{includedir}/conception-preliminaire.adoc[leveloffset=+1]
 include::{includedir}/conception-detaillee.adoc[leveloffset=+1]
 
