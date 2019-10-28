@@ -3,7 +3,7 @@
 [cols=",,",options="header",]
 |===
 |Date |Auteur |Description
-| | |
+| 20/10/19 | Lenormand Tristan| Création du Use Case
 |26/10/19 | Josselin Enet|Correction de l'orthographe
 | | |
 | | |
