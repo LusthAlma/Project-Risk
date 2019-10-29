@@ -90,7 +90,7 @@ Territoire "1..n" o-- "1..*" Territoire : estVoisin
 @enduml
 ----
 
-=== Invariants
+== Invariants
 
 [source,ocl]
 ----
