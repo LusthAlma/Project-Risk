@@ -55,9 +55,9 @@ Le joueur a obtenu ses renforts, il a pu combattre s'il le souhaitait, et a pu s
 === Scénario principal de succès
 
 [arabic]
-. Le Jeu donne au joueur ses renfort. (UC-2.1)
-. Le Joueur peut combattre autant de fois qu'il le veut. (UC-2.2)
-. Le Joueur peut déplacer ses unités. (UC-2.3)
+. Le Jeu donne au joueur ses renforts. (UC-2.1)
+. Le Joueur décide de combattre (autant de fois qu'il le veut). (UC-2.2)
+. Le Joueur décide de déplacer ses unités. (UC-2.3)
 . Le Joueur passe son tour. (UC-2.4)
 
 === Extensions
@@ -68,6 +68,7 @@ Le joueur a obtenu ses renforts, il a pu combattre s'il le souhaitait, et a pu s
 
 === Special Requirements 
 
+=== Instantané
 
 
 === Issues 

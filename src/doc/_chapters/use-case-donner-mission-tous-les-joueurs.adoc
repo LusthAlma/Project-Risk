@@ -3,10 +3,10 @@
 [cols=",,",options="header",]
 |===
 |Date |Auteur |Description
-| 13/10/19| Kévin ROY| Initialisation du document
+| 13/10/19 | Kévin ROY | Initialisation du document
 | 23/10/19 | Kévin ROY | Précision sur le scénario de succès. (UC-1.2.1)
-|26/10/19 | Josselin Enet|Correction de l'orthographe
-| | |
+| 26/10/19 | Josselin Enet |Correction de l'orthographe
+| 31/10/19 | Soline LECOMTE | Corrections mineures
 | | |
 | | |
 | | |
@@ -58,10 +58,9 @@ Initialisation
 === Scénario principal de succès
 
 [arabic]
-. Le jeu a la liste des missions.
-. Il attribue une des missions de la liste au joueur 1 puis retire cette mission de la liste (UC-1.2.1)
-. Il répète l'instruction précédente pour tous les autres joueurs.
-. Il se termine si tous les joueurs ont reçu une mission différente.
+. Le jeu attribue une des missions de la liste au joueur 1 puis retire cette mission de la liste (UC-1.2.1)
+. Le jeu répète l'instruction précédente pour tous les autres joueurs.
+. Le cas d'utilisation se termine si tous les joueurs ont reçu une mission différente.
 
 
 === Extensions
@@ -73,6 +72,8 @@ Initialisation
 
 
 === Special Requirements 
+
+=== Instantané
 
 
 

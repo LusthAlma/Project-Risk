@@ -74,17 +74,17 @@ Les joueurs commandent le lancement d'une partie.
 
 === Special Requirements 
 
+=== Instantané
+
 
 === Issues 
 
 [arabic]
-. {blank}
 
 
 === To do
 
 [arabic]
-. {blank} 
 Find possible Extensions/Variations/Special Requirements/Issues for this Use Case
 Gérer le level du UC
 

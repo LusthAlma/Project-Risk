@@ -3,9 +3,9 @@
 [cols=",,",options="header",]
 |===
 |Date |Auteur |Description
-| 20/10/19 | Lenormand Tristan| Création du Use Case
-|26/10/19 | Josselin Enet|Correction de l'orthographe
-| | |
+| 20/10/19 | Lenormand Tristan | Création du Use Case
+| 26/10/19 | Josselin Enet | Correction de l'orthographe
+| 31/10/19 | Soline LECOMTE | Ajout Snapshot
 | | |
 | | |
 | | |
@@ -72,6 +72,55 @@ Début de partie : fin du Use Case Donner unités (UC-1.3)
 
 === Special Requirements 
 
+=== Instantané
+Distribution des territoires dans une partie avec 3 joueurs.
+
+[.underline]#Début:#
+
+[plantuml, territoire-snap-start, png]
+----
+@startuml
+
+Object joueur1 {
+        nom = "J1"
+        territoires = []
+}
+
+Object joueur2 {
+        nom = "J2"
+        territoires = []
+}
+
+Object joueur3 {
+        nom = "J3"
+        territoires = []
+}
+
+@enduml
+----
+
+[.underline]#Fin:#
+[plantuml, territoire-snap-end, png]
+----
+@startuml	
+
+Object joueur1 {
+        nom = "J1"
+        territoires = [Afghanistan, Inde, Afrique du Nord, Indonésie,	Afrique du Sud	, Islande, Afrique Orientale, Japon, Alaska, Kamchatka, Alberta, Madagascar, Amérique Centrale, Mongolie]
+}
+
+Object joueur2 {
+        nom = "J2"
+        territoires = [Argentine, Moyen Orient, Australie Occidentale, Nouvelle Guinée, Australie orientale Ontario	, Brésil,	Oural, Chine, Pérou,	Congo, Québec, Egypte, Scandinavie]
+}
+
+Object joueur3 {
+        nom = "J3"
+        territoires = [Etat de l'Est, Siam, Etat de l'Ouest, Sibérie,	 Europe du Nord, Tchita, Europe du Sud, Territoire du Nord Ouest, Europe Occidentale, Ukraine, Grande Bretagne, Venezuela, Groenland, Yakoutie]
+}
+
+@enduml
+----
 
 === Issues 
 

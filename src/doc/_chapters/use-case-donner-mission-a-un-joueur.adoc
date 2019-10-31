@@ -3,9 +3,9 @@
 [cols=",,",options="header",]
 |===
 |Date |Auteur |Description
-| 13/10/19| Kévin ROY| Initialisation du document
-|26/10/19 | Josselin Enet|Correction de l'orthographe
-| | |
+| 13/10/19 | Kévin ROY | Initialisation du document
+| 26/10/19 | Josselin Enet | Correction de l'orthographe
+| 31/10/19 | Soline LECOMTE | Corrections mineures
 | | |
 | | |
 | | |
@@ -36,8 +36,8 @@ Joueur
 
 *Pre-Conditions*
 
-La mission existe.
-
+. Le jeu a une mission.
+. Le jeu a un joueur.
 *Post-Conditions*
 
 [.underline]#Condition de fin avec succès#
@@ -55,9 +55,7 @@ Donner Mission Tous Les Joueurs.
 === Scénario principal de succès
 
 [arabic]
-. Le jeu a une mission.
-. Le jeu a un joueur.
-. Le jeu définit la mission du joueur par celle qu'il a.
+. Le jeu affecte au joueur sa mission.
 . Se termine quand le jeu a bien donné la mission au joueur.
 
 
@@ -70,6 +68,8 @@ Donner Mission Tous Les Joueurs.
 
 
 === Special Requirements 
+
+=== Instantané
 
 
 === To do

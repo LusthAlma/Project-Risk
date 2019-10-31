@@ -1,34 +1,10 @@
-== Use Case Template
-
-Version 1.20
-
-*Instructions for removing the ‘Hints, Guidelines and Examples’ from
-this document*
-
-After you have completed the Use Case document, you may want to remove
-the hints and guidelines provided in the document.
-
-To remove the hints: (This procedure applies to Microsoft Word XP and
-higher)
-
-[arabic]
-. Click on any text formatted as Hint.
-. Then, click the right mouse button.
-. A pop-up menu will appear, choose ‘Select text with similar
-formatting’
-. All Hint text will now be selected in the document.
-. *Ensure that none of the text that you have entered is in the
-selection.*
-. Press the _Delete_ key to remove the _Hints , Guidelines and
-examples._.
-
 === Revision History +
 
 [cols=",,",options="header",]
 |===
 |Date |Author |Description of change
 |28/10/2019 | Lenormand Tristan | Creation du Use Case
-| | |
+|31/10/2019 | Lecomte Soline | Corrections mineures
 | | |
 | | |
 | | |
@@ -36,27 +12,7 @@ examples._.
 | | |
 |===
 
-Use Case Template. Copyright (c) 2004-2005 TechnoSolutions Corporation
-
-(Learn more about “TopTeam for Use Cases” at
-http://www.technosolutions.com[[.underline]#www.technosolutions.com#])
-
-Permission is hereby granted, free of charge, to any person obtaining a
-copy of this document and its associated documentation, to use the
-document on their projects for any commercial or non-commercial purpose.
-However you may not publish, distribute, sublicense, and/or sell copies
-of this document.
-
-THE DOCUMENT IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-DOCUMENT OR THE USE OR OTHER DEALINGS IN THE DOCUMENT. TECHNOSOLUTIONS
-CORPORATION MAKES NO REPRESENTATIONS ABOUT THE SUITABILITY OF THIS
-DOCUMENT FOR ANY PURPOSE. +
-*Use Case:* Attaque d'un territoire ennemis par un joueur
+*Use Case:* Attaque d'un territoire ennemi par un joueur
 
 
 *Id*: UC- 2.2
@@ -64,14 +20,13 @@ DOCUMENT FOR ANY PURPOSE. +
 
 *Description*
 
-Un joueur décide pendant son tour d'attaque le territoire d'un autre joueur.
-Il choisit donc le nombre d'armée sur son territoire avec lequel il attaque (1, 2 ou 3) puis
-lance l'assault en lançant un nombre équivalaent de dés. Le défenseur fait de même pour se défendre ( avec 1 ou 2 unités)
-et le nombre d'unités perdus est alors calculé en comparant les dés les plus forts entre eux et les moins fort entre eux.
+Un joueur décide pendant son tour d'attaquer le territoire d'un autre joueur.
+Il choisit donc le nombre d'armées sur son territoire avec lequel il attaque (1, 2 ou 3) puis
+lance l'assault en lançant un nombre équivalaent de dés. Le défenseur fait de même pour se défendre (avec 1 ou 2 unités)
+et le nombre d'unités perdues est alors calculé en comparant les dés les plus forts entre eux et les moins fort entre eux.
 En cas d'égalité, c'est le defenseur qui l'emporte. Le combat se termine lorsque le defenseur n'a
 plus d'unités ou que l'attaquant décide d'arrêter l'attaque ou qu'il na plus assez d'unités pour attaquer.
-Si l'attaquant remporte l'offensive, il déplace sur le territoire conquis un nombre d'unités égal au nombre d'unités attaquante lors de l'offensive.
-
+Si l'attaquant remporte l'offensive, il déplace sur le territoire conquis un nombre d'unités égal au nombre d'unités attaquantes lors de l'offensive.
 
 
 *Level:* <Enter Use Case Goal Level here>
@@ -86,8 +41,6 @@ Le joueur qui est en train de jouer son tour
 Le joueur défenseur
 
 *Stakeholders and Interests*
-
-<List Stakeholders and their interests here>
 
 Les autres joueurs dont l'issue du combat peut contribuer à la progression de leurs objectifs. (éliminer un joueur)
 
@@ -122,9 +75,9 @@ Fin du UC-2.1 Renforts.
 
 [arabic]
 . L'attaquant attaque avec un nombre i d'unités compris entre 1 et 3 et lance un même nombre de dés
-. Le defenseur défends avec 1 ou 2 unités et lance un même nombre de dés
+. Le defenseur défend avec 1 ou 2 unités et lance un même nombre de dés
 . On compare les dés entre eux (fort ensemble, faible ensemble) et les joueurs perdent une unités par dés perdant.
-. Le combat continue jusqu'à que l'attaquant décide d'arrêter ou que l'attaquant n'a plus qu'une unité, ou le defenseur n'a plus d'unités
+. Le combat continue jusqu'à que l'attaquant décide d'arrêter ou que l'attaquant n'aie plus qu'une unité, ou que le defenseur n'aie plus d'unités
 . Si l'attaquant gagne, il déplace le nombre d'unités qu'il a engagé sur le territoire conquis
 
 === Extensions
@@ -136,6 +89,9 @@ Fin du UC-2.1 Renforts.
 
 
 === Special Requirements 
+
+
+=== Instantané
 
 
 === Issues 
