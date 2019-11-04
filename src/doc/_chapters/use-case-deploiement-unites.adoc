@@ -5,7 +5,7 @@
 |Date |Auteur |Description
 | 20/10/19 | Lenormand Tristan | Creation du Use Case
 | 26/10/19| Josselin Enet|Correction de l'orthographe
-| | |
+| 04/11/19| Lenormand Tristan| Ajout Snapshot
 | | |
 | | |
 | | |
@@ -63,7 +63,7 @@ Début de la partie : Fin du Use Case Donner territoires ( UC 1.4).
 [arabic]
 . Joueur i pose un nombre d'unités supérieur à 1 sur un de ses territoires où il n'a pas encore d'armée
 . Le joueur i+1 fait de même
-. On continue jusqu'à ce que tous les territoires soient occupés par une unité au moins, et que plus aucun joueur n'ait d'unités en sa possession
+. On continue jusqu'à ce que tous les territoires soient occupés par une unité au moins, et que plus aucun joueur n'aient d'unités en sa possession
 
 
 === Extensions
@@ -78,14 +78,68 @@ Début de la partie : Fin du Use Case Donner territoires ( UC 1.4).
 
 
 
-=== Issues 
-
-[arabic]
-. {blank}
+=== Instantané
+Résultat d'un déploiement d'unités d'un joueur sur le territoire "Congo" qu'il contrôle
 
 
-=== To do
+[.underline]#Début:#
+[plantuml, deploiement-unites-snap-start, png]
+----
+@startuml
+object joueur1 {
+        nom = "J1"
+        couleur = "vert"
+}
 
-[arabic]
-. {blank} Find possible Extensions/Variations/Special Requirements/Issues for this Use Case
+Object unite1
+Object unite2
+Object unite3
+
+Object territoireControlé{
+        nom = "Congo"
+}
+
+Object reserve
+
+joueur1 -- unite1 : controle
+joueur1 -- unite2 : controle
+joueur1 -- unite3 :controle
+
+unite1 -- reserve : pasPlacée
+unite2 -- reserve : pasPlacée
+unite3 -- reserve : pasPlacée
+@enduml
+----
+[.underline]#Fin:#
+[plantuml, deploiement-unites-snap-end, png]
+----
+@startuml
+object joueur1 {
+nom = "J1"
+couleur = "vert"
+}
+
+Object unite1
+Object unite2
+Object unite3
+
+Object territoireControlé{
+nom = "Congo"
+}
+
+Object reserve
+
+joueur1 -- unite1 : controle
+joueur1 -- unite2 : controle
+joueur1 -- unite3 :controle
+
+unite1 -- territoireControlé : estPositionnée
+unite2 -- territoireControlé : estPositionnée
+unite3 -- reserve : pasPlacée
+
+@enduml
+
+----
+
+
 

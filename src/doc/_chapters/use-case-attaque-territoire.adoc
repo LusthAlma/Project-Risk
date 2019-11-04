@@ -5,7 +5,7 @@
 |Date |Author |Description of change
 |28/10/2019 | Lenormand Tristan | Creation du Use Case
 |31/10/2019 | Lecomte Soline | Corrections mineures
-| | |
+|04/11/2019 | Lenormand Tristan | Ajout Snapshot
 | | |
 | | |
 | | |
@@ -92,6 +92,97 @@ Fin du UC-2.1 Renforts.
 
 
 === Instantané
+
+Résultat d'une attaque d'un joueur d'un territoire qu'il controle vers un territoire contrôlée par un autre joueur
+
+[.underline]#Début:#
+[plantuml, deploiement-unites-snap-start, png]
+----
+@startuml
+object joueur1 {
+        nom = "J1"
+        couleur = "vert"
+}
+
+object joueur2 {
+        nom = "J1"
+        couleur = "vert"
+}
+
+Object unite1
+Object unite2
+Object unite3
+Object unite4
+Object unite5
+Object unite6
+
+Object territoireAttaque{
+        nom = "Congo"
+        appartient = "joueur1"
+}
+
+Object territoireDefense{
+        nom = "Afrique du sud"
+        appartient = "joueur2"
+}
+
+
+joueur1 -- unite1 : controle
+joueur1 -- unite2 : controle
+joueur1 -- unite3 : controle
+
+joueur2 -- unite4 : controle
+joueur2 -- unite5 : controle
+joueur2 -- unite6 :controle
+
+unite1 -- territoireAttaque : estPositionnée
+unite2 -- territoireAttaque : estPositionnée
+unite3 -- territoireAttaque : estPositionnée
+
+unite4 -- territoireDefense : estPositionnée
+unite5 -- territoireDefense : estPositionnée
+unite6 -- territoireDefense : estPositionnée
+
+unite1 -- territoireDefense : attaque
+unite3 -- territoireDefense : attaque
+@enduml
+----
+[.underline]#Fin:#
+[plantuml, deploiement-unites-snap-end, png]
+----
+@startuml
+object joueur1 {
+nom = "J1"
+couleur = "vert"
+}
+
+Object unite1
+Object unite2
+Object unite3
+
+Object territoireAttaque{
+nom = "Congo"
+appartient = "joueur1"
+}
+
+Object territoireDefense{
+        nom = "Afrique du sud"
+        appartient = "joueur1"
+}
+
+
+
+joueur1 -- unite1 : controle
+joueur1 -- unite2 : controle
+joueur1 -- unite3 :controle
+
+unite1 -- territoireDefense : estPositionnée
+unite2 -- territoireAttaque : estPositionnée
+unite3 -- territoireDefense : estPositionnée
+
+@enduml
+
+----
 
 
 === Issues 
