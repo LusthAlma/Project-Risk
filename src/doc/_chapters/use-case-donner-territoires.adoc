@@ -83,17 +83,14 @@ Distribution des territoires dans une partie avec 3 joueurs.
 
 Object joueur1 {
         nom = "J1"
-        territoires = []
 }
 
 Object joueur2 {
         nom = "J2"
-        territoires = []
 }
 
 Object joueur3 {
         nom = "J3"
-        territoires = []
 }
 
 @enduml
@@ -104,20 +101,43 @@ Object joueur3 {
 ----
 @startuml	
 
+Object territoire1 {
+		nom = "Afghanistan"
+}
+
+Object territoire2 {
+		nom = "Pérou"
+}
+
+Object territoire3 {
+		nom = "Sibérie"
+}
+
+Object territoire4 {
+		nom = "Inde"
+}
+
 Object joueur1 {
         nom = "J1"
-        territoires = [Afghanistan, Inde, Afrique du Nord, Indonésie,	Afrique du Sud	, Islande, Afrique Orientale, Japon, Alaska, Kamchatka, Alberta, Madagascar, Amérique Centrale, Mongolie]
+        territoires = [territoire1,territoire4]
 }
 
 Object joueur2 {
         nom = "J2"
-        territoires = [Argentine, Moyen Orient, Australie Occidentale, Nouvelle Guinée, Australie orientale Ontario	, Brésil,	Oural, Chine, Pérou,	Congo, Québec, Egypte, Scandinavie]
+        territoires = [territoire2]
 }
 
 Object joueur3 {
         nom = "J3"
-        territoires = [Etat de l'Est, Siam, Etat de l'Ouest, Sibérie,	 Europe du Nord, Tchita, Europe du Sud, Territoire du Nord Ouest, Europe Occidentale, Ukraine, Grande Bretagne, Venezuela, Groenland, Yakoutie]
+        territoires = [territoire3]
 }
+
+joueur1 -- territoire1 : controle
+joueur1 -- territoire4 : controle
+
+joueur2 -- territoire2 : controle
+
+joueur3 -- territoire3 : controle
 
 @enduml
 ----
