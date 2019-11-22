@@ -1,7 +1,9 @@
 package fr.alma.risk;
 
+import javax.persistence.Entity;
 import java.util.Set;
 
+@Entity
 public class MissionConqueteContinent extends Mission {
     private Set<Continent> continents;
 
