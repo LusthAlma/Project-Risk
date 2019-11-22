@@ -1,3 +1,5 @@
+package fr.alma.risk;
+
 public abstract class Mission {
     private String objectif;
 

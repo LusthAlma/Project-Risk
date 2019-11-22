@@ -1,3 +1,6 @@
+package fr.alma.risk;
+
+
 public abstract class Unité {
 
     private int valeur;

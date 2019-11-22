@@ -1,3 +1,5 @@
+package fr.alma.risk;
+
 public class MissionConqueteTerritoire extends Mission {
     private int nbTerritoires;
 

@@ -1,3 +1,4 @@
+package fr.alma.risk;
 
 public class RiskServer {
 

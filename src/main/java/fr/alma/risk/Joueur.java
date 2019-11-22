@@ -1,3 +1,6 @@
+package fr.alma.risk;
+
+
 import java.awt.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -12,7 +15,7 @@ public class Joueur {
     private int renfortsAPlacer;
     private boolean tourEnCours;
     private Plateau plateau;
-    private ServerInterface serveur;
+    //private ServerInterface serveur;
 
     public Joueur(String nom) {
         this.nom = nom;

@@ -1,3 +1,5 @@
+package fr.alma.risk;
+
 public class MissionElimination extends Mission {
     private Joueur cible;
 
@@ -7,6 +9,6 @@ public class MissionElimination extends Mission {
     }
 
     public boolean estRemplie(Joueur joueur) {
-
+        return cible.nbTerritoiresPossédés() == 0;
     }
 }

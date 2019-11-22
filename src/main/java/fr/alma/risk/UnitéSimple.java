@@ -1,3 +1,5 @@
+package fr.alma.risk;
+
 public class UnitéSimple extends Unité {
 
     public UnitéSimple(Joueur joueur) {

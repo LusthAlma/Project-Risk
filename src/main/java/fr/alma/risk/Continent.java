@@ -1,3 +1,4 @@
+package fr.alma.risk;
 import java.util.Set;
 
 public class Continent {
