@@ -1,12 +1,13 @@
 package fr.alma.risk;
 
 import javax.persistence.Entity;
+import java.util.Set;
 
 @Entity
 public class MissionConqueteTerritoire extends Mission {
     private int nbTerritoires;
 
-    public MissionConqueteTerritoire() {}
+    protected MissionConqueteTerritoire() {}
 
     public MissionConqueteTerritoire(String objectif, int nbTerritoires) {
         super(objectif);
@@ -14,7 +15,7 @@ public class MissionConqueteTerritoire extends Mission {
     }
 
     @Override
-    public boolean estRemplie(Joueur joueur) {
+    public boolean estRemplie(Joueur joueur, Set<Joueur> joueurs) {
         return joueur.nbTerritoiresPossédés() >= nbTerritoires;
     }
 }

@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Set;
 
 @Entity
 public abstract class Mission {
@@ -20,7 +21,7 @@ public abstract class Mission {
         this.objectif = objectif;
     }
 
-    public abstract boolean estRemplie(Joueur joueur);
+    public abstract boolean estRemplie(Joueur joueurDontOnVerifieLaVictoire, Set<Joueur> joueurs);
 
     public long getId() {
         return id;

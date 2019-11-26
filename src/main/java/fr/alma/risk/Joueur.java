@@ -1,10 +1,13 @@
 package fr.alma.risk;
 
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.awt.*;
 import java.util.HashSet;
 import java.util.Set;
-
 
 public class Joueur {
     private String nom;
@@ -17,6 +20,7 @@ public class Joueur {
     private boolean tourEnCours;
     private Plateau plateau;
     //private ServerInterface serveur;
+
 
     public Joueur(String nom) {
         this.nom = nom;
@@ -34,6 +38,10 @@ public class Joueur {
     public void ajouterRenforts(int nbRenforts) {
         this.renfortsAPlacer += nbRenforts;
 
+    }
+
+    public String getNom() {
+        return nom;
     }
 
     public void attribuerMission(Mission mission) {
@@ -59,7 +67,9 @@ public class Joueur {
     }
 
     public boolean aGagné() {
-        return mission.estRemplie(this);
+        Set<Joueur> test = new HashSet<Joueur>();
+        test.add(this);
+        return mission.estRemplie(this,test);
     }
 
 }

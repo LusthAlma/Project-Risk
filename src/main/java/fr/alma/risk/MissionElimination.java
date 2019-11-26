@@ -1,17 +1,28 @@
 package fr.alma.risk;
 
+
 import javax.persistence.Entity;
+import java.util.Set;
 
 @Entity
 public class MissionElimination extends Mission {
-    private Joueur cible;
+    private String cible;
 
-    public MissionElimination(String objectif, Joueur cible) {
+    protected MissionElimination() {}
+
+    public MissionElimination(String objectif, String cible) {
         super(objectif);
         this.cible = cible;
     }
 
-    public boolean estRemplie(Joueur joueur) {
-        return cible.nbTerritoiresPossédés() == 0;
+    @Override
+    public boolean estRemplie(Joueur joueurDontOnVerifieLaVictoire , Set<Joueur> joueurs) {
+        for (Joueur j: joueurs
+             ) {
+            if(cible.equals(j.getNom())){
+                return (j.nbTerritoiresPossédés() == 0);
+            }
+        }
+        return false;
     }
 }

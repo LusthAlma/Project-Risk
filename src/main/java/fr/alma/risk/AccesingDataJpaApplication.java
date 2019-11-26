@@ -22,7 +22,9 @@ public class AccesingDataJpaApplication {
     public CommandLineRunner demo(MissionRepository repository) {
         return (args) -> {
             // save a few customers
-            repository.save(new MissionConqueteTerritoire("Test",5));
+            repository.save(new MissionConqueteTerritoire("Conquerir 25 territoires",25));
+            repository.save(new MissionElimination("Eliminer joueurs noirs","Noir"));
+            repository.save(new MissionConqueteContinent("Conquerir Asie et Afrique du sud","Asie","Afrique du sud"));
 
             // fetch all customers
             log.info("Customers found with findAll():");
@@ -40,14 +42,12 @@ public class AccesingDataJpaApplication {
             log.info("");
 
             // fetch customers by last name
-            log.info("Customer found with findByObjectif('Test'):");
+            log.info("Customer found with findByObjectif(\"Conquerir 25 territoires\"):");
             log.info("--------------------------------------------");
-            repository.findByObjectif("Test").forEach(test -> {
+            repository.findByObjectif("Conquerir 25 territoires").forEach(test -> {
                 log.info(test.toString());
             });
-            // for (Customer bauer : repository.findByLastName("Bauer")) {
-            // 	log.info(bauer.toString());
-            // }
+
             log.info("");
         };
     }

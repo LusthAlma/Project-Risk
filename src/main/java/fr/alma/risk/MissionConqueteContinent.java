@@ -5,15 +5,18 @@ import java.util.Set;
 
 @Entity
 public class MissionConqueteContinent extends Mission {
-    private Set<Continent> continents;
+    private String continents1,continents2;
 
-    public MissionConqueteContinent(String objectif, Set<Continent> continents) {
+    protected MissionConqueteContinent() {}
+
+    public MissionConqueteContinent(String objectif, String continents1, String continents2) {
         super(objectif);
-        this.continents = continents;
+        this.continents1 = continents1;
+        this.continents2 = continents2;
     }
 
     @Override
-    public boolean estRemplie(Joueur joueur) {
-        return joueur.getContinentsControlés().containsAll(continents);
+    public boolean estRemplie(Joueur joueur, Set<Joueur> joueurs) {
+        return (joueur.getContinentsControlés().contains(continents1) && joueur.getContinentsControlés().contains(continents2));
     }
 }
