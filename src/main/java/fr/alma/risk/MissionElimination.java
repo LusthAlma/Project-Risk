@@ -10,8 +10,8 @@ public class MissionElimination extends Mission {
 
     protected MissionElimination() {}
 
-    public MissionElimination(String objectif, String cible) {
-        super(objectif);
+    public MissionElimination(String cible) {
+        super("Vous devez éliminer le joueur "+cible+"ou alors conquérir 25 territoire si le joueur n'est pas présent.");
         this.cible = cible;
     }
 

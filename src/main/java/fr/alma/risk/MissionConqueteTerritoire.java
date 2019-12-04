@@ -9,8 +9,8 @@ public class MissionConqueteTerritoire extends Mission {
 
     protected MissionConqueteTerritoire() {}
 
-    public MissionConqueteTerritoire(String objectif, int nbTerritoires) {
-        super(objectif);
+    public MissionConqueteTerritoire(int nbTerritoires) {
+        super("Vous devez conquérire "+ nbTerritoires+" territoires.");
         this.nbTerritoires = nbTerritoires;
     }
 

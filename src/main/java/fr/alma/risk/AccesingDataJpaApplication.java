@@ -23,9 +23,9 @@ public class AccesingDataJpaApplication {
     public CommandLineRunner demo(MissionRepository repository) {
         return (args) -> {
             // save a few customers
-            repository.save(new MissionConqueteTerritoire("Conquerir 25 territoires",25));
-            repository.save(new MissionElimination("Eliminer joueurs noirs","Noir"));
-            repository.save(new MissionConqueteContinent("Conquerir Asie et Afrique du sud","Asie","Afrique du sud"));
+            repository.save(new MissionConqueteTerritoire(25));
+            repository.save(new MissionElimination("Noir"));
+            repository.save(new MissionConqueteContinent("Asie","Afrique du sud"));
 
             // fetch all customers
             log.info("Customers found with findAll():");
