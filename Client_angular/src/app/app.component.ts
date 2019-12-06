@@ -32,7 +32,7 @@ initializeWebSocketConnection(){
     }
   
     sendMessage(message){
-      this.stompClient.send("/app/fr.alma.websocket/message" , {}, message);
+      this.stompClient.send("/app/send/message" , {}, message);
       $('#input').val('');
     }
 
