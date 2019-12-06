@@ -1,4 +1,4 @@
-package fr.alma.accessingdatamysql;
+package fr.alma.risk.accessingdatamysql;
 
 import fr.alma.risk.Mission;
 import org.springframework.data.repository.CrudRepository;

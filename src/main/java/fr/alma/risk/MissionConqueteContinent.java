@@ -10,7 +10,7 @@ public class MissionConqueteContinent extends Mission {
     protected MissionConqueteContinent() {}
 
     public MissionConqueteContinent(String continents1, String continents2) {
-        super("Vous devez conquérire les territoires suivants : "+continents1+" et "+ continents2+".");
+        super("Vous devez conquerire les territoires suivants : "+continents1+" et "+ continents2+".");
         this.continents1 = continents1;
         this.continents2 = continents2;
     }
