@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import * as Stomp from 'stompjs';
+import * as SockJS from 'sockjs-client';
+
 
 @Component({
   selector: 'app-root',
@@ -7,55 +10,33 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Bienvenue sur le jeu Risk';
+  private serverUrl = 'http://localhost:8080/risk-websocket'
+  private stompClient;
+
+  constructor(){
+      this.initializeWebSocketConnection();
 }
 
-var stompClient = null;
-
-function setConnected(connected) {
-    $("#connect").prop("disabled", connected);
-    $("#disconnect").prop("disabled", !connected);
-    if (connected) {
-        $("#conversation").show();
-    }
-    else {
-        $("#conversation").hide();
-    }
-    $("#greetings").html("");
-}
-
-function connect() {
-    var socket = new SockJS('/risk-websocket');
-    stompClient = Stomp.over(socket);
-    stompClient.connect({}, function (frame) {
-        setConnected(true);
-        console.log('Connected: ' + frame);
-        stompClient.subscribe('/topic/greetings', function (greeting) {
-            showGreeting(JSON.parse(greeting.body).content);
+initializeWebSocketConnection(){
+    let ws = new SockJS (this.serverUrl);
+    this.stompClient = Stomp.over(ws);
+    let that = this;
+    this.stompClient.connect({}, function(frame) {
+        that.stompClient.subscribe("/game-lobby", (message) => {
+          if(message.body) {
+            $(".game-lobby").append("<div class='message'>"+message.body+"</div>")
+            console.log(message.body);
+          }
         });
-    });
-}
-
-function disconnect() {
-    if (stompClient !== null) {
-        stompClient.disconnect();
+      });
     }
-    setConnected(false);
-    console.log("Disconnected");
+  
+    sendMessage(message){
+      this.stompClient.send("/app/fr.alma.websocket/message" , {}, message);
+      $('#input').val('');
+    }
+
 }
 
-function sendName() {
-    stompClient.send("/app/hello", {}, JSON.stringify({'name': $("#name").val()}));
-}
 
-function showGreeting(message) {
-    $("#greetings").append("<tr><td>" + message + "</td></tr>");
-}
 
-$(function () {
-    $("form").on('submit', function (e) {
-        e.preventDefault();
-    });
-    $( "#connect" ).click(function() { connect(); });
-    $( "#disconnect" ).click(function() { disconnect(); });
-    $( "#send" ).click(function() { sendName(); });
-});
