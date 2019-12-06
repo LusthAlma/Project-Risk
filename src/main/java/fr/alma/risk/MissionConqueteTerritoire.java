@@ -10,7 +10,7 @@ public class MissionConqueteTerritoire extends Mission {
     protected MissionConqueteTerritoire() {}
 
     public MissionConqueteTerritoire(int nbTerritoires) {
-        super("Vous devez conquerire "+ nbTerritoires+" territoires.");
+        super("Vous devez conquerir "+ nbTerritoires+" territoires.");
         this.nbTerritoires = nbTerritoires;
     }
 

@@ -12,21 +12,21 @@ public class MainController {
     private MissionRepository missionRepository;
 
 
-    @PostMapping(path = "/add/mission/continent")
+    @PostMapping(path = "/addmissioncontinent")
     public @ResponseBody String addNewMissionConqueteContinent(@RequestParam String premierContient, @RequestParam String secondContinent){
         Mission newMission = new MissionConqueteContinent(premierContient,secondContinent);
         missionRepository.save(newMission);
         return "Mission de Conquete des Continents "+premierContient+ " et "+secondContinent+" , a été sauvegardé";
     }
 
-    @PostMapping(path = "/add")
+    @PostMapping(path = "/addmissionterritoire")
     public @ResponseBody String addNewMissionConqueteTerritoire(@RequestParam int nbTerritoire){
         Mission newMission = new MissionConqueteTerritoire(nbTerritoire);
         missionRepository.save(newMission);
         return "Mission de Conquete de "+nbTerritoire+" territoires"+", a été sauvegardé";
     }
 
-    @PostMapping(path = "/add/mission/elimination")
+    @PostMapping(path = "/addmissionelimination")
     public @ResponseBody String addNewMissionElimination(@RequestParam String cible){
         Mission newMission = new MissionElimination(cible);
         missionRepository.save(newMission);
