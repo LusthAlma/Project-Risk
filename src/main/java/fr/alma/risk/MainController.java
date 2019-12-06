@@ -13,10 +13,10 @@ public class MainController {
 
 
     @PostMapping(path = "/addmissioncontinent")
-    public @ResponseBody String addNewMissionConqueteContinent(@RequestParam String premierContient, @RequestParam String secondContinent){
-        Mission newMission = new MissionConqueteContinent(premierContient,secondContinent);
+    public @ResponseBody String addNewMissionConqueteContinent(@RequestParam String premierContinent, @RequestParam String secondContinent){
+        Mission newMission = new MissionConqueteContinent(premierContinent,secondContinent);
         missionRepository.save(newMission);
-        return "Mission de Conquete des Continents "+premierContient+ " et "+secondContinent+" , a été sauvegardé";
+        return "Mission de Conquete des Continents "+premierContinent+ " et "+secondContinent+" , a été sauvegardé";
     }
 
     @PostMapping(path = "/addmissionterritoire")
