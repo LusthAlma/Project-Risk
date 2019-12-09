@@ -20,6 +20,8 @@ public class Territoire {
     private Set<Unite> unitesDeployees;
     @Transient
     private Set<Territoire> voisins;
+    @ManyToOne
+    Continent continent;
 
     protected Territoire(){}
 

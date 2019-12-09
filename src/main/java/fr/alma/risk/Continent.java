@@ -12,7 +12,9 @@ public class Continent {
     private String nom;
     @Column
     private int renfortsBonus;
-    @Transient
+    @OneToMany(cascade = CascadeType.ALL,
+            mappedBy = "continent", orphanRemoval = true)
+    @OrderBy("id")
     private Set<Territoire> territoires;
 
     protected Continent(){}
