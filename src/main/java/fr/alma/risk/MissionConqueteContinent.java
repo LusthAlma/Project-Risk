@@ -17,6 +17,6 @@ public class MissionConqueteContinent extends Mission {
 
     @Override
     public boolean estRemplie(Joueur joueur, Set<Joueur> joueurs) {
-        return (joueur.getContinentsControlés().contains(continents1) && joueur.getContinentsControlés().contains(continents2));
+        return (joueur.getContinentsControles().contains(continents1) && joueur.getContinentsControles().contains(continents2));
     }
 }

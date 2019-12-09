@@ -1,19 +1,15 @@
 package fr.alma.risk;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.awt.*;
 import java.util.HashSet;
 import java.util.Set;
 
 public class Joueur {
     private String nom;
-    private Set<Unité> unités;
-    private Set<Territoire> territoiresPossédés;
-    private Set<Continent> continentsControlés;
+    private Set<Unite> unites;
+    private Set<Territoire> territoiresPossedes;
+    private Set<Continent> continentsControles;
     private Color couleur;
     private Mission mission;
     private int renfortsAPlacer;
@@ -24,15 +20,15 @@ public class Joueur {
 
     public Joueur(String nom) {
         this.nom = nom;
-        this.unités = new HashSet<Unité>();
-        this.territoiresPossédés = new HashSet<Territoire>();
-        this.continentsControlés = new HashSet<Continent>();
+        this.unites = new HashSet<Unite>();
+        this.territoiresPossedes = new HashSet<Territoire>();
+        this.continentsControles = new HashSet<Continent>();
         this.renfortsAPlacer = 0;
         this.tourEnCours = false;
     }
 
-    public Set<Continent> getContinentsControlés() {
-        return continentsControlés;
+    public Set<Continent> getContinentsControles() {
+        return continentsControles;
     }
 
     public void ajouterRenforts(int nbRenforts) {
@@ -53,11 +49,11 @@ public class Joueur {
     }
 
     public void ajouterTerritoire(Territoire territoire) {
-        this.territoiresPossédés.add(territoire);
+        this.territoiresPossedes.add(territoire);
     }
 
     public int nbTerritoiresPossédés() {
-        return this.territoiresPossédés.size();
+        return this.territoiresPossedes.size();
     }
 
     //public void placerRenforts();
