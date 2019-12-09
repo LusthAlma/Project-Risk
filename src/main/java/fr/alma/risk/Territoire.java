@@ -14,13 +14,11 @@ public class Territoire {
     private String nom;
     @Transient
     private Joueur possesseur;
-<<<<<<< HEAD
     @Transient
-    private Set<Unité> unitésDéployées;
+    private Set<Unite> unitésDéployées;
     @Transient
-=======
     private Set<Unite> unitesDeployees;
->>>>>>> 19225e41d3a954d1d182dbc12f076d25955df784
+    @Transient
     private Set<Territoire> voisins;
 
     protected Territoire(){}
