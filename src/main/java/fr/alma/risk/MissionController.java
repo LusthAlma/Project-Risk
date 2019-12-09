@@ -6,27 +6,27 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping(path = "/demo")
-public class MainController {
+@RequestMapping(path = "/mission")
+public class MissionController {
     @Autowired
     private MissionRepository missionRepository;
 
 
-    @PostMapping(path = "/addmissioncontinent")
+    @PostMapping(path = "/addMissionContinent")
     public @ResponseBody String addNewMissionConqueteContinent(@RequestParam String premierContinent, @RequestParam String secondContinent){
         Mission newMission = new MissionConqueteContinent(premierContinent,secondContinent);
         missionRepository.save(newMission);
         return "Mission de Conquete des Continents "+premierContinent+ " et "+secondContinent+" , a été sauvegardé";
     }
 
-    @PostMapping(path = "/addmissionterritoire")
+    @PostMapping(path = "/addMissionTerritoire")
     public @ResponseBody String addNewMissionConqueteTerritoire(@RequestParam int nbTerritoire){
         Mission newMission = new MissionConqueteTerritoire(nbTerritoire);
         missionRepository.save(newMission);
         return "Mission de Conquete de "+nbTerritoire+" territoires"+", a été sauvegardé";
     }
 
-    @PostMapping(path = "/addmissionelimination")
+    @PostMapping(path = "/addMissionElimination")
     public @ResponseBody String addNewMissionElimination(@RequestParam String cible){
         Mission newMission = new MissionElimination(cible);
         missionRepository.save(newMission);
@@ -34,7 +34,7 @@ public class MainController {
     }
 
 
-    @GetMapping(path="/all")
+    @GetMapping(path="/allMission")
     public @ResponseBody Iterable<Mission> getAllMissions() {
         return missionRepository.findAll();
     }
