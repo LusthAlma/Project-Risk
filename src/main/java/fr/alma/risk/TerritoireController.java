@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping(path = "/territoire")
 public class TerritoireController {
+
     @Autowired
     private TerritoireRepository territoireRepository;
-
 
     @PostMapping(path = "/addTerritoire")
     public @ResponseBody String addNewTerritoire(@RequestParam String nom){

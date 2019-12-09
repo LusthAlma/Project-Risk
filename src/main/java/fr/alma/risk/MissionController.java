@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping(path = "/mission")
 public class MissionController {
+
     @Autowired
     private MissionRepository missionRepository;
-
 
     @PostMapping(path = "/addMissionContinent")
     public @ResponseBody String addNewMissionConqueteContinent(@RequestParam String premierContinent, @RequestParam String secondContinent){
