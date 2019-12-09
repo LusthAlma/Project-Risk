@@ -53,42 +53,7 @@ include::use-case-deplacement.adoc[leveloffset=+2]
 
 == Modèle de classes du domaine
 
-[plantuml, domain-classes, png]
-----
-@startuml
-Class Joueur {
-        nom : String
-        couleur : String
-        void obtenirRenforts()
-}
-
-Class Unite {
-        void deplacer(Territoire)
-        void attaquer(Territoire)
-}
-
-Class Continent {
-        nom : String
-        renfortsBonus : Integer
-}
-
-Class Territoire {
-        nom : String
-}
-
-Class Mission {
-        objectif : String
-        boolean reussie()
-}
-
-Joueur "1" *-- "*" Unite : controle
-Joueur "0..1" o-- "1" Mission : aMission
-Unite "0..*" o-- "1" Territoire : estPositionnee
-Continent "1" *-- "*" Territoire : estCompose
-Territoire "1..n" o-- "1..*" Territoire : estVoisin
-
-@enduml
-----
+image:images/domain-classes.png[Diagramme de classe]
 
 == Invariants
 

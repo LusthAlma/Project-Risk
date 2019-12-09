@@ -11,6 +11,7 @@ h1 {
   }
   body {
     margin: 2em;
+    background-color: #f5f5f5;
   }
   body, input[type="text"], button {
     color: #333;
@@ -20,3 +21,49 @@ h1 {
   * {
     font-family: Arial, Helvetica, sans-serif;
   }
+
+  #main-content {
+    max-width: 940px;
+    padding: 2em 3em;
+    margin: 0 auto 20px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.game-lobby-container{
+  height: 80vh;
+  width: 100vw;
+}
+.game-lobby{
+  text-align: left;
+  margin: 0 auto;
+  width: 50%;
+  height: 100%;
+  border: 1px solid grey;
+}
+
+.footer{
+  background: #cccccc;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  height: 10vh;
+  width: 100vw;
+}
+.send-button{
+  margin: 0 auto;
+  height: 70%;
+  width: 50%;
+}
+input{
+  float: right;
+  height: 30px;
+  border-radius: 15px;
+  font-size: 1.5em;
+}
+
+    
+
