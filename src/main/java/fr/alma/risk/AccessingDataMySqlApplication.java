@@ -53,7 +53,6 @@ public class AccessingDataMySqlApplication {
             for (Mission mission : missionRepository.findAll()) {
                 log.info("territoire "+ mission.getObjectif());
             }
-            log.info("");
         };
     }
 

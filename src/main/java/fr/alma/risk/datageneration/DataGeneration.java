@@ -2,7 +2,9 @@ package fr.alma.risk.datageneration;
 
 import fr.alma.risk.*;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class DataGeneration {
@@ -150,12 +152,28 @@ public class DataGeneration {
         /*--------------------Ensemble des Missions--------------------*/
         Set<Mission> missions = generateMission(continents);
 
+
+        /*--------------------Retour des Generated Data--------------------*/
         return new GeneratedData(continents,territoires,missions);
 
     }
 
-    public static Set<Mission> generateMission(Set<Continent> continents){
+    public static Set<Mission> generateMission(Set<Continent> continentSet){
         Set<Mission> missions = new HashSet<>();
+
+
+
+        /*--------------------Récupération des continents--------------------*/
+        List<Continent> continentList = new ArrayList<>();
+        continentList.addAll(continentSet);
+
+        for(int i=0;i<continentList.size();i++){
+            for(int j=i;j<continentList.size();j++){
+                if(j!=i){
+                    missions.add(new MissionConqueteContinent(continentList.get(i),continentList.get(j)));
+                }
+            }
+        }
 
         /*--------------------Mission Elimination--------------------*/
         missions.add(new MissionElimination("Noir"));
@@ -166,6 +184,7 @@ public class DataGeneration {
         missions.add(new MissionElimination("Jaune"));
 
         /*--------------------Mission Conquete Continent--------------------*/
+
 
         /*--------------------Mission Conquete Territoire--------------------*/
         missions.add(new MissionConqueteTerritoire(24));
