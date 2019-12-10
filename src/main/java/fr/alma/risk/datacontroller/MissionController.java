@@ -16,12 +16,14 @@ public class MissionController {
     @Autowired
     private MissionRepository missionRepository;
 
+    /*
     @PostMapping(path = "/addMissionContinent")
     public @ResponseBody String addNewMissionConqueteContinent(@RequestParam String premierContinent, @RequestParam String secondContinent){
         Mission newMission = new MissionConqueteContinent(premierContinent,secondContinent);
         missionRepository.save(newMission);
         return "Mission de Conquete des Continents "+premierContinent+ " et "+secondContinent+" , a été sauvegardé";
     }
+    */
 
     @PostMapping(path = "/addMissionTerritoire")
     public @ResponseBody String addNewMissionConqueteTerritoire(@RequestParam int nbTerritoire){

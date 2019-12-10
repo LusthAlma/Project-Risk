@@ -3,6 +3,7 @@ package fr.alma.risk;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -40,6 +41,11 @@ public class Territoire {
 
     public Territoire(String nom){
         this.nom = nom;
+        this.voisins = new HashSet<>();
+    }
+
+    public boolean addVoisin(Territoire voisin){
+        return (voisins.add(voisin) && voisin.addVoisin(this));
     }
 
     public void setContinent(Continent continent) {
