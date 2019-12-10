@@ -1,22 +1,24 @@
 package fr.alma.risk;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 public class MissionConqueteContinent extends Mission {
-    private String continents1,continents2;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @OrderBy("id")
+    private Set<Continent> continents;
 
     protected MissionConqueteContinent() {}
 
-    public MissionConqueteContinent(String continents1, String continents2) {
-        super("Vous devez conquerir les territoires suivants : "+continents1+" et "+ continents2+".");
-        this.continents1 = continents1;
-        this.continents2 = continents2;
+    public MissionConqueteContinent(Set<Continent> continents) {
+        super("Vous devnez conquerir les territoires suivants : ");
+        this.continents = continents;
     }
 
     @Override
     public boolean estRemplie(Joueur joueur, Set<Joueur> joueurs) {
-        return (joueur.getContinentsControles().contains(continents1) && joueur.getContinentsControles().contains(continents2));
+        return joueur.getContinentsControles().containsAll(continents);
     }
 }

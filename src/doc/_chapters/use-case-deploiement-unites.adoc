@@ -1,4 +1,4 @@
-=== Modifications
+== Modifications
 
 [cols=",,",options="header",]
 |===
@@ -6,10 +6,6 @@
 | 20/10/19 | Lenormand Tristan | Creation du Use Case
 | 26/10/19| Josselin Enet|Correction de l'orthographe
 | 04/11/19| Lenormand Tristan| Ajout Snapshot
-| | |
-| | |
-| | |
-| | |
 |===
 
 *Use Case:* Déploiement des unités.
@@ -28,10 +24,6 @@ de ses territoires jusqu'à qu'il n'ait plus d'unités en sa possession.
 Tous les joueurs.
 
 *Acteurs Secondaires*
-
-Aucun.
-
-*Parties Prenantes*
 
 Aucun.
 
@@ -58,7 +50,7 @@ Il reste des unités non placées à un joueur.
 Début de la partie : Fin du Use Case Donner territoires ( UC 1.4).
 
 
-=== Scénario principal de succès
+== Scénario principal de succès
 
 [arabic]
 . Joueur i pose un nombre d'unités supérieur à 1 sur un de ses territoires où il n'a pas encore d'armée
@@ -66,19 +58,7 @@ Début de la partie : Fin du Use Case Donner territoires ( UC 1.4).
 . On continue jusqu'à ce que tous les territoires soient occupés par une unité au moins, et que plus aucun joueur n'aient d'unités en sa possession
 
 
-=== Extensions
-
-
-
-=== Variations
-
-
-
-=== Special Requirements 
-
-
-
-=== Instantané
+== Instantané
 Résultat d'un déploiement d'unités d'un joueur sur le territoire "Congo" qu'il contrôle
 
 

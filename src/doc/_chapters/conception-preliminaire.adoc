@@ -1,10 +1,11 @@
-= Spécification des composants
+= Conception préliminaire
 
 
-Ce livrable correspond à la "conception préliminaire" du projet. Il comprend la division de la solution en différents composants, l'explication des fonctionnalités attendues de chaque composant, la spécification des interfaces fournies par chaque composant, ainsi que des diagramme de séquence qui valident ces interfaces.
+Cette partie correspond à la "conception préliminaire" du projet. Elle comprend la division de la solution en différents composants, l'explication des fonctionnalités attendues de chaque composant, la spécification des interfaces fournies par chaque composant, ainsi que des diagrammes de séquence qui valident ces interfaces.
 
 == Objectif
-Préciser les objectifs de ce chapitre. 
+
+A partir des exigences formulées et de l'étude du domaine effectuée précédemment, nous pouvons désormais commencer à imaginer les bases de notre application. Pour cela, nous commencerons par définir les différents composants du système, remplissant chacun des fonctions bien distinctes. Ensuite, nous serons en mesure de déterminer une interface pour chacun de ces composants, qui leur permettra de communiquer et d'interagir efficacement. 
 
 == Organisation du chapitre
 
@@ -12,11 +13,24 @@ Cette section décrit le contenu du reste du chapitre  et explique comment le do
 
 == Description des composants 
 
+Le système se distingue en deux parties principales :
+
+* La partie client, qui gère les interactions avec le joueur.
+* La partie serveur, qui effectue les opérations sur le jeu et garde en mémoire l'état de la partie.
+
+Il est assez évident d'effectuer une décomposition en deux composants en partant de ces deux acteurs. De plus, nous ajouterons l'utilisation d'une base de données afin de stocker toutes les informations semblables d'une partie sur l'autre, comme la composition de la carte, les missions, etc...
+
+Le composant Web Client devra être capable de gérer les actions d'un joueur et de les communiquer vers le serveur. Ainsi, nous devrons définir des opérations permettant de se connecter au serveur, d'envoyer les informations nécessaires au calcul des actions par le serveur, et également de recevoir et traduire les mises à jour transmises par le serveur. 
+
+Le composant Game Server devra quant à lui être en capacité d'effectuer l'initialisation d'une partie avec des clients ayant fait un requête de connexion. De plus, il devra gérer les opérations relatives au déroulement d'une partie grâce aux informations envoyées par les joueurs, modifier en conséquence l'état du jeu et leur transmettre le résultat à chaque étape.
+
+//////
 Établir les frontières du système.
 
 Division du système en composants.
 
 Décrire le comportement souhaité des composants.
+//////
 
 == Le composant `Game Server`
 
@@ -26,9 +40,11 @@ Décrire succinctement le comportement du composant.
 
 ==== Spécification de l'interface A
 	
+////
 Présentation de l'interface en UML (ou HUTN). 
 Description du comportement de chaque opération. 
 Spécification éventuelle des pré-conditions en OCL.
+////
 
 [plantuml, interface-gameserver-a, png]
 ----
@@ -47,6 +63,12 @@ WebClient ..> deployerUnite
 
 @enduml
 ----
+
+Cette interface doit permettre l'initialisation d'une partie côté serveur.
+
+L'opération seConnecter() est appelée par un client, qui est ensuite placé dans un lobby approprié en attendant le début d'une partie.
+
+L'opération deployerUnite() est appelée par un client à l'issu de la distribution des ressources de début de partie. Le client doit alors transmettre les unités qu'il place sur chacun de ses territoires.
 
 ==== Spécification de l'interface B 
 
@@ -73,6 +95,10 @@ WebClient ..> finirTour
 
 @enduml
 ----
+
+Cette interface permet aux joueurs le cacul et la prise en compte des actions qu'ils ont entrepris.
+
+L'opération
 
 == Le composant `Web Client`
 

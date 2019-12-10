@@ -1,4 +1,4 @@
-=== Modifications
+== Modifications
 
 [cols=",,",options="header",]
 |===
@@ -6,10 +6,6 @@
 | 16/10/19| Soline LECOMTE| Initialisation du document
 | 26/10/19| Josselin Enet| Correction de l'orthographe
 | 31/10/19| Soline LECOMTE| Ajout snapshot
-| | |
-| | |
-| | |
-| | |
 |===
 
 
@@ -27,7 +23,7 @@ Le jeu distribue des unités à chaque joueur.
 
 Le jeu.
 
-*Parties Prenantes*
+*Personnes concernées*
 
 Ce cas d'utilisation permettra aux joueurs de pouvoir déployer leurs unités et d'ensuite commencer la partie.
 
@@ -50,33 +46,31 @@ Le jeu a distribué le mauvais nombre d'unités aux joueurs.
 Le jeu a distribué une mission à chaque joueur, l'initialisation de la partie continue avec ce cas d'utilisation.
 
 
-=== Scénario principal de succès
+== Scénario principal de succès
 
 [arabic]
 . En fonction du nombre de joueurs, le jeu distribue un nombre identique d'armées à chaque joueur.
 
 
-=== Extensions
+== Extensions
 
 Extension du step 1 : 
 
 1a. S'il y a 3 joueurs :
-		- Le jeu distribue 35 armées à chacun.
+		- Le jeu distribue 35 armées à chacun. +
 1b. S'il y a 4 joueurs :
-		- Le jeu distribue 30 armées à chacun.
+		- Le jeu distribue 30 armées à chacun. +
 1c. S'il y a 5 joueurs :
-		- Le jeu distribue 25 armées à chacun.
+		- Le jeu distribue 25 armées à chacun. +
 1d. S'il y a 6 joueurs :
-		- Le jeu distribue 20 armées à chacun.
+		- Le jeu distribue 20 armées à chacun. +
 
 
 
 *Fréquence:* Une fois par partie.
 
 
-=== Besoins spéciaux
-
-=== Instantané
+== Instantané
 
 Distribution des unités dans une partie avec 3 joueurs.
 

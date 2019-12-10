@@ -1,10 +1,12 @@
 package fr.alma.risk;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import java.util.Set;
 
 @Entity
 public class MissionConqueteTerritoire extends Mission {
+    @Column(name = "NBTERRITOIRES")
     private int nbTerritoires;
 
     protected MissionConqueteTerritoire() {}

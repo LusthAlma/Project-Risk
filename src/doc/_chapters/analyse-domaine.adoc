@@ -34,22 +34,46 @@ Dans une quatrième et dernière partie, nous apportons un regard critique sur l
 
 === Mise en place d'une partie
 
+==== Initialisation de la partie
 include::use-case-initialisation.adoc[leveloffset=+2]
+
+==== Attribution des couleurs
 include::use-case-attribuer-couleur.adoc[leveloffset=+2]
+
+==== Distribution des missions
 include::use-case-donner-mission-tous-les-joueurs.adoc[leveloffset=+2]
-include::use-case-distribuer-unites.adoc[leveloffset=+2]
-include::use-case-donner-territoires.adoc[leveloffset=+2]
-include::use-case-deploiement-unites.adoc[leveloffset=+2]
+
+==== Distribution d'une mission par joueur
 include::use-case-donner-mission-a-un-joueur.adoc[leveloffset=+2]
-//include::use-case-deploiement-unite-seule.adoc[leveloffset=+2]
+
+==== Distribution des unités
+include::use-case-distribuer-unites.adoc[leveloffset=+2]
+
+==== Distribution des territoires
+include::use-case-donner-territoires.adoc[leveloffset=+2]
+
+==== Déploiement des unités
+include::use-case-deploiement-unites.adoc[leveloffset=+2]
+
+==== Déploiement d'une unité
+include::use-case-deploiement-unite-seule.adoc[leveloffset=+2]
 
 === Déroulement de la partie
 
+==== Jouer un tour
 include::use-case-jouer-un-tour.adoc[leveloffset=+2]
+
+==== Distribution des renforts
 include::use-case-donner-renforts.adoc[leveloffset=+2]
-//include::use-case-combat.adoc[leveloffset=+2]
+
+==== Déroulement d'un combat
+include::use-case-attaque-territoire.adoc[leveloffset=+2]
+
+==== Déroulement d'un déplacement
 include::use-case-deplacement.adoc[leveloffset=+2]
-//include::use-case-fin-de-tour.adoc[leveloffset=+2]
+
+==== Fin d'un tour
+include::use-case-fin-de-tour.adoc[leveloffset=+2]
 
 == Modèle de classes du domaine
 

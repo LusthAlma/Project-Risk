@@ -1,5 +1,9 @@
-package fr.alma.risk;
+package fr.alma.risk.datacontroller;
 
+import fr.alma.risk.Mission;
+import fr.alma.risk.MissionConqueteContinent;
+import fr.alma.risk.MissionConqueteTerritoire;
+import fr.alma.risk.MissionElimination;
 import fr.alma.risk.accessingdatamysql.MissionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,12 +16,14 @@ public class MissionController {
     @Autowired
     private MissionRepository missionRepository;
 
+    /*
     @PostMapping(path = "/addMissionContinent")
     public @ResponseBody String addNewMissionConqueteContinent(@RequestParam String premierContinent, @RequestParam String secondContinent){
         Mission newMission = new MissionConqueteContinent(premierContinent,secondContinent);
         missionRepository.save(newMission);
         return "Mission de Conquete des Continents "+premierContinent+ " et "+secondContinent+" , a été sauvegardé";
     }
+    */
 
     @PostMapping(path = "/addMissionTerritoire")
     public @ResponseBody String addNewMissionConqueteTerritoire(@RequestParam int nbTerritoire){

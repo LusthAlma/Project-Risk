@@ -1,5 +1,6 @@
-package fr.alma.risk;
+package fr.alma.risk.datacontroller;
 
+import fr.alma.risk.Continent;
 import fr.alma.risk.Territoire;
 import fr.alma.risk.accessingdatamysql.ContinentRepository;
 import fr.alma.risk.accessingdatamysql.TerritoireRepository;

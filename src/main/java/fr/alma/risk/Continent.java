@@ -8,10 +8,13 @@ public class Continent {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @Column
+
+    @Column(name = "NOM")
     private String nom;
-    @Column
+
+    @Column(name = "RENFORTSBONUS")
     private int renfortsBonus;
+
     @OneToMany(cascade = CascadeType.ALL,
             mappedBy = "continent", orphanRemoval = true)
     @OrderBy("id")
@@ -32,5 +35,9 @@ public class Continent {
 
     public String getNom() {
         return nom;
+    }
+
+    public int getRenfortsBonus() {
+        return renfortsBonus;
     }
 }
