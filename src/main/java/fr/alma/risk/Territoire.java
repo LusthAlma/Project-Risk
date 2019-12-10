@@ -1,5 +1,7 @@
 package fr.alma.risk;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -10,7 +12,7 @@ public class Territoire {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @Column
+    @Column(name = "NOM")
     private String nom;
     @Transient
     private Joueur possesseur;
@@ -18,7 +20,13 @@ public class Territoire {
     private Set<Unite> unitésDéployées;
     @Transient
     private Set<Unite> unitesDeployees;
-    @Transient
+    @JsonIgnoreProperties("voisins") // EDIT: will prevent the infinite recursion
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "VOISINS",
+            joinColumns = @JoinColumn(name = "territoire_id",
+                    referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "voisin_id",
+                    referencedColumnName = "id"))
     private Set<Territoire> voisins;
     @ManyToOne
     Continent continent;
@@ -34,7 +42,19 @@ public class Territoire {
         this.nom = nom;
     }
 
+    public void setContinent(Continent continent) {
+        this.continent = continent;
+    }
+
     public String getNom() {
         return nom;
+    }
+
+    public Joueur getPossesseur() {
+        return possesseur;
+    }
+
+    public void setPossesseur(Joueur possesseur) {
+        this.possesseur = possesseur;
     }
 }

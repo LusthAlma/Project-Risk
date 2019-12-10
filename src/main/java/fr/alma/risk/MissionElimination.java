@@ -1,11 +1,13 @@
 package fr.alma.risk;
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import java.util.Set;
 
 @Entity
 public class MissionElimination extends Mission {
+    @Column(name = "CIBLE")
     private String cible;
 
     protected MissionElimination() {}

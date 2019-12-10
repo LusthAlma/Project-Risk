@@ -1,11 +1,16 @@
 package fr.alma.risk;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import java.util.Set;
 
 @Entity
 public class MissionConqueteContinent extends Mission {
-    private String continents1,continents2;
+
+    @Column(name = "PREMIERCONTINENT")
+    private String continents1;
+    @Column(name = "SECONDCONTINENT")
+    private String continents2;
 
     protected MissionConqueteContinent() {}
 
