@@ -1,5 +1,9 @@
-package fr.alma.risk;
+package fr.alma.risk.datacontroller;
 
+import fr.alma.risk.Mission;
+import fr.alma.risk.MissionConqueteContinent;
+import fr.alma.risk.MissionConqueteTerritoire;
+import fr.alma.risk.MissionElimination;
 import fr.alma.risk.accessingdatamysql.MissionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
