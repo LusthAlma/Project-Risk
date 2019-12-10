@@ -28,6 +28,8 @@ public class AccessingDataMySqlApplication {
     public CommandLineRunner demo(MissionRepository missionRepository, TerritoireRepository territoireRepository, ContinentRepository continentRepository) {
         return (args) -> {
 
+
+            //Cette partie de code sert a générer les données de base du risk ( Continent, Territoire, Mission).
             GeneratedData datas = DataGeneration.generate();
             Set<Continent> continents = datas.getContinents();
             Set<Territoire> territoires = datas.getTerritoires();
@@ -38,6 +40,7 @@ public class AccessingDataMySqlApplication {
             territoireRepository.saveAll(territoires);
 
 
+            //Show the content of the 3 repository as example.
             log.info("");
             log.info("continentRepository.findall");
             for (Continent continent : continentRepository.findAll()) {
