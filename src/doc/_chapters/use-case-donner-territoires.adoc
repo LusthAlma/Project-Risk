@@ -1,4 +1,4 @@
-=== Modifications
+== Modifications
 
 [cols=",,",options="header",]
 |===
@@ -6,10 +6,6 @@
 | 20/10/19 | Lenormand Tristan | Création du Use Case
 | 26/10/19 | Josselin Enet | Correction de l'orthographe
 | 31/10/19 | Soline LECOMTE | Ajout Snapshot
-| | |
-| | |
-| | |
-| | |
 |===
 
 *Use Case:* Donner les territoires
@@ -51,7 +47,7 @@ Tous les joueurs n'ont pas le même nombre de cartes territoire à une carte pr�
 
 Début de partie : fin du Use Case Donner unités (UC-1.3)
 
-=== Scénario principal de succès
+== Scénario principal de succès
 
 [arabic]
 . Le jeu donne une carte territoire au joueur i
@@ -59,20 +55,7 @@ Début de partie : fin du Use Case Donner unités (UC-1.3)
 . On recommence cette étape jusqu'à ce que toutes les cartes de la pioche soient épuisées
 
 
-=== Extensions
-
-
-
-=== Variations
-
-
-
-*Assumptions*
-
-
-=== Special Requirements 
-
-=== Instantané
+== Instantané
 Distribution des territoires dans une partie avec 3 joueurs.
 
 [.underline]#Début:#
@@ -142,12 +125,9 @@ joueur3 -- territoire3 : controle
 @enduml
 ----
 
-=== Issues 
-
-
 
 === To do
 
 [arabic]
-. {blank} Compléter Extension/Variations/Special Requirements/Issues
+. {blank} Compléter Level
 

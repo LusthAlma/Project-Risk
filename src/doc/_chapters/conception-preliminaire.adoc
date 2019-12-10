@@ -1,7 +1,7 @@
-= Spécification des composants
+= Conception préliminaire
 
 
-Ce livrable correspond à la "conception préliminaire" du projet. Il comprend la division de la solution en différents composants, l'explication des fonctionnalités attendues de chaque composant, la spécification des interfaces fournies par chaque composant, ainsi que des diagrammes de séquence qui valident ces interfaces.
+Cette partie correspond à la "conception préliminaire" du projet. Elle comprend la division de la solution en différents composants, l'explication des fonctionnalités attendues de chaque composant, la spécification des interfaces fournies par chaque composant, ainsi que des diagrammes de séquence qui valident ces interfaces.
 
 == Objectif
 

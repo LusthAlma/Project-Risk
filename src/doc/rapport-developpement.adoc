@@ -19,6 +19,7 @@ Ce projet a pour but d'implémenter le jeu de plateau Risk. Nous commencerons pa
 == Organisation du document
 
 . Analyse du domaine
+.. Introduction
 .. Cas d'utilisation
 .. Modèle de classes du domaine
 .. Invariants
@@ -26,12 +27,14 @@ Ce projet a pour but d'implémenter le jeu de plateau Risk. Nous commencerons pa
 .. Conclusion
 . Exigences
 . Conception préliminaire
+.. Objectif
+.. Organisation du chapitre
 .. Description des composants
 .. Composant GameServer
 .. Composant WebClient
 .. Interactions
 . Conception détaillée
-.. Coposant GameServer
+.. Composant GameServer
 .. Composant WebClient
 . Conclusion
 

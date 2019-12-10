@@ -1,15 +1,9 @@
-=== Revision History +
+== Modifications
 
 [cols=",,",options="header",]
 |===
 |Date |Author |Description of change
 | 02/11/19 | Kévin Roy | Initialisation du document
-| | |
-| | |
-| | |
-| | |
-| | |
-| | |
 |===
 
 *Use Case:* Fin de tour
@@ -20,18 +14,15 @@
 
 Le Joueur décide de terminer son tour, le jeu donne la main au joueur suivant.
 
-*Level:*
+*Niveau :*
 
-*Primary Actor*
+*Acteur principal*
 
 Joueur jouant son tour
 
-*Supporting Actors*
+*Acteurs secondaires*
 
 Le Jeu
-
-*Stakeholders and Interests*
-
 
 *Pre-Conditions*
 
@@ -39,22 +30,20 @@ Le Joueur a décidé de passer son tour.
 
 *Post Conditions*
 
-[.underline]#Success end condition#
+[.underline]#Condition de fin avec succès#
 
 Le jeu passe la main au joueur suivant, c'est à dire que le joueur qui a terminé son tour ne peut plus jouer jusqu'au début de son prochain tour, et l'autre joueur dont le tour débute peut désormais jouer.
 
-[.underline]#Failure end condition#:
+[.underline]#Condition de fin avec échec#
 
 Le joueur ayant passé son tour peut encore jouer, ou l'autre joueur ne peut pas joueur alors quer le premier à terminé son tour.
 
-[.underline]#Minimal Guarantee#
 
-
-*Trigger*
+*Déclenchement*
 
 Le joueur jouant son tour indique qu'il le termine.
 
-=== Main Success Scenario
+== Scénario principal de succès
 
 [arabic]
 . Le joueur jouant son tour décide de le terminer.
@@ -62,25 +51,11 @@ Le joueur jouant son tour indique qu'il le termine.
 . Le jeu débute le tour du joueur suivant.
 
 
-=== Extensions
 
+*Fréquence:* Une fois par tour, sauf si les conditions de victoire sont remplies, auquel cas la partie s'interrompt sans que le joueur passe son tour.
 
-
-=== Variations
-
-
-*Frequency:* Une fois par tour, sauf si les conditions de victoire sont remplis au quel cas la partie s'interrompt sans que le joueur passe son tour.
-
-*Assumptions*
-
-
-=== Special Requirements 
-
-=== Issues 
 
 [arabic]
-
-
 
 === To do
 

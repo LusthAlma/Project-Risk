@@ -1,15 +1,9 @@
-=== Modifications
+== Modifications
 
 [cols=",,",options="header",]
 |===
 |Date |Auteur |Description
 |Josselin Enet | 26/10/19|Création du Use Case
-| | |
-| | |
-| | |
-| | |
-| | |
-| | |
 |===
 
 *Use Case:* Déplacer des unités
@@ -52,7 +46,7 @@ Le nombre d'unités enlevées au territoire de départ est différent de celui a
 
 Le joueur choisit certaines de ses unités qu'il souhaite déplacer.
 
-=== Scénario principal de succès
+== Scénario principal de succès
 
 [arabic]
 . Le joueur choisit des unités qui se situent sur un des territoires qu'il contrôle.
@@ -61,7 +55,7 @@ Le joueur choisit certaines de ses unités qu'il souhaite déplacer.
 
 *Fréquence:* Autant de fois que souhaité par le joueur chaque tour.
 
-=== Besoins spéciaux 
+== Besoins spéciaux
 
 [.underline]#Interface#
 
@@ -69,7 +63,7 @@ Le joueur choisit certaines de ses unités qu'il souhaite déplacer.
 
 {empty}2. Si plusieurs unités sont sélectionnées lors d'un même déplacement, alors une seule animation sera effectuée en affichant clairement le nombre d'unités déplacées.
 
-=== Instantané
+== Instantané
 
 Résultat d'un déplacement d'unités depuis le Congo vers l'Afrique du Nord.
 
@@ -154,7 +148,7 @@ terrDepart -- terrArrivee : estVoisin
 
 
 
-=== Problèmes 
+== Problèmes
 
 [arabic]
 

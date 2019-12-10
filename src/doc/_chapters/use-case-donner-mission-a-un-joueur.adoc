@@ -1,4 +1,4 @@
-=== Modifications
+== Modifications
 
 [cols=",,",options="header",]
 |===
@@ -6,10 +6,6 @@
 | 13/10/19 | Kévin ROY | Initialisation du document
 | 26/10/19 | Josselin Enet | Correction de l'orthographe
 | 31/10/19 | Soline LECOMTE | Corrections mineures
-| | |
-| | |
-| | |
-| | |
 |===
 
 *Use Case:* Donner Mission A Un Joueur
@@ -30,7 +26,7 @@ Le Jeu.
 
 Aucun.
 
-*Parties Prenantes*
+*Personnes concernées*
 
 Joueur
 
@@ -38,6 +34,7 @@ Joueur
 
 . Le jeu a une mission.
 . Le jeu a un joueur.
+
 *Post-Conditions*
 
 [.underline]#Condition de fin avec succès#
@@ -52,24 +49,14 @@ Le joueur n'a pas de mission, ou a une mission différente.
 
 Donner Mission Tous Les Joueurs.
 
-=== Scénario principal de succès
+== Scénario principal de succès
 
 [arabic]
 . Le jeu affecte au joueur sa mission.
 . Se termine quand le jeu a bien donné la mission au joueur.
 
 
-=== Extensions
-
-
-
-=== Variations
-
-
-
-=== Special Requirements 
-
-=== Instantané
+== Instantané
 
 
 === To do
