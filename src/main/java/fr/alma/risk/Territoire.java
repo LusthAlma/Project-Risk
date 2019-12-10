@@ -44,8 +44,8 @@ public class Territoire {
         this.voisins = new HashSet<>();
     }
 
-    public boolean addVoisin(Territoire voisin){
-        return (voisins.add(voisin) && voisin.addVoisin(this));
+    public boolean sontVoinsins(Territoire voisin){
+        return (voisins.add(voisin) && voisin.sontVoinsins(this));
     }
 
     public void setContinent(Continent continent) {

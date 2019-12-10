@@ -11,6 +11,7 @@ public class DataGeneration {
 
     public static GeneratedData generate(){
 
+        /*__________________________________Déclaration des pays et des Continents__________________________________*/
         /*--------------------Asie--------------------*/
         Set<Territoire> territoireSetAsie = new HashSet<>();
         Territoire japon = new Territoire("Japon");
@@ -47,7 +48,7 @@ public class DataGeneration {
         Territoire ukraine = new Territoire("Ukraine");
         Territoire europeoccidentale = new Territoire("Europe Occidentale");
         Territoire europedunord = new Territoire("Europe Du Nord");
-        Territoire europedelest = new Territoire("Europe De L'Est");
+        Territoire europedusud = new Territoire("Europe Du Sud");
         Territoire scandinavie = new Territoire("Scandinavie");
         Territoire grandebretagne = new Territoire("Grande Bretagne");
 
@@ -55,7 +56,7 @@ public class DataGeneration {
         territoireSetEurope.add(ukraine);
         territoireSetEurope.add(europeoccidentale);
         territoireSetEurope.add(europedunord);
-        territoireSetEurope.add(europedelest);
+        territoireSetEurope.add(europedusud);
         territoireSetEurope.add(scandinavie);
         territoireSetEurope.add(grandebretagne);
 
@@ -131,6 +132,102 @@ public class DataGeneration {
 
         Continent ameriqueDuSud = new Continent("Amerique Du Sud",2,territoireSetAmeriqueDuSud);
 
+        /*__________________________________Déclaration des voisins des pays__________________________________*/
+        /*--------------------Asie--------------------*/
+        japon.sontVoinsins(kamchakta);
+        japon.sontVoinsins(mongolie);
+        kamchakta.sontVoinsins(alaska);
+        kamchakta.sontVoinsins(yakoutie);
+        kamchakta.sontVoinsins(tchita);
+        kamchakta.sontVoinsins(mongolie);
+        yakoutie.sontVoinsins(kamchakta);
+        yakoutie.sontVoinsins(tchita);
+        yakoutie.sontVoinsins(sibérie);
+        tchita.sontVoinsins(mongolie);
+        tchita.sontVoinsins(sibérie);
+        sibérie.sontVoinsins(oural);
+        sibérie.sontVoinsins(chine);
+        mongolie.sontVoinsins(chine);
+        chine.sontVoinsins(siam);
+        chine.sontVoinsins(afghanistan);
+        chine.sontVoinsins(inde);
+        oural.sontVoinsins(ukraine);
+        oural.sontVoinsins(afghanistan);
+        afghanistan.sontVoinsins(ukraine);
+        afghanistan.sontVoinsins(inde);
+        afghanistan.sontVoinsins(moyenorient);
+        siam.sontVoinsins(inde);
+        siam.sontVoinsins(indonésie);
+        inde.sontVoinsins(moyenorient);
+        moyenorient.sontVoinsins(egypte);
+        moyenorient.sontVoinsins(ukraine);
+        moyenorient.sontVoinsins(europedusud);
+
+        /*--------------------Europe--------------------*/
+        islande.sontVoinsins(groenland);
+        islande.sontVoinsins(grandebretagne);
+        islande.sontVoinsins(scandinavie);
+        scandinavie.sontVoinsins(ukraine);
+        scandinavie.sontVoinsins(europedunord);
+        scandinavie.sontVoinsins(grandebretagne);
+        ukraine.sontVoinsins(europedusud);
+        ukraine.sontVoinsins(europedunord);
+        europedunord.sontVoinsins(grandebretagne);
+        europedunord.sontVoinsins(europeoccidentale);
+        europedunord.sontVoinsins(europedusud);
+        europeoccidentale.sontVoinsins(grandebretagne);
+        europeoccidentale.sontVoinsins(afriquedunord);
+        europeoccidentale.sontVoinsins(europedusud);
+        europedusud.sontVoinsins(egypte);
+        europedusud.sontVoinsins(afriquedunord);
+
+        /*--------------------Australie--------------------*/
+        indonésie.sontVoinsins(nouvelleguinee);
+        indonésie.sontVoinsins(australieoccidentale);
+        nouvelleguinee.sontVoinsins(australieoccidentale);
+        nouvelleguinee.sontVoinsins(australieorientale);
+        australieoccidentale.sontVoinsins(australieorientale);
+
+        /*--------------------Afrique--------------------*/
+        egypte.sontVoinsins(afriqueoccidentale);
+        egypte.sontVoinsins(afriquedunord);
+        afriqueoccidentale.sontVoinsins(moyenorient);
+        afriqueoccidentale.sontVoinsins(congo);
+        afriqueoccidentale.sontVoinsins(afriquedusud);
+        afriqueoccidentale.sontVoinsins(madagascar);
+        afriquedusud.sontVoinsins(madagascar);
+        afriquedusud.sontVoinsins(congo);
+        congo.sontVoinsins(afriquedunord);
+        afriquedunord.sontVoinsins(bresil);
+
+        /*--------------------Amerique Du Nord--------------------*/
+        alaska.sontVoinsins(territoiredunordouest);
+        alaska.sontVoinsins(alberta);
+        territoiredunordouest.sontVoinsins(alberta);
+        territoiredunordouest.sontVoinsins(groenland);
+        territoiredunordouest.sontVoinsins(ontario);
+        groenland.sontVoinsins(islande);
+        groenland.sontVoinsins(quebec);
+        groenland.sontVoinsins(ontario);
+        alberta.sontVoinsins(ontario);
+        alberta.sontVoinsins(etatdelouest);
+        quebec.sontVoinsins(ontario);
+        quebec.sontVoinsins(etatdelest);
+        etatdelest.sontVoinsins(ontario);
+        etatdelest.sontVoinsins(etatdelouest);
+        etatdelest.sontVoinsins(ameriquecentrale);
+        etatdelouest.sontVoinsins(ameriquecentrale);
+        ameriquecentrale.sontVoinsins(venezuela);
+
+        /*--------------------Amerique Du Sud--------------------*/
+        venezuela.sontVoinsins(bresil);
+        venezuela.sontVoinsins(perou);
+        bresil.sontVoinsins(perou);
+        bresil.sontVoinsins(argentine);
+        perou.sontVoinsins(argentine);
+        bresil.sontVoinsins(afriquedunord);
+
+        /*__________________________________Déclaration des trois sets a retourner__________________________________*/
         /*--------------------Ensemble des Continents--------------------*/
         Set<Continent> continents = new HashSet<>();
         continents.add(asie);
