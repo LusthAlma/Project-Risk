@@ -1,15 +1,10 @@
-=== Modifications
+== Modifications
 
 [cols=",,",options="header",]
 |===
 |Date |Auteur |Description
 |20/10/19| Josselin Enet|Création du Use Case
 |26/10/19 | Josselin Enet|Correction de l'orthographe
-| | |
-| | |
-| | |
-| | |
-| | |
 |===
 
 
@@ -52,7 +47,7 @@ Des joueurs ont la même couleur.
 
 La partie est lancée.
 
-=== Scénario principal de succès
+== Scénario principal de succès
 
 [arabic]
 . Plusieurs joueurs se connectent et lancent une partie.
@@ -60,13 +55,13 @@ La partie est lancée.
 
 *Fréquence:* Une fois au début de chaque partie.
 
-=== Besoins spéciaux
+== Besoins spéciaux
 
 [.underline]#Interface#
 
 . Chaque joueur doit pouvoir visualiser sa couleur ainsi que celle des autres joueurs.
 
-=== Instantané
+== Instantané
 
 Attribution des couleurs dans une partie avec 3 joueurs.
 

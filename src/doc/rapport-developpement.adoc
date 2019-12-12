@@ -32,7 +32,7 @@ Ce projet a pour but d'implémenter le jeu de plateau Risk. Nous commencerons pa
 .. Composant WebClient
 .. Interactions
 . Conception détaillée
-.. Coposant GameServer
+.. Composant GameServer
 .. Composant WebClient
 . Conclusion
 

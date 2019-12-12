@@ -1,7 +1,7 @@
 package fr.alma.risk;
 
 
-public abstract class Unité {
+public abstract class Unite {
 
     private int valeur;
     private Joueur joueur;
@@ -31,7 +31,7 @@ public abstract class Unité {
         this.territoire = territoire;
     }
 
-    public abstract void déplacer(Territoire arrivée);
+    public abstract void deplacer(Territoire arrivee);
 
 
 }

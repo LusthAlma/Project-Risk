@@ -5,11 +5,6 @@
 |Date |Auteur |Description
 | 23/10/19 | Kévin Roy | Initialisation du document
 | 26/10/19| Josselin Enet|Correction de l'orthographe
-| | |
-| | |
-| | |
-| | |
-| | |
 |===
 
 *Use Case:* Jouer un tour
@@ -30,7 +25,7 @@ Joueur.
 
 Le Jeu
 
-*Parties Prenantes*
+*Personnes concernées*
 
 Autres Joueurs
 
@@ -52,7 +47,7 @@ Le joueur a obtenu ses renforts, il a pu combattre s'il le souhaitait, et a pu s
 *Déclenchement*
 
 
-=== Scénario principal de succès
+== Scénario principal de succès
 
 [arabic]
 . Le Jeu donne au joueur ses renforts. (UC-2.1)
@@ -60,19 +55,7 @@ Le joueur a obtenu ses renforts, il a pu combattre s'il le souhaitait, et a pu s
 . Le Joueur décide de déplacer ses unités. (UC-2.3)
 . Le Joueur passe son tour. (UC-2.4)
 
-=== Extensions
-
-
-=== Variations
-
-
-=== Special Requirements 
-
-=== Instantané
-
-
-=== Issues 
-
+== Instantané
 
 
 === To do

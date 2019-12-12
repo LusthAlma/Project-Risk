@@ -1,4 +1,4 @@
-=== Revision History +
+== Modifications
 
 [cols=",,",options="header",]
 |===
@@ -6,10 +6,6 @@
 |28/10/2019 | Lenormand Tristan | Creation du Use Case
 |31/10/2019 | Lecomte Soline | Corrections mineures
 |04/11/2019 | Lenormand Tristan | Ajout Snapshot
-| | |
-| | |
-| | |
-| | |
 |===
 
 *Use Case:* Attaque d'un territoire ennemi par un joueur
@@ -29,18 +25,18 @@ plus d'unités ou que l'attaquant décide d'arrêter l'attaque ou qu'il na plus 
 Si l'attaquant remporte l'offensive, il déplace sur le territoire conquis un nombre d'unités égal au nombre d'unités attaquantes lors de l'offensive.
 
 
-*Level:* <Enter Use Case Goal Level here>
+*Niveau:* <Enter Use Case Goal Level here>
 
 
-*Primary Actor*
+*Acteur Principal*
 
 Le joueur qui est en train de jouer son tour
 
-*Supporting Actors*
+*Acteurs secondaires*
 
 Le joueur défenseur
 
-*Stakeholders and Interests*
+*Personnes concernées*
 
 Les autres joueurs dont l'issue du combat peut contribuer à la progression de leurs objectifs. (éliminer un joueur)
 
@@ -53,25 +49,23 @@ Le joueur defenseur a un nombre Y d'unités sur le territoire defenseur.
 
 *Post Conditions*
 
-[.underline]#Success end condition#
+[.underline]#Condition de fin avec succès#
 
 -Le joueur defenseur n'a plus d'unités sur son territoire. Le joueur attaquant déplace le nombre d'unités qu'il a engagé
 lors de l'attaque sur le territoire defenseur en laissant au minimum 1 unité sur le territoire d'origine.
 
 -Le joueur attaquant n'a plus qu'une unité sur son territoire il a donc perdu l'attaque.
 
-[.underline]#Failure end condition#:
+[.underline]#Condition de fin avec échec#
 
 Le joueur attaquant décide d'arrêter l'attaque et il n'y a donc pas de vainqueurs
 
 
-[.underline]#Minimal Guarantee#
-
-*Trigger*
+*Déclenchement*
 
 Fin du UC-2.1 Renforts.
 
-=== Main Success Scenario
+== Scénario principal de succès
 
 [arabic]
 . L'attaquant attaque avec un nombre i d'unités compris entre 1 et 3 et lance un même nombre de dés
@@ -80,18 +74,8 @@ Fin du UC-2.1 Renforts.
 . Le combat continue jusqu'à que l'attaquant décide d'arrêter ou que l'attaquant n'aie plus qu'une unité, ou que le defenseur n'aie plus d'unités
 . Si l'attaquant gagne, il déplace le nombre d'unités qu'il a engagé sur le territoire conquis
 
-=== Extensions
 
-
-
-=== Variations
-
-
-
-=== Special Requirements 
-
-
-=== Instantané
+== Instantané
 
 Résultat d'une attaque d'un joueur d'un territoire qu'il controle vers un territoire contrôlée par un autre joueur
 
@@ -185,9 +169,5 @@ unite3 -- territoireDefense : estPositionnée
 ----
 
 
-=== Issues 
-
-
-
 === To do
-
+Level

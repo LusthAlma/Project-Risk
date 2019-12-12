@@ -1,4 +1,4 @@
-=== Modifications
+== Modifications
 
 [cols=",,",options="header",]
 |===
@@ -7,9 +7,6 @@
 | 23/10/19 | Kévin ROY | Précision sur le scénario de succès. (UC-1.2.1)
 | 26/10/19 | Josselin Enet |Correction de l'orthographe
 | 31/10/19 | Soline LECOMTE | Corrections mineures
-| | |
-| | |
-| | |
 |===
 
 *Use Case:* Donner Mission Tous Les Joueurs
@@ -33,7 +30,7 @@ Le Jeu.
 
 Aucun.
 
-*Parties Prenantes*
+*Personnes concernées*
 
 Joueurs.
 
@@ -55,7 +52,7 @@ Un ou plusieurs joueurs n'ont pas de mission, ou deux joueurs ont la même missi
 
 Initialisation
 
-=== Scénario principal de succès
+== Scénario principal de succès
 
 [arabic]
 . Le jeu attribue une des missions de la liste au joueur 1 puis retire cette mission de la liste (UC-1.2.1)
@@ -63,21 +60,7 @@ Initialisation
 . Le cas d'utilisation se termine si tous les joueurs ont reçu une mission différente.
 
 
-=== Extensions
-
-
-
-=== Variations
-
-
-
-=== Special Requirements 
-
-=== Instantané
-
-
-
-=== Issues 
+== Instantané
 
 
 

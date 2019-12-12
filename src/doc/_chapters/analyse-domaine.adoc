@@ -10,7 +10,7 @@ Ce chapitre constitue le premier livrable d’une série de quatre chapitres des
 Ce document présente l’ensemble de la démarche suivie ainsi que les résultats obtenus lors de la phase de l'analyse du domaine de notre système. 
 Il se décompose en plusieurs parties.
 
-== Organisation du chapitre
+=== Organisation du chapitre
 
 Ce chapitre est organisé en 4 sections.
 
@@ -34,61 +34,50 @@ Dans une quatrième et dernière partie, nous apportons un regard critique sur l
 
 === Mise en place d'une partie
 
+==== Initialisation de la partie
 include::use-case-initialisation.adoc[leveloffset=+2]
+
+==== Attribution des couleurs
 include::use-case-attribuer-couleur.adoc[leveloffset=+2]
+
+==== Distribution des missions
 include::use-case-donner-mission-tous-les-joueurs.adoc[leveloffset=+2]
-include::use-case-distribuer-unites.adoc[leveloffset=+2]
-include::use-case-donner-territoires.adoc[leveloffset=+2]
-include::use-case-deploiement-unites.adoc[leveloffset=+2]
+
+==== Distribution d'une mission par joueur
 include::use-case-donner-mission-a-un-joueur.adoc[leveloffset=+2]
-//include::use-case-deploiement-unite-seule.adoc[leveloffset=+2]
+
+==== Distribution des unités
+include::use-case-distribuer-unites.adoc[leveloffset=+2]
+
+==== Distribution des territoires
+include::use-case-donner-territoires.adoc[leveloffset=+2]
+
+==== Déploiement des unités
+include::use-case-deploiement-unites.adoc[leveloffset=+2]
+
+==== Déploiement d'une unité
+include::use-case-deploiement-unite-seule.adoc[leveloffset=+2]
 
 === Déroulement de la partie
 
+==== Jouer un tour
 include::use-case-jouer-un-tour.adoc[leveloffset=+2]
+
+==== Distribution des renforts
 include::use-case-donner-renforts.adoc[leveloffset=+2]
-//include::use-case-combat.adoc[leveloffset=+2]
+
+==== Déroulement d'un combat
+include::use-case-attaque-territoire.adoc[leveloffset=+2]
+
+==== Déroulement d'un déplacement
 include::use-case-deplacement.adoc[leveloffset=+2]
-//include::use-case-fin-de-tour.adoc[leveloffset=+2]
+
+==== Fin d'un tour
+include::use-case-fin-de-tour.adoc[leveloffset=+2]
 
 == Modèle de classes du domaine
 
-[plantuml, domain-classes, png]
-----
-@startuml
-Class Joueur {
-        nom : String
-        couleur : String
-        void obtenirRenforts()
-}
-
-Class Unite {
-        void deplacer(Territoire)
-        void attaquer(Territoire)
-}
-
-Class Continent {
-        nom : String
-        renfortsBonus : Integer
-}
-
-Class Territoire {
-        nom : String
-}
-
-Class Mission {
-        objectif : String
-        boolean reussie()
-}
-
-Joueur "1" *-- "*" Unite : controle
-Joueur "0..1" o-- "1" Mission : aMission
-Unite "0..*" o-- "1" Territoire : estPositionnee
-Continent "1" *-- "*" Territoire : estCompose
-Territoire "1..n" o-- "1..*" Territoire : estVoisin
-
-@enduml
-----
+image:images/domain-classes.png[Diagramme de classe]
 
 == Invariants
 

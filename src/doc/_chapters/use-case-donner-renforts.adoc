@@ -1,15 +1,10 @@
-=== Modifications
+== Modifications
 
 [cols=",,",options="header",]
 |===
 |Date |Auteur |Description
 | 24/10/19| Josselin Enet|Création du Use Case
 | 26/10/19| Josselin Enet|Correction de l'orthographe
-| | |
-| | |
-| | |
-| | |
-| | |
 |===
 
 
@@ -31,7 +26,7 @@ Le jeu.
 
 Le joueur dont le tour vient de commencer.
 
-*Parties Prenantes*
+*Personnes concernées*
 
 Les autres joueurs.
 
@@ -60,7 +55,7 @@ Le tour du joueur n'est pas terminé.
 
 Le tour d'un joueur commence.
 
-=== Scénario principal de succès
+== Scénario principal de succès
 
 [arabic]
 
@@ -68,7 +63,7 @@ Le tour d'un joueur commence.
 . Le jeu distribue à ce joueur un nombre d'unités égal à ⌊t/3⌋, où t est le nombre de territoires possédés par le joueur.
 . Le joueur pose chacune de ses unités de renfort sur un des territoires qu'il contrôle.
 
-=== Extensions
+== Extensions
 
 2a. Le joueur possède tous les territoires d'un continent.
 
@@ -83,20 +78,20 @@ Le tour d'un joueur commence.
 
 Ces renforts sont cumulables.
 
-=== Variations
+== Variations
 
 2'. Si le joueur doit recevoir moins de 3 unités de renfort, alors 3 unités de renfort lui sont attribuées.
 
 *Fréquence:* Une fois au début de chaque tour.
 
 
-=== Besoins Spéciaux
+== Besoins Spéciaux
 
 [.underline]#Interface#
 
 {empty}1. Le nombre d'unités reçues par le joueur doit être clairement visible par tous les joueurs. Le placement des renforts sur les territoires doit également faire l'objet d'un affichage.
 
-=== Instantané
+== Instantané
 
 Obtention de renforts par un joueur possédant uniquement 2 territoires.
 
@@ -169,3 +164,8 @@ unite5 -- territoire2 : estPositionnee
 
 @enduml
 ----
+
+=== To do
+
+[arabic]
+. Ajouter le level du use case.

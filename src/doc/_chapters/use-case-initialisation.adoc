@@ -5,11 +5,6 @@
 |Date |Auteur |Description
 | 16/10/19| Soline LECOMTE| Initialisation du document
 | 26/10/19| Josselin Enet|Correction de l'orthographe
-| | |
-| | |
-| | |
-| | |
-| | |
 |===
 
 *Use Case:* Initialisation du jeu
@@ -56,7 +51,7 @@ OU	- Les unités n'ont pas été placées
 
 Les joueurs commandent le lancement d'une partie.
 
-=== Scénario principal de succès
+== Scénario principal de succès
 
 [arabic]
 . Le jeu attribue une couleur à chaque Joueur (UC 1.1)
@@ -65,26 +60,13 @@ Les joueurs commandent le lancement d'une partie.
 . Le jeu distribue les territoires aux joueurs (UC 1.4)
 . Le jeu laisse les joueurs déployer leurs unités (UC 1.5)
 
-=== Extensions
-
-
-=== Variations
 
 *Fréquence:* Une fois par partie.
 
-=== Special Requirements 
-
-=== Instantané
-
-
-=== Issues 
-
-[arabic]
-
+== Instantané
 
 === To do
 
 [arabic]
-Find possible Extensions/Variations/Special Requirements/Issues for this Use Case
 Gérer le level du UC
 
