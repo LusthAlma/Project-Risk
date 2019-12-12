@@ -34,11 +34,6 @@ public class Joueur {
         return continentsControles;
     }
 
-    public void ajouterRenforts(int nbRenforts) throws ExceptionNegativeRenforts {
-        if(nbRenforts<0) throw new ExceptionNegativeRenforts();
-        this.renfortsAPlacer += nbRenforts;
-    }
-
     public String getNom() {
         return nom;
     }
@@ -59,14 +54,37 @@ public class Joueur {
         return territoiresPossedes;
     }
 
+    /**
+     * ajouter des renforts au joueur.
+     * @param nbRenforts est la valeur a ajouter la valeur actuelle du joueur.
+     * @throws ExceptionNegativeRenforts si le paramètre nbRenforts est négatif.
+     */
+    public void ajouterRenforts(int nbRenforts) throws ExceptionNegativeRenforts {
+        if(nbRenforts<0) throw new ExceptionNegativeRenforts();
+        this.renfortsAPlacer += nbRenforts;
+    }
+
+    /**
+     * attribue une mission à un joueur
+     * @param mission à attribuer a un joueur.
+     */
     public void attribuerMission(Mission mission) {
         this.mission = mission;
     }
 
+    /**
+     * attribue une couleur à un joueur
+     * @param couleur à attribuer au joueur.
+     */
     public void attribuerCouleur(Color couleur) {
         this.couleur = couleur;
     }
 
+    /**
+     * Permet d'ajouter un terrtoire a la liste des territoires possèdé par un joueur.
+     * @param territoire à ajouter au joueur.
+     * @throws ExceptionTerritoireStillHavePossesseur si le territoire est déja possedé par quelqu'un
+     */
     public void ajouterTerritoire(Territoire territoire) throws ExceptionTerritoireStillHavePossesseur {
         if(territoire.getPossesseur() == null){
             this.territoiresPossedes.add(territoire);
@@ -80,8 +98,6 @@ public class Joueur {
     public int nbTerritoiresPossédés() {
         return this.territoiresPossedes.size();
     }
-
-    //public void placerRenforts();
 
     public void débuterTour() {
         this.tourEnCours = true;
