@@ -1,10 +1,9 @@
-package fr.alma.risk.datacontroller;
+package fr.alma.risk.jpaclasses.datacontroller;
 
 import fr.alma.risk.Mission;
-import fr.alma.risk.MissionConqueteContinent;
 import fr.alma.risk.MissionConqueteTerritoire;
 import fr.alma.risk.MissionElimination;
-import fr.alma.risk.accessingdatamysql.MissionRepository;
+import fr.alma.risk.jpaclasses.accessingdatamysql.MissionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

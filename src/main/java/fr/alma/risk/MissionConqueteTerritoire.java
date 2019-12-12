@@ -17,7 +17,7 @@ public class MissionConqueteTerritoire extends Mission {
     }
 
     @Override
-    public boolean estRemplie(Joueur joueur, Set<Joueur> joueurs) {
+    public boolean estReussie(Joueur joueur, Set<Joueur> joueurs) {
         return joueur.nbTerritoiresPossédés() >= nbTerritoires;
     }
 }

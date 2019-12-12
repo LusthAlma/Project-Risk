@@ -1,9 +1,7 @@
-package fr.alma.risk.datacontroller;
+package fr.alma.risk.jpaclasses.datacontroller;
 
 import fr.alma.risk.Continent;
-import fr.alma.risk.Territoire;
-import fr.alma.risk.accessingdatamysql.ContinentRepository;
-import fr.alma.risk.accessingdatamysql.TerritoireRepository;
+import fr.alma.risk.jpaclasses.accessingdatamysql.ContinentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

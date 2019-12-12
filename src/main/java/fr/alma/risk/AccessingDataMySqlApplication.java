@@ -1,8 +1,8 @@
 package fr.alma.risk;
 
-import fr.alma.risk.accessingdatamysql.ContinentRepository;
-import fr.alma.risk.accessingdatamysql.MissionRepository;
-import fr.alma.risk.accessingdatamysql.TerritoireRepository;
+import fr.alma.risk.jpaclasses.accessingdatamysql.ContinentRepository;
+import fr.alma.risk.jpaclasses.accessingdatamysql.MissionRepository;
+import fr.alma.risk.jpaclasses.accessingdatamysql.TerritoireRepository;
 import fr.alma.risk.datageneration.DataGeneration;
 import fr.alma.risk.datageneration.GeneratedData;
 import org.slf4j.Logger;
