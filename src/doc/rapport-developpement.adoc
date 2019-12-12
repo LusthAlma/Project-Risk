@@ -14,18 +14,19 @@
 
 == Introduction
 
-Ce projet a pour but d'implémenter le jeu de plateau Risk. Nous commencerons par mener une analyse de domaine afin de mieux appréhender le sujet. Ensuite, nous expliquerons nos choix de conception à haut niveau permettant de répondre aux exigences. Ces explications seront approfondies dans l'analyse détaillée, où nous nous assurerons de leur pertinence. Suite à ces étapes, le code source pourra être écrit et nous pourrons terminer en effectuant une critique constructive des atouts et failles de notre projet.
+Ce projet a pour but d'implémenter le jeu de plateau Risk. Nous commencerons par mener une analyse de domaine afin de mieux appréhender le sujet. Ensuite, nous expliquerons lors de la conception détailée nos choix de conception à haut niveau permettant de répondre aux exigences. Ces explications seront approfondies dans l'analyse détaillée, où nous nous assurerons de leur pertinence. Suite à ces étapes, le code source pourra être écrit et les tests unitaires mis en place. Nous pourrons terminer en effectuant une critique constructive des atouts et failles de notre projet.
 
 == Organisation du document
 
 . Analyse du domaine
+.. Introduction
 .. Cas d'utilisation
 .. Modèle de classes du domaine
 .. Invariants
 .. Dictionnaire de données
 .. Conclusion
-. Exigences
 . Conception préliminaire
+.. Introduction
 .. Description des composants
 .. Composant GameServer
 .. Composant WebClient

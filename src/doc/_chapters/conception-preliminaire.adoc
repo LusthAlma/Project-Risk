@@ -1,12 +1,12 @@
-= Spécification des composants
+= Conception préliminaire
 
-
+==Introdutcion
 Ce livrable correspond à la "conception préliminaire" du projet. Il comprend la division de la solution en différents composants, l'explication des fonctionnalités attendues de chaque composant, la spécification des interfaces fournies par chaque composant, ainsi que des diagramme de séquence qui valident ces interfaces.
 
-== Objectif
+=== Objectif
 Préciser les objectifs de ce chapitre. 
 
-== Organisation du chapitre
+=== Organisation du chapitre
 
 Cette section décrit le contenu du reste du chapitre  et explique comment le document est organisé.
 

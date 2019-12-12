@@ -2,7 +2,7 @@
  
 == Introduction
 
-=== Objectif
+== Objectif
 
 // Décrire l'objectif de ce chapitre.
 
@@ -10,7 +10,7 @@ Ce chapitre constitue le premier livrable d’une série de quatre chapitres des
 Ce document présente l’ensemble de la démarche suivie ainsi que les résultats obtenus lors de la phase de l'analyse du domaine de notre système. 
 Il se décompose en plusieurs parties.
 
-=== Organisation du chapitre
+== Organisation du chapitre
 
 Ce chapitre est organisé en 4 sections.
 
