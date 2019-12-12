@@ -65,7 +65,7 @@ public class Joueur {
     public boolean aGagné() {
         Set<Joueur> test = new HashSet<Joueur>();
         test.add(this);
-        return mission.estRemplie(this,test);
+        return mission.estReussie(this,test);
     }
 
 }

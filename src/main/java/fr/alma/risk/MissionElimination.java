@@ -18,7 +18,7 @@ public class MissionElimination extends Mission {
     }
 
     @Override
-    public boolean estRemplie(Joueur joueurDontOnVerifieLaVictoire , Set<Joueur> joueurs) {
+    public boolean estReussie(Joueur joueurDontOnVerifieLaVictoire , Set<Joueur> joueurs) {
         for (Joueur j: joueurs
              ) {
             if(cible.equals(j.getNom())){
