@@ -1,6 +1,5 @@
-package fr.alma.risk.accessingdatamysql;
+package fr.alma.risk.jpaclasses.accessingdatamysql;
 
-import fr.alma.risk.Continent;
 import fr.alma.risk.Mission;
 import org.springframework.data.repository.CrudRepository;
 
@@ -8,6 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 // This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
 // CRUD refers Create, Read, Update, Delete
 
-public interface ContinentRepository extends CrudRepository<Continent, Integer> {
+public interface MissionRepository extends CrudRepository<Mission, Integer> {
 
 }
