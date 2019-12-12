@@ -2,7 +2,7 @@
  
 == Introduction
 
-== Objectif
+=== Objectif
 
 // Décrire l'objectif de ce chapitre.
 

@@ -1,16 +1,16 @@
 = Conception préliminaire
 
-==Introdutcion
+== Introdutcion
 
 Cette partie correspond à la "conception préliminaire" du projet. Elle comprend la division de la solution en différents composants, l'explication des fonctionnalités attendues de chaque composant, la spécification des interfaces fournies par chaque composant, ainsi que des diagrammes de séquence qui valident ces interfaces.
 
 === Objectif
 
-A partir des exigences formulées et de l'étude du domaine effectuée précédemment, nous pouvons désormais commencer à imaginer les bases de notre application. Pour cela, nous commencerons par définir les différents composants du système, remplissant chacun des fonctions bien distinctes. Ensuite, nous serons en mesure de déterminer une interface pour chacun de ces composants, qui leur permettra de communiquer et d'interagir efficacement. 
+A partir des exigences formulées et de l'étude du domaine effectuée précédemment, nous pouvons désormais commencer à imaginer les bases de notre application. Pour cela, nous commencerons par définir les différents composants du système, remplissant chacun des fonctions bien distinctes. Ensuite, nous serons en mesure de déterminer des interfaces pour chacun de ces composants, qui leur permettra de communiquer et d'interagir efficacement.
 
 === Organisation du chapitre
 
-Cette section décrit le contenu du reste du chapitre  et explique comment le document est organisé.
+Dans ce chapitre nous commencerons par faire un description globale des composants. Suite à cela, nous approfondirons chacun d'eux dans une section spécifique, afin de bien visualiser et comprendre leur intérêt et fonctionnement.
 
 == Description des composants 
 
@@ -35,7 +35,11 @@ Décrire le comportement souhaité des composants.
 
 == Le composant `Game Server`
 
-Décrire succinctement le comportement du composant.
+Comme mentionné précedemment, ce composant aura différentes fonctionnalités. En effet, il devra tout d'abord être capable de créer et initialiser une
+partie lors d'une demande de connexion. De plus, il sera interrogé à chaque étape de chaque tour d'un joueur, et ce jusqu'a la fin de la partie. Il
+devra donc pouvoir gérer la distribution des renforts, les attaques, la défense et les déplacements. Au sein d'un même tour, afin de permettre
+aux joueurs de visualiser les modifications apportées, de nombreux échanges auront lieu entre le client et le serveur, et ce dernier devra à chaque fois
+être en mesure de mettre à jour l'état de la partie, et de le communiquer aux autres joueurs.
 
 === Spécification des interfaces
 
@@ -82,14 +86,14 @@ left to right direction
 Component WebClient
 Component GameServer
 
-deplacer -- GameServer
-WebClient ..> deplacer
+placerRenforts -- GameServer
+WebClient ..> placerRenforts
 
 attaquer -- GameServer
 WebClient ..> attaquer
 
-placerRenforts -- GameServer
-WebClient ..> placerRenforts
+deplacer -- GameServer
+WebClient ..> deplacer
 
 finirTour -- GameServer
 WebClient ..> finirTour
@@ -97,9 +101,18 @@ WebClient ..> finirTour
 @enduml
 ----
 
-Cette interface permet aux joueurs le cacul et la prise en compte des actions qu'ils ont entrepris.
+Cette interface permet aux joueurs le calcul et la prise en compte des actions qu'ils ont entrepris.
 
-L'opération
+L'opération placerRenforts() sera déclenchée au début de chaque tour. Elle distribue les renforts du joueur et attend que ce dernier ai choisi où les placer.
+Lorsque le joueur aura fait son choix, il validera et le cient enverra alors au serveur les différentes modifications à apporter et à communiquer aux
+autres joueurs.
+
+L'opération attaquer() sera déclenchée lorsque placerRenforts() est terminée. Si le joueur souhaite attaquer un territoire, alors il spécifie avec combien
+d'unités, et cette information est envoyée au serveur. Une fois reçue, ce dernier va demander au joueur qui se fait attaquer s'il souhaite se défendre,
+et avec combien d'unités. Cette information récupérée, le serveur va calculer le résultat du combat et le communiquer à tous les joueurs, en mettant
+à jour le plateau.
+
+
 
 == Le composant `Web Client`
 
