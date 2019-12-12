@@ -1,13 +1,14 @@
 = Conception préliminaire
 
+==Introdutcion
 
 Cette partie correspond à la "conception préliminaire" du projet. Elle comprend la division de la solution en différents composants, l'explication des fonctionnalités attendues de chaque composant, la spécification des interfaces fournies par chaque composant, ainsi que des diagrammes de séquence qui valident ces interfaces.
 
-== Objectif
+=== Objectif
 
 A partir des exigences formulées et de l'étude du domaine effectuée précédemment, nous pouvons désormais commencer à imaginer les bases de notre application. Pour cela, nous commencerons par définir les différents composants du système, remplissant chacun des fonctions bien distinctes. Ensuite, nous serons en mesure de déterminer une interface pour chacun de ces composants, qui leur permettra de communiquer et d'interagir efficacement. 
 
-== Organisation du chapitre
+=== Organisation du chapitre
 
 Cette section décrit le contenu du reste du chapitre  et explique comment le document est organisé.
 

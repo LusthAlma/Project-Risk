@@ -40,4 +40,5 @@ public class Continent {
     public int getRenfortsBonus() {
         return renfortsBonus;
     }
+
 }
