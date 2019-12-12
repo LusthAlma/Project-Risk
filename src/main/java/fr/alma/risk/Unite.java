@@ -46,7 +46,7 @@ public abstract class Unite {
      * @return renvoit vraie si l'unité est déplacé, faux sinon
      */
     public boolean deplacer(Territoire arrivee) throws ExceptionUniteHasNoTerritory, ExceptionTerritoryCantBeEmpty {
-        if(this.getTerritoire() == null) throw new ExceptionUniteHasNoTerritory();
+        if(!this.hasTerritoire()) throw new ExceptionUniteHasNoTerritory();
         if(this.getTerritoire().getUnitesDeployees().size()>1) {
             this.setTerritoire(arrivee);
             return true;
@@ -65,6 +65,13 @@ public abstract class Unite {
     }
 
 
+    /**
+     * Regarde si l'unite est placé sur un territoire
+     * @return renvoit vrai si elle a un territoire,sinon faux
+     */
+    private boolean hasTerritoire(){
+        return(this.territoire!=null);
+    }
 
 
 }
