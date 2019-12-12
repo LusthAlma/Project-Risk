@@ -1,6 +1,9 @@
 package fr.alma.risk;
 
 
+import fr.alma.risk.exception.ExceptionNegativeRenforts;
+import fr.alma.risk.exception.ExceptionTerritoireStillHavePossesseur;
+
 import java.awt.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -31,13 +34,29 @@ public class Joueur {
         return continentsControles;
     }
 
-    public void ajouterRenforts(int nbRenforts) {
+    public void ajouterRenforts(int nbRenforts) throws ExceptionNegativeRenforts {
+        if(nbRenforts<0) throw new ExceptionNegativeRenforts();
         this.renfortsAPlacer += nbRenforts;
-
     }
 
     public String getNom() {
         return nom;
+    }
+
+    public Mission getMission() {
+        return mission;
+    }
+
+    public int getRenfortsAPlacer() {
+        return renfortsAPlacer;
+    }
+
+    public Color getCouleur() {
+        return couleur;
+    }
+
+    public Set<Territoire> getTerritoiresPossedes() {
+        return territoiresPossedes;
     }
 
     public void attribuerMission(Mission mission) {
@@ -48,8 +67,14 @@ public class Joueur {
         this.couleur = couleur;
     }
 
-    public void ajouterTerritoire(Territoire territoire) {
-        this.territoiresPossedes.add(territoire);
+    public void ajouterTerritoire(Territoire territoire) throws ExceptionTerritoireStillHavePossesseur {
+        if(territoire.getPossesseur() == null){
+            this.territoiresPossedes.add(territoire);
+            territoire.setPossesseur(this);
+        }else{
+            throw new ExceptionTerritoireStillHavePossesseur();
+        }
+
     }
 
     public int nbTerritoiresPossédés() {
