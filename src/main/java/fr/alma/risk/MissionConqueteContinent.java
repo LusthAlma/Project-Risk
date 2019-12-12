@@ -14,7 +14,7 @@ public class MissionConqueteContinent extends Mission {
     protected MissionConqueteContinent() {}
 
     public MissionConqueteContinent(Continent continent1, Continent continent2) {
-        super("Vous devnez conquerir les continents suivants : "+continent1.getNom()+" et "+continent2.getNom()+".");
+        super("Vous devez conquerir les continents suivants : "+continent1.getNom()+" et "+continent2.getNom()+".");
         this.continent1=continent1;
         this.continent2=continent2;
     }
