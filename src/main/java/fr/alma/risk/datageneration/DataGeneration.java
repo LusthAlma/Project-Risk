@@ -1,6 +1,11 @@
 package fr.alma.risk.datageneration;
 
-import fr.alma.risk.datatypes.*;
+import fr.alma.risk.datatypes.map.Continent;
+import fr.alma.risk.datatypes.map.Territoire;
+import fr.alma.risk.datatypes.mission.Mission;
+import fr.alma.risk.datatypes.mission.MissionConqueteContinent;
+import fr.alma.risk.datatypes.mission.MissionConqueteTerritoire;
+import fr.alma.risk.datatypes.mission.MissionElimination;
 
 import java.util.ArrayList;
 import java.util.HashSet;

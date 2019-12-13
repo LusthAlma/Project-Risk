@@ -1,6 +1,8 @@
-package fr.alma.risk.datatypes;
+package fr.alma.risk.datatypes.map;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import fr.alma.risk.datatypes.player.Joueur;
+import fr.alma.risk.datatypes.unite.Unite;
 
 import javax.persistence.*;
 import java.util.HashSet;

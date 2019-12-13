@@ -1,8 +1,8 @@
 package fr.alma.risk;
 
-import fr.alma.risk.datatypes.Continent;
-import fr.alma.risk.datatypes.Mission;
-import fr.alma.risk.datatypes.Territoire;
+import fr.alma.risk.datatypes.map.Continent;
+import fr.alma.risk.datatypes.mission.Mission;
+import fr.alma.risk.datatypes.map.Territoire;
 import fr.alma.risk.jpaclasses.accessingdatamysql.ContinentRepository;
 import fr.alma.risk.jpaclasses.accessingdatamysql.MissionRepository;
 import fr.alma.risk.jpaclasses.accessingdatamysql.TerritoireRepository;

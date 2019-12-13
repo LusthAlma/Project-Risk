@@ -1,6 +1,6 @@
 package fr.alma.risk.jpaclasses.accessingdatamysql;
 
-import fr.alma.risk.datatypes.Territoire;
+import fr.alma.risk.datatypes.map.Territoire;
 import org.springframework.data.repository.CrudRepository;
 
 

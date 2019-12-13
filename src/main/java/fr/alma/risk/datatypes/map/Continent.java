@@ -1,4 +1,4 @@
-package fr.alma.risk.datatypes;
+package fr.alma.risk.datatypes.map;
 
 import javax.persistence.*;
 import java.util.Set;
