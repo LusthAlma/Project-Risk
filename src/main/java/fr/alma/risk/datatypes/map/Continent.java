@@ -27,6 +27,10 @@ public class Continent {
         this.nom = nom;
         this.renfortsBonus = renfortsBonus;
         this.territoires = territoires;
+        for (Territoire territoire:territoires
+             ) {
+            territoire.setContinent(this);
+        }
     }
 
     public Continent(String nom, int renfortsBonus){
