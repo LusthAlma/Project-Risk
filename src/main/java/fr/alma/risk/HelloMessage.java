@@ -1,4 +1,4 @@
-package fr.alma.websocket;
+package fr.alma.risk;
 
 public class HelloMessage {
 

@@ -1,6 +1,8 @@
 package fr.alma.risk;
 
 import static org.junit.Assert.*;
+
+import fr.alma.risk.datatypes.Territoire;
 import org.junit.Before;
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package fr.alma.risk;
+package fr.alma.risk.datatypes;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

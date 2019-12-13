@@ -1,4 +1,4 @@
-package fr.alma.websocket;
+package fr.alma.risk;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;

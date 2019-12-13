@@ -1,4 +1,4 @@
-package fr.alma.risk;
+package fr.alma.risk.datatypes;
 
 public class UniteSimple extends Unite {
 

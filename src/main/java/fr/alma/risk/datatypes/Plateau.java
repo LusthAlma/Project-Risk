@@ -1,4 +1,4 @@
-package fr.alma.risk;
+package fr.alma.risk.datatypes;
 
 import java.util.Set;
 

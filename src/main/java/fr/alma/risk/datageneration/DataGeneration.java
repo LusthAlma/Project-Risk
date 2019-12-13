@@ -1,6 +1,6 @@
 package fr.alma.risk.datageneration;
 
-import fr.alma.risk.*;
+import fr.alma.risk.datatypes.*;
 
 import java.util.ArrayList;
 import java.util.HashSet;

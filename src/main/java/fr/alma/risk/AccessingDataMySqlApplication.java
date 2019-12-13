@@ -1,5 +1,8 @@
 package fr.alma.risk;
 
+import fr.alma.risk.datatypes.Continent;
+import fr.alma.risk.datatypes.Mission;
+import fr.alma.risk.datatypes.Territoire;
 import fr.alma.risk.jpaclasses.accessingdatamysql.ContinentRepository;
 import fr.alma.risk.jpaclasses.accessingdatamysql.MissionRepository;
 import fr.alma.risk.jpaclasses.accessingdatamysql.TerritoireRepository;
@@ -11,7 +14,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.PropertySource;
 
 import java.util.Set;
 

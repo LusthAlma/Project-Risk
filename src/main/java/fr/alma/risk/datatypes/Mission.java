@@ -1,5 +1,7 @@
-package fr.alma.risk;
+package fr.alma.risk.datatypes;
 
+
+import fr.alma.risk.datatypes.Joueur;
 
 import javax.persistence.*;
 import java.util.Set;

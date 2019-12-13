@@ -1,8 +1,8 @@
 package fr.alma.risk.datageneration;
 
-import fr.alma.risk.Continent;
-import fr.alma.risk.Mission;
-import fr.alma.risk.Territoire;
+import fr.alma.risk.datatypes.Continent;
+import fr.alma.risk.datatypes.Mission;
+import fr.alma.risk.datatypes.Territoire;
 
 import java.util.Set;
 

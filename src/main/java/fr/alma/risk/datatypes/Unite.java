@@ -1,7 +1,6 @@
-package fr.alma.risk;
+package fr.alma.risk.datatypes;
 
 
-import fr.alma.risk.exception.ExceptionRisk;
 import fr.alma.risk.exception.ExceptionTerritoryCantBeEmpty;
 import fr.alma.risk.exception.ExceptionUniteHasNoTerritory;
 

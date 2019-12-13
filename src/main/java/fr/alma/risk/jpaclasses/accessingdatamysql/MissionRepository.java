@@ -1,6 +1,6 @@
 package fr.alma.risk.jpaclasses.accessingdatamysql;
 
-import fr.alma.risk.Mission;
+import fr.alma.risk.datatypes.Mission;
 import org.springframework.data.repository.CrudRepository;
 
 

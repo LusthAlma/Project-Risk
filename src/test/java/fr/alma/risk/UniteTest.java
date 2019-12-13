@@ -3,6 +3,10 @@ package fr.alma.risk;
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import fr.alma.risk.datatypes.Joueur;
+import fr.alma.risk.datatypes.Territoire;
+import fr.alma.risk.datatypes.Unite;
+import fr.alma.risk.datatypes.UniteSimple;
 import fr.alma.risk.exception.ExceptionRisk;
 import fr.alma.risk.exception.ExceptionTerritoryCantBeEmpty;
 import fr.alma.risk.exception.ExceptionUniteHasNoTerritory;
