@@ -112,11 +112,18 @@ d'unités, et cette information est envoyée au serveur. Une fois reçue, ce der
 et avec combien d'unités. Cette information récupérée, le serveur va calculer le résultat du combat et le communiquer à tous les joueurs, en mettant
 à jour le plateau.
 
+L'operation deplacer() sera déclenchée lorsque le joueur aura fini d'attaquer. Si le joueur souhaite déplacer des unités d'un territoire à un autre,
+les informations necessaires seront envoyées au serveur, et une mise à jour du plateau sera renvoyée à tous les joueurs.
+
+L'operation finirTour() sera déclenchée soit lorsque le joueur aura choisi de terminer son tour, soit lorsque son temps imparti de jeu sera écoulé.
 
 
 == Le composant `Web Client`
 
-Décrire succinctement le comportement du composant.
+Le composant Web Client devra être en mesure de gérer les actions d'un joueur et de les communiquer vers le serveur. Il comprendra donc des opérations
+lui permettant de se connecter au serveur, de récupérer et d'envoyer les informations necessaires au serveur lors de chacune de ses actions afin que
+celui-ci soit capable de calculer les résultats des actions. De plus, le composant Web Client devra aussi pouvoir recevoir et interpeter les mises à
+jour transmises par le serveur.
 
 === Spécification des interfaces
 
@@ -149,6 +156,19 @@ GameServer ..> attribuerUnite
 
 @enduml
 ----
+
+Cette interface doit permettre l'initialisation d'une partie côté client.
+
+Chacune des méthodes sera appelée au début de la partie.
+
+La méthode attribuerCouleur() permettra au client de connaître quelle sera la couleur qu'il portera lors du déroulement de la partie.
+
+La méthode attribuerMission() lui permettra de connaître la mission qu'il doit effectuer afin de gagner la partie.
+
+La méthode attribuerTerritoire() lui permmettra de savoir quels territoires lui ont été attribués, afin qu'il puisse ensuite placer les unités qu'il
+va recevoir.
+
+La méthode attribuerUnite() lui permettra donc de récupérer ses unités afin de les placer sur le plateau.
 
 ==== Spécification de l'interface B 
 
@@ -187,6 +207,9 @@ Utiliser des interactions, c'est à dire, des diagrammes de séquence et des dia
 === Mise en place d'un jeu
 
 ==== Interaction: cas nominal
+
+image::../_chapters/images/SequenceInitialisation.png[]
+
 
 ==== Interaction: cas A
 
