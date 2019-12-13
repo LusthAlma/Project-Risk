@@ -55,9 +55,6 @@ include::use-case-donner-territoires.adoc[leveloffset=+2]
 ==== Déploiement des unités
 include::use-case-deploiement-unites.adoc[leveloffset=+2]
 
-==== Déploiement d'une unité
-include::use-case-deploiement-unite-seule.adoc[leveloffset=+2]
-
 === Déroulement de la partie
 
 ==== Jouer un tour
@@ -77,7 +74,7 @@ include::use-case-fin-de-tour.adoc[leveloffset=+2]
 
 == Modèle de classes du domaine
 
-image:images/domain-classes.png[Diagramme de classe]
+image:../_chapters/images/domain-classes.png[Diagramme de classe]
 
 == Invariants
 
