@@ -7,12 +7,12 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@Table(name = "missions")
 public abstract class Mission {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @Column(name = "OBJECTIF")
     private String objectif;
 
     protected Mission () {}

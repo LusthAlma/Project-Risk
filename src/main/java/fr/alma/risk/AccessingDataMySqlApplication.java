@@ -31,7 +31,6 @@ public class AccessingDataMySqlApplication {
     public CommandLineRunner demo(MissionRepository missionRepository, TerritoireRepository territoireRepository, ContinentRepository continentRepository) {
         return (args) -> {
 
-
             //Cette partie de code sert a générer les données de base du risk ( Continent, Territoire, Mission).
             GeneratedData datas = DataGeneration.generate();
             Set<Continent> continents = datas.getContinents();
@@ -59,6 +58,56 @@ public class AccessingDataMySqlApplication {
             for (Mission mission : missionRepository.findAll()) {
                 log.info("territoire "+ mission.getObjectif());
             }
+
+            // fetch territoire by id
+            log.info("Territoire found with findByNom('1'):");
+            log.info("--------------------------------------------");
+            log.info(territoireRepository.findWithId((long)1).getNom());
+
+
+            // fetch territoire by nom
+            log.info("Territoire found with findByNom('Japon'):");
+            log.info("--------------------------------------------");
+            log.info(territoireRepository.findWithNom("Japon").getNom());
+
+
+            //fetch voisins
+            log.info("Territoire found with findVoisinsWithNom('Japon'):");
+            log.info("--------------------------------------------");
+            territoireRepository.findVoisinsWithNom("Japon").forEach(voisin -> {
+                log.info(voisin.getNom());
+            });
+
+
+            //fetch continent
+            log.info("Territoire found with findContinentWithName('Japon'):");
+            log.info("--------------------------------------------");
+            log.info(continentRepository.findContinentWithName("Japon").getNom());
+
+
+
+
+
+            //fetch mission elimination
+            log.info("Mission found with findMissionElimination():");
+            log.info("--------------------------------------------");
+            missionRepository.findMissionElimination().forEach(missionElimination -> {
+                log.info(missionElimination.getObjectif());
+            });
+
+            //fetch mission elimination
+            log.info("Mission found with findMissionConqueteContinent():");
+            log.info("--------------------------------------------");
+            missionRepository.findMissionConqueteContinent().forEach(missionConqueteContinent -> {
+                log.info(missionConqueteContinent.getObjectif());
+            });
+
+            //fetch mission elimination
+            log.info("Mission found with findMissionConqueteTerritoire():");
+            log.info("--------------------------------------------");
+            missionRepository.findMissionConqueteTerritoire().forEach(missionConqueteTerritoire -> {
+                log.info(missionConqueteTerritoire.getObjectif());
+            });
         };
     }
 

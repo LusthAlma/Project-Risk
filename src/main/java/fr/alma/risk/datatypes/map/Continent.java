@@ -4,16 +4,15 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@Table(name = "continents")
 public class Continent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name = "NOM")
     private String nom;
 
-    @Column(name = "RENFORTSBONUS")
     private int renfortsBonus;
 
     @OneToMany(cascade = CascadeType.ALL,
