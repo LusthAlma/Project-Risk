@@ -58,32 +58,33 @@ public class AccessingDataMySqlApplication {
             for (Mission mission : missionRepository.findAll()) {
                 log.info("territoire "+ mission.getObjectif());
             }
+            log.info("");
 
             // fetch territoire by id
             log.info("Territoire found with findByNom('1'):");
             log.info("--------------------------------------------");
             log.info(territoireRepository.findWithId((long)1).getNom());
-
+            log.info("");
 
             // fetch territoire by nom
-            log.info("Territoire found with findByNom('Japon'):");
+            log.info("Territoire found with findByNom('Chine'):");
             log.info("--------------------------------------------");
-            log.info(territoireRepository.findWithNom("Japon").getNom());
-
+            log.info(territoireRepository.findWithNom("Chine").getNom());
+            log.info("");
 
             //fetch voisins
-            log.info("Territoire found with findVoisinsWithNom('Japon'):");
+            log.info("Territoire found with findVoisinsWithNom('Chine'):");
             log.info("--------------------------------------------");
-            territoireRepository.findVoisinsWithNom("Japon").forEach(voisin -> {
+            territoireRepository.findVoisins("Chine").forEach(voisin -> {
                 log.info(voisin.getNom());
             });
-
+            log.info("");
 
             //fetch continent
-            log.info("Territoire found with findContinentWithName('Japon'):");
+            log.info("Territoire found with findContinentWithName('Chine'):");
             log.info("--------------------------------------------");
-            log.info(continentRepository.findContinentWithName("Japon").getNom());
-
+            log.info(continentRepository.findContinentOfTerritory("Chine").getNom());
+            log.info("");
 
 
             //fetch mission elimination
@@ -92,6 +93,7 @@ public class AccessingDataMySqlApplication {
             missionRepository.findMissionElimination().forEach(missionElimination -> {
                 log.info(missionElimination.getObjectif());
             });
+            log.info("");
 
             //fetch mission elimination
             log.info("Mission found with findMissionConqueteContinent():");
@@ -99,6 +101,7 @@ public class AccessingDataMySqlApplication {
             missionRepository.findMissionConqueteContinent().forEach(missionConqueteContinent -> {
                 log.info(missionConqueteContinent.getObjectif());
             });
+            log.info("");
 
             //fetch mission elimination
             log.info("Mission found with findMissionConqueteTerritoire():");

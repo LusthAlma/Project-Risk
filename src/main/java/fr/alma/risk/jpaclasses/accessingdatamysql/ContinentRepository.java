@@ -28,7 +28,7 @@ public interface ContinentRepository extends CrudRepository<Continent, Integer> 
      * @return renvoit le continent en question
      */
     @Query(value = "SELECT id,nom,renforts_bonus FROM (SELECT continent_id FROM territoires WHERE nom = :territoryname) AS t2  INNER JOIN continents ON continents.id = t2.continent_id",nativeQuery = true)
-    public Continent findContinentWithName(@Param("territoryname") String nom);
+    public Continent findContinentOfTerritory(@Param("territoryname") String nom);
 
     /**
      * Requête permettant de retrouver le continent qui contient le pays passé en paramètre
@@ -36,5 +36,5 @@ public interface ContinentRepository extends CrudRepository<Continent, Integer> 
      * @return renvoit le continent en question
      */
     @Query(value = "SELECT id,nom,renforts_bonus FROM (SELECT continent_id FROM territoires WHERE id = :territoryid) AS t2  INNER JOIN continents ON continents.id = t2.continent_id",nativeQuery = true)
-    public Continent findContinentWithId(@Param("territoryid") long id);
+    public Continent findContinentOfTerritory(@Param("territoryid") long id);
 }

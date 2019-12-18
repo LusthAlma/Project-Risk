@@ -36,7 +36,7 @@ public interface TerritoireRepository extends CrudRepository<Territoire, Integer
      * @return renvoit la liste des pays étant de le voisin de celui passe en parametre
      */
     @Query(value = "SELECT id,nom,continent_id FROM (SELECT voisin_id FROM (SELECT * FROM territoires WHERE nom = :territoryname) AS t2 INNER JOIN voisins ON t2.id = voisins.territoire_id) AS t3 INNER JOIN territoires ON t3.voisin_id = territoires.id ",nativeQuery = true)
-    public List<Territoire> findVoisinsWithNom(@Param("territoryname") String nom);
+    public List<Territoire> findVoisins(@Param("territoryname") String nom);
 
     /**
      * Requête permettant de trouver tous les voisins d'un pays en donnant son id.
@@ -44,10 +44,7 @@ public interface TerritoireRepository extends CrudRepository<Territoire, Integer
      * @return renvoit la liste des pays étant de le voisin de celui passe en parametre
      */
     @Query(value = "SELECT id,nom,continent_id FROM (SELECT voisin_id FROM (SELECT * FROM territoires WHERE id = :territoryid) AS t2 INNER JOIN voisins ON t2.id = voisins.territoire_id) AS t3 INNER JOIN territoires ON t3.voisin_id = territoires.id ",nativeQuery = true)
-    public List<Territoire> findVoisinsWithId(@Param("territoryid") Long id);
+    public List<Territoire> findVoisins(@Param("territoryid") Long id);
 
-
-    @Query(value = "SELECT id,nom,renforts_bonus FROM (SELECT continent_id FROM territoires WHERE nom = :territoryname) AS t2  INNER JOIN continents ON continents.id = t2.continent_id",nativeQuery = true)
-    public Continent findContinentWithName(@Param("territoryname") String nom);
 
 }
