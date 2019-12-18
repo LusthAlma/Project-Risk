@@ -43,7 +43,7 @@ aux joueurs de visualiser les modifications apportées, de nombreux échanges au
 
 === Spécification des interfaces
 
-==== Spécification de l'interface A
+==== Spécification de l'interface A - Initialisation de la partie
 	
 ////
 Présentation de l'interface en UML (ou HUTN). 
@@ -75,7 +75,7 @@ L'opération seConnecter() est appelée par un client, qui est ensuite placé da
 
 L'opération deployerUnite() est appelée par un client à l'issu de la distribution des ressources de début de partie. Le client doit alors transmettre les unités qu'il place sur chacun de ses territoires.
 
-==== Spécification de l'interface B 
+==== Spécification de l'interface B - Jouer un tour
 
 [plantuml, interface-gameserver-b, png]
 ----
@@ -101,7 +101,7 @@ WebClient ..> finirTour
 @enduml
 ----
 
-Cette interface permet aux joueurs le calcul et la prise en compte des actions qu'ils ont entrepris.
+Cette interface permet aux joueurs le calcul et la prise en compte des actions qu'ils ont entreprises.
 
 L'opération placerRenforts() sera déclenchée au début de chaque tour. Elle distribue les renforts du joueur et attend que ce dernier ai choisi où les placer.
 Lorsque le joueur aura fait son choix, il validera et le cient enverra alors au serveur les différentes modifications à apporter et à communiquer aux
@@ -127,11 +127,8 @@ jour transmises par le serveur.
 
 === Spécification des interfaces
 
-==== Spécification de l'interface A
-	
-Présentation de l'interface en UML (ou HUTN). 
-Description du comportement de chaque opération. 
-Spécification éventuelle des pré-conditions en OCL.
+==== Spécification de l'interface A - Initialisation de la partie
+
 
 [plantuml, interface-webclient-a, png]
 ----
@@ -170,7 +167,7 @@ va recevoir.
 
 La méthode attribuerUnite() lui permettra donc de récupérer ses unités afin de les placer sur le plateau.
 
-==== Spécification de l'interface B 
+==== Spécification de l'interface B - Jouer un tour
 
 [plantuml, interface-webclient-b, png]
 ----
@@ -196,6 +193,16 @@ GameServer ..> mettreAJour
 @enduml
 ----
 
+Cette interface devra permettre au serveur de gérer les décisions du joueur en prenant en compte ses actions, et en les communiquant aux autres joueurs.
+
+La méthode debuterTour() sera appelée afin de déclencher le début du tour de chaque joueur.
+
+La méthode donnerRenforts() distribuera les renforts au joueur courant au début de son tour.
+
+La méthode resultatCombat() permettra de calculer les résultats d'un combat en fonction des décosions des joueurs.
+
+La méthode mettreAJour() permettra de mettre le plateau à jour afin de communiquer les changements du plateau a tout le monde.
+
 == Interactions
 
 Objectif: décrire, à haut-niveau, la collaboration entre les composants majeurs, en faisant référence aux besoins.
@@ -218,6 +225,9 @@ image::../_chapters/images/SequenceInitialisation.png[]
 === Tour d'un joueur 
 
 ==== Interaction: cas nominal
+
+image::../_chapters/images/SequenceJouerTour.png[]
+
 
 ==== Interaction: cas A
 
