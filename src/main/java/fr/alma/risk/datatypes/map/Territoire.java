@@ -68,6 +68,10 @@ public class Territoire {
         return voisins;
     }
 
+    public Continent getContinent() {
+        return continent;
+    }
+
     public boolean ajoutUnite(Unite unite){
         return this.unitesDeployees.add(unite);
     }
