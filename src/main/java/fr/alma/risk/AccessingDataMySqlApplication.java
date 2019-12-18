@@ -86,8 +86,6 @@ public class AccessingDataMySqlApplication {
 
 
 
-
-
             //fetch mission elimination
             log.info("Mission found with findMissionElimination():");
             log.info("--------------------------------------------");
