@@ -65,52 +65,7 @@ La partie est lancée.
 
 Attribution des couleurs dans une partie avec 3 joueurs.
 
-[.underline]#Début:#
-
-[plantuml, couleur-snap-start, png]
-----
-@startuml
-
-Object joueur1 {
-        nom = "J1"
-        couleur = ""
-}
-
-Object joueur2 {
-        nom = "J2"
-        couleur = ""
-}
-
-Object joueur3 {
-        nom = "J3"
-        couleur = ""
-}
-
-@enduml
-----
-
-[.underline]#Fin:#
-[plantuml, couleur-snap-end, png]
-----
-@startuml
-
-Object joueur1 {
-        nom = "J1"
-        couleur = "vert"
-}
-
-Object joueur2 {
-        nom = "J2"
-        couleur = "bleu"
-}
-
-Object joueur3 {
-        nom = "J3"
-        couleur = "rouge"
-}
-
-@enduml
-----
+image:couleur-snap.png[]
 
 
 

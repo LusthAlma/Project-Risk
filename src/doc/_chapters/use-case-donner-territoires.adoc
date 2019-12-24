@@ -58,72 +58,7 @@ Début de partie : fin du Use Case Donner unités (UC-1.3)
 == Instantané
 Distribution des territoires dans une partie avec 3 joueurs.
 
-[.underline]#Début:#
-
-[plantuml, territoire-snap-start, png]
-----
-@startuml
-
-Object joueur1 {
-        nom = "J1"
-}
-
-Object joueur2 {
-        nom = "J2"
-}
-
-Object joueur3 {
-        nom = "J3"
-}
-
-@enduml
-----
-
-[.underline]#Fin:#
-[plantuml, territoire-snap-end, png]
-----
-@startuml	
-
-Object territoire1 {
-		nom = "Afghanistan"
-}
-
-Object territoire2 {
-		nom = "Pérou"
-}
-
-Object territoire3 {
-		nom = "Sibérie"
-}
-
-Object territoire4 {
-		nom = "Inde"
-}
-
-Object joueur1 {
-        nom = "J1"
-        territoires = [territoire1,territoire4]
-}
-
-Object joueur2 {
-        nom = "J2"
-        territoires = [territoire2]
-}
-
-Object joueur3 {
-        nom = "J3"
-        territoires = [territoire3]
-}
-
-joueur1 -- territoire1 : controle
-joueur1 -- territoire4 : controle
-
-joueur2 -- territoire2 : controle
-
-joueur3 -- territoire3 : controle
-
-@enduml
-----
+image:distribuer-territoires-snap.png[]
 
 
 === To do

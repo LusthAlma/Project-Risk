@@ -74,52 +74,7 @@ Extension du step 1 :
 
 Distribution des unités dans une partie avec 3 joueurs.
 
-[.underline]#Début:#
-
-[plantuml, unite-snap-start, png]
-----
-@startuml
-
-Object joueur1 {
-        nom = "J1"
-        unites = 0
-}
-
-Object joueur2 {
-        nom = "J2"
-        unites = 0
-}
-
-Object joueur3 {
-        nom = "J3"
-        unites = 0
-}
-
-@enduml
-----
-
-[.underline]#Fin:#
-[plantuml, unite-snap-end, png]
-----
-@startuml
-
-Object joueur1 {
-        nom = "J1"
-        unites = 35
-}
-
-Object joueur2 {
-        nom = "J2"
-        unites = 35
-}
-
-Object joueur3 {
-        nom = "J3"
-        unites = 35
-}
-
-@enduml
-----
+image:distribuer-unites-snap.png[]
 
 
 === To do

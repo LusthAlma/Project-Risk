@@ -36,27 +36,35 @@ Dans une quatrième et dernière partie, nous apportons un regard critique sur l
 
 ==== Initialisation de la partie
 include::use-case-initialisation.adoc[leveloffset=+2]
+//add snapshot
 
 ==== Attribution des couleurs
 include::use-case-attribuer-couleur.adoc[leveloffset=+2]
+//fait
 
 ==== Distribution des missions
 include::use-case-donner-mission-tous-les-joueurs.adoc[leveloffset=+2]
+//add snapshot
 
 ==== Distribution d'une mission par joueur
 include::use-case-donner-mission-a-un-joueur.adoc[leveloffset=+2]
+//add snapshot
 
 ==== Distribution des unités
 include::use-case-distribuer-unites.adoc[leveloffset=+2]
+//fait
 
 ==== Distribution des territoires
 include::use-case-donner-territoires.adoc[leveloffset=+2]
+//fait
 
 ==== Déploiement des unités
 include::use-case-deploiement-unites.adoc[leveloffset=+2]
+//
 
 ==== Déploiement d'une unité
 include::use-case-deploiement-unite-seule.adoc[leveloffset=+2]
+//TO DO
 
 === Déroulement de la partie
 
