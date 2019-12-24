@@ -1,13 +1,7 @@
 package fr.alma.risk;
 
-public abstract class NetworkExchanger {
+public interface NetworkExchanger {
 
-    private Facade facade;
-
-    public NetworkExchanger(Facade facade) {
-        this.facade = facade;
-    }
-
-    public abstract void send(String message);
+    void send(String message);
 
 }
