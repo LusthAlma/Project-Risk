@@ -1,7 +1,6 @@
 package fr.alma.risk;
 
-public class ServerFacade {
-    ServerNetworkExchanger serverNetworkExchanger;
+public class ServerFacade implements Facade {
 
     public ServerFacade(){
 
