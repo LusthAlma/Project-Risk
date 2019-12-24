@@ -28,8 +28,8 @@ public class JoueurTest {
 
     @Before
     public void setup(){
-        joueurNamedTest = new Joueur("Test");
-        joueurNamedOther = new Joueur("Other");
+        joueurNamedTest = new Joueur("Test", "12345");
+        joueurNamedOther = new Joueur("Other", "54321");
         territoireNamedTest = new Territoire("Test");
         missionEliminationRouge = new MissionElimination("Rouge");
         colorNoir = Color.BLACK;

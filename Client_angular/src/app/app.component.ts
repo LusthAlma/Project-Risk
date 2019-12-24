@@ -14,10 +14,10 @@ export class AppComponent {
   private stompClient;
 
   constructor(){
-      this.initializeWebSocketConnection();
+      this.init();
 }
 
-initializeWebSocketConnection(){
+init(){
     let ws = new SockJS (this.serverUrl);
     this.stompClient = Stomp.over(ws);
     let that = this;
@@ -32,10 +32,15 @@ initializeWebSocketConnection(){
     }
   
     sendMessage(message){
-      console.log("coucou")
       this.stompClient.send("/app/send/message" , {}, message);
       $('#input').val('');
     }
+
+    connect(){
+      this.stompClient.send("/app/connect", {})
+    }
+
+    
 
 }
 

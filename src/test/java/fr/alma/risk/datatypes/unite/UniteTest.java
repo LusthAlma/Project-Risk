@@ -24,7 +24,7 @@ public class UniteTest {
 
     @Before
     public void setup(){
-        joueurNamedTest = new Joueur("Test");
+        joueurNamedTest = new Joueur("Test", "12345");
         uniteSimpleWithJoueurNamedTest1 = new UniteSimple(joueurNamedTest);
         uniteSimpleWithJoueurNamedTest2 = new UniteSimple(joueurNamedTest);
 
