@@ -1,7 +1,21 @@
 package fr.alma.risk;
 
-public interface ServerNetworkExchanger {
+public class ServerNetworkExchanger implements NetworkExchanger {
 
-    public void send(String message);
+    private ServerFacade facade;
+
+    public ServerNetworkExchanger(ServerFacade facade) {
+        this.facade = facade;
+    }
+
+    @Override
+    public void send(String message) {
+
+    }
+
+    public ServerFacade getFacade() {
+        return facade;
+    }
+
 
 }
