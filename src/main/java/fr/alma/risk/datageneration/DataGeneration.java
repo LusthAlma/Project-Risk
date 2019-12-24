@@ -1,6 +1,11 @@
 package fr.alma.risk.datageneration;
 
-import fr.alma.risk.*;
+import fr.alma.risk.datatypes.map.Continent;
+import fr.alma.risk.datatypes.map.Territoire;
+import fr.alma.risk.datatypes.mission.Mission;
+import fr.alma.risk.datatypes.mission.MissionConqueteContinent;
+import fr.alma.risk.datatypes.mission.MissionConqueteTerritoire;
+import fr.alma.risk.datatypes.mission.MissionElimination;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -9,6 +14,10 @@ import java.util.Set;
 
 public class DataGeneration {
 
+    /**
+     * Cette méthode permet de générer tous les territoires,contients et missions de base.
+     * @return un objet contenant l'ensemble des territoires, l'ensemble des continents et l'ensemble des missions.
+     */
     public static GeneratedData generate(){
 
         /*__________________________________Déclaration des pays et des Continents__________________________________*/
@@ -229,22 +238,10 @@ public class DataGeneration {
 
         /*__________________________________Déclaration des trois sets a retourner__________________________________*/
         /*--------------------Ensemble des Continents--------------------*/
-        Set<Continent> continents = new HashSet<>();
-        continents.add(asie);
-        continents.add(europe);
-        continents.add(australie);
-        continents.add(afrique);
-        continents.add(ameriqueDuNord);
-        continents.add(ameriqueDuSud);
+        Set<Continent> continents = getContinents(asie, europe, australie, afrique, ameriqueDuNord, ameriqueDuSud);
 
         /*--------------------Ensemble des Territoires--------------------*/
-        Set<Territoire> territoires = new HashSet<>();
-        territoires.addAll(territoireSetAsie);
-        territoires.addAll(territoireSetEurope);
-        territoires.addAll(territoireSetAustralie);
-        territoires.addAll(territoireSetAfrique);
-        territoires.addAll(territoireSetAmeriqueDuNord);
-        territoires.addAll(territoireSetAmeriqueDuSud);
+        Set<Territoire> territoires = getTerritoires(territoireSetAsie, territoireSetEurope, territoireSetAustralie, territoireSetAfrique, territoireSetAmeriqueDuNord, territoireSetAmeriqueDuSud);
 
         /*--------------------Ensemble des Missions--------------------*/
         Set<Mission> missions = generateMission(continents);
@@ -255,22 +252,60 @@ public class DataGeneration {
 
     }
 
-    public static Set<Mission> generateMission(Set<Continent> continentSet){
+    /**
+     * Cette méthode permet d'obtenir l'ensemble des continents
+     * @param asie continent asie
+     * @param europe continent europe
+     * @param australie continent australie
+     * @param afrique continent afrique
+     * @param ameriqueDuNord continent amerique du nord
+     * @param ameriqueDuSud continent amerique du sud
+     * @return un ensemble de tous ces continents.
+     */
+    private static Set<Continent> getContinents(Continent asie, Continent europe, Continent australie, Continent afrique, Continent ameriqueDuNord, Continent ameriqueDuSud) {
+        Set<Continent> continents = new HashSet<>();
+        continents.add(asie);
+        continents.add(europe);
+        continents.add(australie);
+        continents.add(afrique);
+        continents.add(ameriqueDuNord);
+        continents.add(ameriqueDuSud);
+        return continents;
+    }
+
+    /**
+     * Cette methode permet d'obtenir un ensemble de tous les territoires;
+     * @param territoireSetAsie territoires d'asie
+     * @param territoireSetEurope territoires d'europe
+     * @param territoireSetAustralie territoires d'australie
+     * @param territoireSetAfrique territoires d'afrique
+     * @param territoireSetAmeriqueDuNord territoires d'amerique du nord
+     * @param territoireSetAmeriqueDuSud territoires d'amerique du sud
+     * @return un ensemble de tous ces territoires
+     */
+    private static Set<Territoire> getTerritoires(Set<Territoire> territoireSetAsie, Set<Territoire> territoireSetEurope, Set<Territoire> territoireSetAustralie, Set<Territoire> territoireSetAfrique, Set<Territoire> territoireSetAmeriqueDuNord, Set<Territoire> territoireSetAmeriqueDuSud) {
+        Set<Territoire> territoires = new HashSet<>();
+        territoires.addAll(territoireSetAsie);
+        territoires.addAll(territoireSetEurope);
+        territoires.addAll(territoireSetAustralie);
+        territoires.addAll(territoireSetAfrique);
+        territoires.addAll(territoireSetAmeriqueDuNord);
+        territoires.addAll(territoireSetAmeriqueDuSud);
+        return territoires;
+    }
+
+    /**
+     * Cette méthode permet de generer toutes les missions.
+     * @param continentSet ensemble des continents
+     * @return l'ensemble des missions générées.
+     */
+    private static Set<Mission> generateMission(Set<Continent> continentSet){
         Set<Mission> missions = new HashSet<>();
-
-
-
         /*--------------------Récupération des continents--------------------*/
         List<Continent> continentList = new ArrayList<>();
         continentList.addAll(continentSet);
 
-        for(int i=0;i<continentList.size();i++){
-            for(int j=i;j<continentList.size();j++){
-                if(j!=i){
-                    missions.add(new MissionConqueteContinent(continentList.get(i),continentList.get(j)));
-                }
-            }
-        }
+
 
         /*--------------------Mission Elimination--------------------*/
         missions.add(new MissionElimination("Noir"));
@@ -281,7 +316,13 @@ public class DataGeneration {
         missions.add(new MissionElimination("Jaune"));
 
         /*--------------------Mission Conquete Continent--------------------*/
-
+        for(int i=0;i<continentList.size();i++){
+            for(int j=i;j<continentList.size();j++){
+                if(j!=i){
+                    missions.add(new MissionConqueteContinent(continentList.get(i),continentList.get(j)));
+                }
+            }
+        }
 
         /*--------------------Mission Conquete Territoire--------------------*/
         missions.add(new MissionConqueteTerritoire(24));

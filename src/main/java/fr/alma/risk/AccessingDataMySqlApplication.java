@@ -1,5 +1,8 @@
 package fr.alma.risk;
 
+import fr.alma.risk.datatypes.map.Continent;
+import fr.alma.risk.datatypes.mission.Mission;
+import fr.alma.risk.datatypes.map.Territoire;
 import fr.alma.risk.jpaclasses.accessingdatamysql.ContinentRepository;
 import fr.alma.risk.jpaclasses.accessingdatamysql.MissionRepository;
 import fr.alma.risk.jpaclasses.accessingdatamysql.TerritoireRepository;
@@ -28,7 +31,6 @@ public class AccessingDataMySqlApplication {
     public CommandLineRunner demo(MissionRepository missionRepository, TerritoireRepository territoireRepository, ContinentRepository continentRepository) {
         return (args) -> {
 
-
             //Cette partie de code sert a générer les données de base du risk ( Continent, Territoire, Mission).
             GeneratedData datas = DataGeneration.generate();
             Set<Continent> continents = datas.getContinents();
@@ -56,6 +58,57 @@ public class AccessingDataMySqlApplication {
             for (Mission mission : missionRepository.findAll()) {
                 log.info("territoire "+ mission.getObjectif());
             }
+            log.info("");
+
+            // fetch territoire by id
+            log.info("Territoire found with findByNom('1'):");
+            log.info("--------------------------------------------");
+            log.info(territoireRepository.findWithId((long)1).getNom());
+            log.info("");
+
+            // fetch territoire by nom
+            log.info("Territoire found with findByNom('Chine'):");
+            log.info("--------------------------------------------");
+            log.info(territoireRepository.findWithNom("Chine").getNom());
+            log.info("");
+
+            //fetch voisins
+            log.info("Territoire found with findVoisinsWithNom('Chine'):");
+            log.info("--------------------------------------------");
+            territoireRepository.findVoisins("Chine").forEach(voisin -> {
+                log.info(voisin.getNom());
+            });
+            log.info("");
+
+            //fetch continent
+            log.info("Territoire found with findContinentWithName('Chine'):");
+            log.info("--------------------------------------------");
+            log.info(continentRepository.findContinentOfTerritory("Chine").getNom());
+            log.info("");
+
+
+            //fetch mission elimination
+            log.info("Mission found with findMissionElimination():");
+            log.info("--------------------------------------------");
+            missionRepository.findMissionElimination().forEach(missionElimination -> {
+                log.info(missionElimination.getObjectif());
+            });
+            log.info("");
+
+            //fetch mission elimination
+            log.info("Mission found with findMissionConqueteContinent():");
+            log.info("--------------------------------------------");
+            missionRepository.findMissionConqueteContinent().forEach(missionConqueteContinent -> {
+                log.info(missionConqueteContinent.getObjectif());
+            });
+            log.info("");
+
+            //fetch mission elimination
+            log.info("Mission found with findMissionConqueteTerritoire():");
+            log.info("--------------------------------------------");
+            missionRepository.findMissionConqueteTerritoire().forEach(missionConqueteTerritoire -> {
+                log.info(missionConqueteTerritoire.getObjectif());
+            });
         };
     }
 

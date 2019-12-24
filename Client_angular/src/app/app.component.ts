@@ -32,6 +32,7 @@ initializeWebSocketConnection(){
     }
   
     sendMessage(message){
+      console.log("coucou")
       this.stompClient.send("/app/send/message" , {}, message);
       $('#input').val('');
     }

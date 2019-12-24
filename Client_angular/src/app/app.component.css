@@ -1,43 +1,8 @@
-/* Application-wide Styles */
-h1 {
-    color: #369;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 250%;
-  }
-  h2, h3 {
-    color: #444;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: lighter;
-  }
-  body {
-    margin: 2em;
-    background-color: #f5f5f5;
-  }
-  body, input[type="text"], button {
-    color: #333;
-    font-family: Cambria, Georgia;
-  }
-  /* everywhere else */
-  * {
-    font-family: Arial, Helvetica, sans-serif;
-  }
-
-  #main-content {
-    max-width: 940px;
-    padding: 2em 3em;
-    margin: 0 auto 20px;
-    background-color: #fff;
-    border: 1px solid #e5e5e5;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-}
-
-.game-lobby-container{
+.chat-container{
   height: 80vh;
   width: 100vw;
 }
-.game-lobby{
+.chat{
   text-align: left;
   margin: 0 auto;
   width: 50%;
@@ -64,6 +29,13 @@ input{
   border-radius: 15px;
   font-size: 1.5em;
 }
+.send{
+  float: right;
+  background: url("../assets/images/send.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
+  margin-left: 5px;
 
-    
-
+}

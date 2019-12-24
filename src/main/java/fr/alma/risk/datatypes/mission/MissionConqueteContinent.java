@@ -1,4 +1,7 @@
-package fr.alma.risk;
+package fr.alma.risk.datatypes.mission;
+
+import fr.alma.risk.datatypes.map.Continent;
+import fr.alma.risk.datatypes.player.Joueur;
 
 import javax.persistence.*;
 import java.util.Set;

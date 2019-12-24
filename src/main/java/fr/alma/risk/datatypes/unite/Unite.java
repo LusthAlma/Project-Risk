@@ -1,7 +1,8 @@
-package fr.alma.risk;
+package fr.alma.risk.datatypes.unite;
 
 
-import fr.alma.risk.exception.ExceptionRisk;
+import fr.alma.risk.datatypes.player.Joueur;
+import fr.alma.risk.datatypes.map.Territoire;
 import fr.alma.risk.exception.ExceptionTerritoryCantBeEmpty;
 import fr.alma.risk.exception.ExceptionUniteHasNoTerritory;
 

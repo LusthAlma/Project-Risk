@@ -1,7 +1,10 @@
-package fr.alma.risk;
+package fr.alma.risk.datatypes.mission;
+
+import fr.alma.risk.datatypes.player.Joueur;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Set;
 
 @Entity

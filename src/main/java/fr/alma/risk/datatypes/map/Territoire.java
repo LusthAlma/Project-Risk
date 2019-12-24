@@ -1,12 +1,15 @@
-package fr.alma.risk;
+package fr.alma.risk.datatypes.map;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import fr.alma.risk.datatypes.player.Joueur;
+import fr.alma.risk.datatypes.unite.Unite;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Table(name = "territoires")
 public class Territoire {
 
 
@@ -63,6 +66,10 @@ public class Territoire {
 
     public Set<Territoire> getVoisins() {
         return voisins;
+    }
+
+    public Continent getContinent() {
+        return continent;
     }
 
     public boolean ajoutUnite(Unite unite){

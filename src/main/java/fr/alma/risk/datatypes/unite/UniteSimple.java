@@ -1,4 +1,6 @@
-package fr.alma.risk;
+package fr.alma.risk.datatypes.unite;
+
+import fr.alma.risk.datatypes.player.Joueur;
 
 public class UniteSimple extends Unite {
 

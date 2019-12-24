@@ -1,12 +1,15 @@
-package fr.alma.risk;
+package fr.alma.risk.datatypes.player;
 
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
+import fr.alma.risk.datatypes.player.Joueur;
+import fr.alma.risk.datatypes.mission.Mission;
+import fr.alma.risk.datatypes.mission.MissionElimination;
+import fr.alma.risk.datatypes.map.Territoire;
 import fr.alma.risk.exception.ExceptionNegativeRenforts;
 import fr.alma.risk.exception.ExceptionTerritoireStillHavePossesseur;
-import fr.alma.risk.exception.ExceptionTerritoryCantBeEmpty;
 import org.junit.Before;
 import org.junit.Test;
 

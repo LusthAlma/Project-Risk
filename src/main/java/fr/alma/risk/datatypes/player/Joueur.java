@@ -1,6 +1,11 @@
-package fr.alma.risk;
+package fr.alma.risk.datatypes.player;
 
 
+import fr.alma.risk.datatypes.mission.Mission;
+import fr.alma.risk.datatypes.Plateau;
+import fr.alma.risk.datatypes.map.Continent;
+import fr.alma.risk.datatypes.map.Territoire;
+import fr.alma.risk.datatypes.unite.Unite;
 import fr.alma.risk.exception.ExceptionNegativeRenforts;
 import fr.alma.risk.exception.ExceptionTerritoireStillHavePossesseur;
 
