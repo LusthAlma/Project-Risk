@@ -63,8 +63,6 @@ Les joueurs commandent le lancement d'une partie.
 
 *Fréquence:* Une fois par partie.
 
-== Instantané
-
 === To do
 
 [arabic]

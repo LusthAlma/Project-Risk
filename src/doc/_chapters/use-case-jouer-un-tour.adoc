@@ -55,9 +55,6 @@ Le joueur a obtenu ses renforts, il a pu combattre s'il le souhaitait, et a pu s
 . Le Joueur décide de déplacer ses unités. (UC-2.3)
 . Le Joueur passe son tour. (UC-2.4)
 
-== Instantané
-
-
 === To do
 
 [arabic]

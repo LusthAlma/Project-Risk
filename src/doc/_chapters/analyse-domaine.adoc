@@ -36,59 +36,87 @@ Dans une quatrième et dernière partie, nous apportons un regard critique sur l
 
 ==== Initialisation de la partie
 include::use-case-initialisation.adoc[leveloffset=+2]
-//add snapshot
+//no snapshot needed
+
+''''
 
 ==== Attribution des couleurs
 include::use-case-attribuer-couleur.adoc[leveloffset=+2]
 //fait
 
+''''
+
 ==== Distribution des missions
 include::use-case-donner-mission-tous-les-joueurs.adoc[leveloffset=+2]
-//add snapshot
+//no snapshot needed
+
+''''
 
 ==== Distribution d'une mission par joueur
 include::use-case-donner-mission-a-un-joueur.adoc[leveloffset=+2]
-//add snapshot
+//fait
+
+''''
 
 ==== Distribution des unités
 include::use-case-distribuer-unites.adoc[leveloffset=+2]
 //fait
 
+''''
+
 ==== Distribution des territoires
 include::use-case-donner-territoires.adoc[leveloffset=+2]
 //fait
 
+''''
+
 ==== Déploiement des unités
 include::use-case-deploiement-unites.adoc[leveloffset=+2]
-//
+//fait
 
-<<<<<<< HEAD
+''''
+
 ==== Déploiement d'une unité
 include::use-case-deploiement-unite-seule.adoc[leveloffset=+2]
-//TO DO
+//no snapshot needed
 
-=======
->>>>>>> 063b9acdea4fcba804ad4accf0eb2ca5759ddf58
+''''
+
 === Déroulement de la partie
 
 ==== Jouer un tour
 include::use-case-jouer-un-tour.adoc[leveloffset=+2]
+//no snapshot needed
+
+''''
 
 ==== Distribution des renforts
 include::use-case-donner-renforts.adoc[leveloffset=+2]
+//fait
+
+''''
 
 ==== Déroulement d'un combat
 include::use-case-attaque-territoire.adoc[leveloffset=+2]
 
+''''
+
 ==== Déroulement d'un déplacement
 include::use-case-deplacement.adoc[leveloffset=+2]
 
+''''
+
 ==== Fin d'un tour
 include::use-case-fin-de-tour.adoc[leveloffset=+2]
+//no snapshot needed
+
+''''
 
 == Modèle de classes du domaine
 
-image:../_chapters/images/domain-classes.png[Diagramme de classe]
+image:domaine-classes.png[]
+
+''''
 
 == Invariants
 

@@ -96,74 +96,7 @@ Ces renforts sont cumulables.
 Obtention de renforts par un joueur possédant uniquement 2 territoires.
 
 
-[.underline]#Début:#
-
-[plantuml, renforts-snap-start, png]
-----
-@startuml
-
-Object joueur1 {
-        nom = "J1"
-        couleur = "vert"
-}
-
-Object unite1
-Object unite2
-
-Object territoire1 {
-        nom = "Islande"
-}
-
-Object territoire2 {
-        nom = "Congo"
-}
-
-joueur1 -- unite1 : controle
-joueur1 -- unite2 : controle
-unite1 -- territoire1 : estPositionnee
-unite2 -- territoire2 : estPositionnee
-
-@enduml
-----
-
-
-[.underline]#Fin:#
-[plantuml, renforts-snap-end, png]
-----
-@startuml
-
-Object joueur1 {
-        nom = "J1"
-        couleur = "vert"
-}
-
-Object unite1
-Object unite2
-Object unite3
-Object unite4
-Object unite5
-
-Object territoire1 {
-        nom = "Islande"
-}
-
-Object territoire2 {
-        nom = "Congo"
-}
-
-joueur1 -- unite1 : controle
-joueur1 -- unite2 : controle
-joueur1 -- unite3 : controle
-joueur1 -- unite4 : controle
-joueur1 -- unite5 : controle
-unite1 -- territoire1 : estPositionnee
-unite2 -- territoire2 : estPositionnee
-unite3 -- territoire1 : estPositionnee
-unite4 -- territoire2 : estPositionnee
-unite5 -- territoire2 : estPositionnee
-
-@enduml
-----
+image:donner-renforts-snap.png[]
 
 === To do
 

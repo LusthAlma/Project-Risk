@@ -58,6 +58,7 @@ Donner Mission Tous Les Joueurs.
 
 == Instantané
 
+image:donner-mission-unique-snap.png[]
 
 === To do
 

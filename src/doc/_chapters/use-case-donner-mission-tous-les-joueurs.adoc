@@ -59,11 +59,6 @@ Initialisation
 . Le jeu répète l'instruction précédente pour tous les autres joueurs.
 . Le cas d'utilisation se termine si tous les joueurs ont reçu une mission différente.
 
-
-== Instantané
-
-
-
 === To do
 
 [arabic]
