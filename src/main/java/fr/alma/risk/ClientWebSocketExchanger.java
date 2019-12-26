@@ -6,8 +6,10 @@ import org.springframework.stereotype.Controller;
 
 import java.util.Set;
 
-@Controller
+@Controller("/client")
 public class ClientWebSocketExchanger extends ClientNetworkExchanger {
+
+    protected ClientWebSocketExchanger(){super();}
 
     public ClientWebSocketExchanger(ClientFacade facade) {
         super(facade);

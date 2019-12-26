@@ -4,6 +4,8 @@ public class ServerNetworkExchanger implements NetworkExchanger {
 
     private ServerFacade facade;
 
+    protected ServerNetworkExchanger(){}
+
     public ServerNetworkExchanger(ServerFacade facade) {
         this.facade = facade;
     }

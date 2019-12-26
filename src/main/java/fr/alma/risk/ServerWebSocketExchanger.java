@@ -3,8 +3,10 @@ package fr.alma.risk;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.stereotype.Controller;
 
-@Controller
+@Controller("/server")
 public class ServerWebSocketExchanger extends ServerNetworkExchanger {
+
+    protected ServerWebSocketExchanger(){super();}
 
     public ServerWebSocketExchanger(ServerFacade facade) {
         super(facade);
