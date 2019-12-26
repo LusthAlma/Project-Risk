@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
+import javax.jws.soap.SOAPBinding;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -36,6 +37,7 @@ public class WebSocketController {
 
     private static List<String> ColorsList = new ArrayList<String>(Arrays.asList("jaune","rouge","bleues","noires","violettes","vertes"));
 
+
     private List<Joueur> Users = new ArrayList<>();
 
     @Autowired
@@ -56,9 +58,10 @@ public class WebSocketController {
     public void connectToGame(String sessionId){ ;
         LOGGER.info("The user " + sessionId + "is now connected");
         Joueur j = new Joueur(ColorsList.get(Users.size()),sessionId);
-        template.convertAndSend("/game-lobby", "Le joueur " + sessionId + "rentre en jeu avec la" +
-                "couleur " + ColorsList.size());
+        template.convertAndSend("/game-lobby", "Le joueur " + sessionId + " rentre en jeu avec la " +
+                "couleur " + ColorsList.get(Users.size()));
         Users.add(j);
+
 
 
     }
