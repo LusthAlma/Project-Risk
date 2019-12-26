@@ -14,7 +14,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Joueur {
-    private String sessionId;
     private String nom;
     private Set<Unite> unites;
     private Set<Territoire> territoiresPossedes;
@@ -28,7 +27,6 @@ public class Joueur {
 
 
     public Joueur(String nom, String sessionId) {
-        this.sessionId = sessionId;
         this.nom = nom;
         this.unites = new HashSet<Unite>();
         this.territoiresPossedes = new HashSet<Territoire>();
@@ -61,7 +59,6 @@ public class Joueur {
         return territoiresPossedes;
     }
 
-    public String getSessionId(){return sessionId;}
 
     /**
      * ajouter des renforts au joueur.

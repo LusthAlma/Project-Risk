@@ -1,4 +1,4 @@
-package fr.alma.risk;
+/*package fr.alma.risk;
 
 import fr.alma.risk.datatypes.map.Territoire;
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -35,3 +35,4 @@ public class ClientWebSocketExchanger extends ClientNetworkExchanger {
         this.getFacade().mettreAJour(terrModifies);
     }
 }
+*/

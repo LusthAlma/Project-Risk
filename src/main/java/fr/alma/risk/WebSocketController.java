@@ -53,11 +53,10 @@ public class WebSocketController {
     }
 
     @MessageMapping("/connect")
-    public void connectToGame(@Header("simpleSessionID") String sessionId){ ;
-        LOGGER.info("The user " + sessionId + "is now connected");
-        Joueur j = new Joueur(ColorsList.get(Users.size()),sessionId);
-        template.convertAndSend("/game-lobby" + sessionId, "Le joueur " + sessionId + "rentre en jeu avec la" +
-                "couleur " + ColorsList.size());
+    public void connectToGame(String message){
+        LOGGER.info("The user " + message + "is now connected");
+        Joueur j = new Joueur(ColorsList.get(Users.size()),message);
+        template.convertAndSend("/game-lobby",new SimpleDateFormat("HH:mm:ss").format(new Date())+ "Le joueur " + message + " rentre en jeu avec la couleur " + ColorsList.get(Users.size()));
         Users.add(j);
 
 

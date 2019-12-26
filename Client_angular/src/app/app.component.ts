@@ -33,12 +33,15 @@ init(){
   
     sendMessage(message){
       this.stompClient.send("/app/send/message" , {}, message);
-      $('#input').val('');
+      $('#input_message').val('');
     }
 
-    connect(){
-      this.stompClient.send("/app/connect", {})
+    connect(message){
+      this.stompClient.send("/app/connect", {}, message);
+      $('#input_connect').val('');
     }
+
+    
 
     
 

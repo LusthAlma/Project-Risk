@@ -1,8 +1,8 @@
-.chat-container{
+.game-lobby-container{
   height: 80vh;
   width: 100vw;
 }
-.chat{
+.game-lobby{
   text-align: left;
   margin: 0 auto;
   width: 50%;

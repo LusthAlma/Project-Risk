@@ -1,4 +1,4 @@
-package fr.alma.risk;
+/*package fr.alma.risk;
 
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.stereotype.Controller;
@@ -31,4 +31,4 @@ public class ServerWebSocketExchanger extends ServerNetworkExchanger {
     public void finirTour(String pseudo){
         this.getFacade().finirTour(pseudo);
     }
-}
+}*/
