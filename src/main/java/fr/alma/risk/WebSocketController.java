@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
+import javax.jws.soap.SOAPBinding;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,13 +35,14 @@ public class WebSocketController {
     @Autowired
     private final SimpMessagingTemplate template;
 
-    private static List<String> ColorsList = new ArrayList<String>(Arrays.asList("jaune","rouge","bleues","noires","violettes","vertes"));
+    private static List<String> ColorsList = new ArrayList<String>(Arrays.asList("jaune", "rouge", "bleues", "noires", "violettes", "vertes"));
+
 
     private List<Joueur> Users = new ArrayList<>();
 
     @Autowired
-    WebSocketController(SimpMessagingTemplate template){
-        this.template=template;
+    WebSocketController(SimpMessagingTemplate template) {
+        this.template = template;
     }
 
     private static final Logger LOGGER = Logger.getLogger(WebSocketController.class.getName());
@@ -49,18 +51,16 @@ public class WebSocketController {
     @MessageMapping("/send/message")
     public void onReceivedMessage(String message) throws Exception {
         Thread.sleep(1000); // simulated delay
-        this.template.convertAndSend("/game-lobby",new SimpleDateFormat("HH:mm:ss").format(new Date())+message);
+        this.template.convertAndSend("/game-lobby", new SimpleDateFormat("HH:mm:ss").format(new Date()) + message);
     }
 
     @MessageMapping("/connect")
-    public void connectToGame(String message){
+    public void connectToGame(String message) {
         LOGGER.info("The user " + message + "is now connected");
-        Joueur j = new Joueur(ColorsList.get(Users.size()),message);
-        template.convertAndSend("/game-lobby",new SimpleDateFormat("HH:mm:ss").format(new Date())+ "Le joueur " + message + " rentre en jeu avec la couleur " + ColorsList.get(Users.size()));
-        Users.add(j);
+        Joueur j = new Joueur(ColorsList.get(Users.size()), message);
+        template.convertAndSend("/game-lobby", new SimpleDateFormat("HH:mm:ss").format(new Date()) + "Le joueur " + message + " rentre en jeu avec la couleur " + ColorsList.get(Users.size()));
 
 
     }
-
 }
 

@@ -3,10 +3,11 @@
 import fr.alma.risk.datatypes.map.Territoire;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Set;
 
-@Controller("/client")
+//@Controller
 public class ClientWebSocketExchanger extends ClientNetworkExchanger {
 
     protected ClientWebSocketExchanger(){super();}
@@ -15,22 +16,22 @@ public class ClientWebSocketExchanger extends ClientNetworkExchanger {
         super(facade);
     }
 
-    @MessageMapping("/init")
+   // @MessageMapping("/init")
     public void initialisation(String couleur) {
         this.getFacade().initialisation(couleur);
     }
 
-    @MessageMapping("/begin")
+   // @MessageMapping("/begin")
     public void debuteTour() {
         this.getFacade().debuteTour();
     }
 
-    @MessageMapping("/result")
+   // @MessageMapping("/result")
     public void resultatCombat() {
         this.getFacade().resultatCombat();
     }
 
-    @MessageMapping("/update")
+   // @MessageMapping("/update")
     public void mettreAJour(Set<Territoire> terrModifies) {
         this.getFacade().mettreAJour(terrModifies);
     }

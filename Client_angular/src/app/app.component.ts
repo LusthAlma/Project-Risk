@@ -30,7 +30,7 @@ init(){
         });
       });
     }
-  
+
     sendMessage(message){
       this.stompClient.send("/app/send/message" , {}, message);
       $('#input_message').val('');
@@ -39,9 +39,10 @@ init(){
     connect(message){
       this.stompClient.send("/app/connect", {}, message);
       $('#input_connect').val('');
+
     }
 
-    
+
 
     
 
