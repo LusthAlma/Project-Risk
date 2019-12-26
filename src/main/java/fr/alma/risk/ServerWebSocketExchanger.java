@@ -2,8 +2,9 @@ package fr.alma.risk;
 
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller("/server")
+//@Controller
 public class ServerWebSocketExchanger extends ServerNetworkExchanger {
 
     protected ServerWebSocketExchanger(){super();}
@@ -12,22 +13,22 @@ public class ServerWebSocketExchanger extends ServerNetworkExchanger {
         super(facade);
     }
 
-    @MessageMapping("/connect")
+  //  @MessageMapping("/connect")
     public void seConnecter(String pseudo){
         this.getFacade().seConnecter(pseudo);
     }
 
-    @MessageMapping("/deploy")
+  //  @MessageMapping("/deploy")
     public void deployerUnite(int nbUnit, String territoire){
         this.getFacade().deployerUnite(nbUnit, territoire);
     }
 
-    @MessageMapping("/move")
+  //  @MessageMapping("/move")
     public void deplacer(int nbUnit, String depart, String arrivee){
         this.getFacade().deplacer(nbUnit, depart, arrivee);
     }
 
-    @MessageMapping("/end")
+   // @MessageMapping("/end")
     public void finirTour(String pseudo){
         this.getFacade().finirTour(pseudo);
     }

@@ -1,28 +1,30 @@
-<div style="text-align:center">
-  <h1>
-    {{title}}!
-  </h1>
-  <div class="game-lobby-container">
-    <div class="game-lobby">
-      <div class="message"></div>
-    </div>
+<h1>
+  {{title}}!
+</h1>
+
+
+
+<label for="input_connect">WebSocket connection:</label>
+<input  id="input_connect" type="text" #input_connect>
+<br>
+<button id="connect" class="btn btn-default" type="button" (click)="connect(input_connect.value)">Connect</button>
+
+
+
+<br>
+
+<div class="game-lobby-container">
+  <div class="game-lobby">
+    <div class="message"></div>
   </div>
 </div>
+
+<br>
 
 <div class="footer">
-  <div class="send-button">
-
-    <div class="send" (click)="sendMessage(input.value)">
-    </div>
-    <input  id="input" type="text" #input>
-  </div>
+  <input  id="input_message" type="text" #input_message>
+  <button id="send" class="btn btn-default send" type="button" (click)="sendMessage(input_message.value)"></button>
 </div>
 
-<form class="form-inline">
-  <div class="form-group">
-    <label for="connect">WebSocket connection:</label>
-     <button id="connect" class="btn btn-default" type="submit">Connect</button>
-    </div>
-  </form>
 
 

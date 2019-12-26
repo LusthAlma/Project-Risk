@@ -30,17 +30,17 @@ init(){
         });
       });
     }
-  
+
     sendMessage(message){
       this.stompClient.send("/app/send/message" , {}, message);
       $('#input').val('');
     }
 
-    connect(){
-      this.stompClient.send("/app/connect", {})
+    connect(connect){
+      this.stompClient.send("/app/connect", {}, connect);
     }
 
-    
+
 
 }
 
