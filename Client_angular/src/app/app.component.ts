@@ -42,6 +42,10 @@ init(){
 
     }
 
+    readyToStart(){
+      this.stompClient.send("/app/ready", {})
+    }
+
 
 
     

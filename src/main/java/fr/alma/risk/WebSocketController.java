@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 import javax.jws.soap.SOAPBinding;
+import java.awt.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,18 +28,20 @@ import java.util.logging.Logger;
 @RequestMapping(path="/app")
 public class WebSocketController {
     @Autowired
-    private ContinentRepository ContinentRepository;
+    private ContinentRepository continentRepository;
     @Autowired
-    private TerritoireRepository TerritoireRepository;
+    private TerritoireRepository territoireRepository;
     @Autowired
-    private MissionRepository MissionRepository;
+    private MissionRepository missionRepository;
     @Autowired
     private final SimpMessagingTemplate template;
 
-    private static List<String> ColorsList = new ArrayList<String>(Arrays.asList("jaune", "rouge", "bleues", "noires", "violettes", "vertes"));
+    private static List<Color> colorsList = new ArrayList<>(Arrays.asList(Color.yellow, Color.red, Color.blue, Color.black, Color.pink, Color.green));
 
 
-    private List<Joueur> Users = new ArrayList<>();
+    private List<Joueur> users = new ArrayList<>();
+
+    private List<String> check = new ArrayList<>();
 
     @Autowired
     WebSocketController(SimpMessagingTemplate template) {
@@ -54,11 +57,47 @@ public class WebSocketController {
         this.template.convertAndSend("/game-lobby", new SimpleDateFormat("HH:mm:ss").format(new Date()) + message);
     }
 
+    @MessageMapping("/ready")
+    public void readyToStart(@Header("simpSessionId") String sessionId){
+        if(!check.contains(sessionId)){
+            check.add(sessionId);
+            template.convertAndSend("/game-lobby", "le joueur " + check.size() + " est prêt");
+        }
+        LOGGER.info("vous êtes déjà prêt");
+    }
+
     @MessageMapping("/connect")
-    public void connectToGame(String message) {
-        LOGGER.info("The user " + message + "is now connected");
-        Joueur j = new Joueur(ColorsList.get(Users.size()), message);
-        template.convertAndSend("/game-lobby", new SimpleDateFormat("HH:mm:ss").format(new Date()) + "Le joueur " + message + " rentre en jeu avec la couleur " + ColorsList.get(Users.size()));
+    public void connectToGame(@Header("simpSessionId") String sessionId, String message) {
+        boolean ready = false;
+        if(users.size() < 6) {
+            LOGGER.info("The user " + message + "is now connected");
+            Joueur j = new Joueur(message, colorsList.get(users.size()), sessionId);
+
+            template.convertAndSend("/game-lobby", new SimpleDateFormat("HH:mm:ss").format(new Date()) + "Le joueur " + message + " rentre en jeu avec la couleur " + colorsList.get(users.size()).toString());
+            users.add(j);
+        }
+        else
+            template.convertAndSend("/game-lobby", "Le lobby est plein");
+
+        while(!ready){
+            try {
+                Thread.sleep(1000);
+            }
+            catch (InterruptedException interupt){}
+            if (users.size() == 6 || (users.size()>= 2 && check.size() == users.size())){
+                ready=true;
+            }
+
+        }
+
+        template.convertAndSend("/game-lobby", "La partie va commencer");
+        /* Jeu.start() */
+        users.clear();
+        check.clear();
+
+
+
+
 
 
     }

@@ -13,6 +13,8 @@ import fr.alma.risk.exception.ExceptionUniteHasNoTerritory;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.awt.*;
+
 
 public class UniteTest {
 
@@ -24,7 +26,7 @@ public class UniteTest {
 
     @Before
     public void setup(){
-        joueurNamedTest = new Joueur("Test", "12345");
+        joueurNamedTest = new Joueur("Test", Color.black,"12345");
         uniteSimpleWithJoueurNamedTest1 = new UniteSimple(joueurNamedTest);
         uniteSimpleWithJoueurNamedTest2 = new UniteSimple(joueurNamedTest);
 
