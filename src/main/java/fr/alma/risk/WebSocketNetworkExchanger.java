@@ -1,12 +1,12 @@
 package fr.alma.risk;
 
-public class ServerNetworkExchanger implements NetworkExchanger {
+public class WebSocketNetworkExchanger implements NetworkExchanger {
 
     private ServerFacade facade;
 
-    protected ServerNetworkExchanger(){}
+    protected WebSocketNetworkExchanger(){}
 
-    public ServerNetworkExchanger(ServerFacade facade) {
+    public WebSocketNetworkExchanger(ServerFacade facade) {
         this.facade = facade;
     }
 

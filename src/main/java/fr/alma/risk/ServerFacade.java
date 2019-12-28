@@ -1,6 +1,10 @@
 package fr.alma.risk;
 
-public class ServerFacade implements Facade {
+import java.util.Set;
+
+public class ServerFacade {
+
+    private Set<Partie> parties;
 
     public ServerFacade(){
 
