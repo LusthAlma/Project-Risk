@@ -1,0 +1,59 @@
+=== Modifications
+
+[cols=",,",options="header",]
+|===
+|Date |Auteur |Description
+| 28/12/19 | Roy Kévin | Creation du Use Case
+
+|===
+
+*Use Case:* Déploiement d'une unité.
+
+*Id*: UC-1.5.1
+
+*Description* 
+
+Un Joueur a décidé de placer une unité sur un territoire, celle-ci est donc placée.
+
+*Niveau:* 
+
+*Acteur Principal*
+
+Le joueur qui place l'unité.
+
+*Acteurs Secondaires*
+
+Aucun.
+
+*Pre-Conditions*
+
+Le joueur doit encore avoir au moins une unité a placer.
+
+*Post-Conditions*
+
+[.underline]#Condition de fin avec succès#
+
+L'unité a bien été placéé sur le territoire, de plus le joueur a une unité de moins a placer.
+
+
+[.underline]#Condition de fin avec échec#
+
+Le territoire n'as pas l'unité de placé.
+Le nombre d'unité a placer du joueur n'a pas été décrémenté.
+
+*Déclenchement*
+
+Début de la partie : Fin du Use Case Donner territoires ( UC 1.4). Durant deploiment des unités. ( UC 1.5).
+
+
+== Scénario principal de succès
+
+[arabic]
+. Un Joueur i place une unité u sur un territoire t.
+. Le joueur i a une unité de moins a placer.
+
+
+
+
+
+
