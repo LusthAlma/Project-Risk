@@ -51,23 +51,7 @@ Description du comportement de chaque opération.
 Spécification éventuelle des pré-conditions en OCL.
 ////
 
-[plantuml, interface-gameserver-a, png]
-----
-@startuml
-
-left to right direction
-
-Component WebClient
-Component GameServer
-
-seConnecter -- GameServer
-WebClient ..> seConnecter
-
-deployerUnite -- GameServer
-WebClient ..> deployerUnite
-
-@enduml
-----
+image:gameserver_init.png[]
 
 Cette interface doit permettre l'initialisation d'une partie côté serveur.
 
@@ -77,29 +61,7 @@ L'opération deployerUnite() est appelée par un client à l'issu de la distribu
 
 ==== Spécification de l'interface B - Jouer un tour
 
-[plantuml, interface-gameserver-b, png]
-----
-@startuml
-
-left to right direction
-
-Component WebClient
-Component GameServer
-
-placerRenforts -- GameServer
-WebClient ..> placerRenforts
-
-attaquer -- GameServer
-WebClient ..> attaquer
-
-deplacer -- GameServer
-WebClient ..> deplacer
-
-finirTour -- GameServer
-WebClient ..> finirTour
-
-@enduml
-----
+image:gameserver_play.png[]
 
 Cette interface permet aux joueurs le calcul et la prise en compte des actions qu'ils ont entreprises.
 
@@ -129,30 +91,7 @@ jour transmises par le serveur.
 
 ==== Spécification de l'interface A - Initialisation de la partie
 
-
-[plantuml, interface-webclient-a, png]
-----
-@startuml
-
-left to right direction
-
-Component WebClient
-Component GameServer
-
-attribuerCouleur -- WebClient
-GameServer ..> attribuerCouleur
-
-attribuerMission -- WebClient
-GameServer ..> attribuerMission
-
-attribuerTerritoire -- WebClient
-GameServer ..> attribuerTerritoire
-
-attribuerUnite -- WebClient
-GameServer ..> attribuerUnite
-
-@enduml
-----
+image:webclient_init.png[]
 
 Cette interface doit permettre l'initialisation d'une partie côté client.
 
@@ -169,29 +108,7 @@ La méthode attribuerUnite() lui permettra donc de récupérer ses unités afin 
 
 ==== Spécification de l'interface B - Jouer un tour
 
-[plantuml, interface-webclient-b, png]
-----
-@startuml
-
-left to right direction
-
-Component WebClient
-Component GameServer
-
-debuterTour -- WebClient
-GameServer ..> debuterTour
-
-donnerRenforts -- WebClient
-GameServer ..> donnerRenforts
-
-resultatCombat -- WebClient
-GameServer ..> resultatCombat
-
-mettreAJour -- WebClient
-GameServer ..> mettreAJour
-
-@enduml
-----
+image:webclient_play.png[]
 
 Cette interface devra permettre au serveur de gérer les décisions du joueur en prenant en compte ses actions, et en les communiquant aux autres joueurs.
 
@@ -199,9 +116,12 @@ La méthode debuterTour() sera appelée afin de déclencher le début du tour de
 
 La méthode donnerRenforts() distribuera les renforts au joueur courant au début de son tour.
 
-La méthode resultatCombat() permettra de calculer les résultats d'un combat en fonction des décosions des joueurs.
+La méthode resultatCombat() permettra de calculer les résultats d'un combat en fonction des décisions des joueurs.
 
 La méthode mettreAJour() permettra de mettre le plateau à jour afin de communiquer les changements du plateau a tout le monde.
+
+La méthode forcerFinirTour() sera appelée lorsq'un joueur aura mis trop de temps à jouer, son tour sera alors automatiquement passé et un autre 
+joueur pourra commencer son tour.
 
 == Interactions
 
@@ -215,8 +135,7 @@ Utiliser des interactions, c'est à dire, des diagrammes de séquence et des dia
 
 ==== Interaction: cas nominal
 
-image::../_chapters/images/SequenceInitialisation.png[]
-
+image:SequenceInitialisation.png[]
 
 ==== Interaction: cas A
 
@@ -226,9 +145,12 @@ image::../_chapters/images/SequenceInitialisation.png[]
 
 ==== Interaction: cas nominal
 
-image::../_chapters/images/SequenceJouerTour.png[]
+image:SequenceJouerTour.png[]
 
+==== Interaction: cas de crash du serveur
 
-==== Interaction: cas A
+image:SequenceCrashServeur.png[]
 
-==== Interaction: cas B
+==== Interaction: cas de timeout d'un joueur
+
+image:SequencePlayerTookTooLong.png[]

@@ -78,7 +78,7 @@ include::use-case-deploiement-unites.adoc[leveloffset=+2]
 
 ==== Déploiement d'une unité
 include::use-case-deploiement-unite-seule.adoc[leveloffset=+2]
-//no snapshot needed
+//TO DO
 
 ''''
 
@@ -145,3 +145,7 @@ include::terms.adoc[]
 
 == Conclusion
 
+En définitive, il est assez simple de distinguer les éléments composant le jeu à l'aide des règles. 
+Les interactions peuvent être séparées en deux groupes : celles ayant pour but l'initialisation de la partie et celles faisant partie intégrante de la partie. 
+Leur complexité se cache dans le fait que certaines d'entres elles ne s'effectuent pas forcément de manière linéaire, elles peuvent 
+être répétées et/ou effectuées dans un ordre quelconque.
