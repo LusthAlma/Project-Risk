@@ -1,19 +1,24 @@
 package fr.alma.risk;
 
+import fr.alma.risk.datageneration.DataGeneration;
+import fr.alma.risk.datageneration.GeneratedData;
+import fr.alma.risk.datatypes.map.Continent;
+import fr.alma.risk.datatypes.map.Territoire;
+import fr.alma.risk.datatypes.mission.Mission;
 import fr.alma.risk.datatypes.player.Joueur;
+import fr.alma.risk.exception.ExceptionNegativeRenforts;
+import fr.alma.risk.exception.ExceptionTerritoireStillHavePossesseur;
 import fr.alma.risk.jpaclasses.accessingdatamysql.ContinentRepository;
 import fr.alma.risk.jpaclasses.accessingdatamysql.MissionRepository;
 import fr.alma.risk.jpaclasses.accessingdatamysql.TerritoireRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
-import javax.jws.soap.SOAPBinding;
 import java.awt.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -132,6 +137,84 @@ public class WebSocketController {
     public void initialisation(List<Joueur> joueurs){
         LOGGER.info("Initialisation de la partie");
         jeu = new Partie(1, joueurs);
+
+        LOGGER.info("Génération des données de base du Risk");
+        GeneratedData datas = DataGeneration.generate();
+        Set<Continent> continents = datas.getContinents();
+        Set<Territoire> territoires = datas.getTerritoires();
+        Set<Mission> missions = datas.getMissions();
+
+        LOGGER.info("Ajout des missions");
+        missionRepository.saveAll(missions);
+        LOGGER.info("Ajout des continents");
+        continentRepository.saveAll(continents);
+        LOGGER.info("Ajout des territoires");
+        territoireRepository.saveAll(territoires);
+
+
+        donnerMissionTousLesJoueurs();
+
+        donnerTerritoiresTousLesJoueurs();
+
+        donnerRenfortsDeBase();
+
+
+    }
+
+    private void donnerTerritoiresTousLesJoueurs() {
+        List<Territoire> territoireList = new ArrayList<>();
+        territoireRepository.findAll().forEach(territoire -> {
+            territoireList.add(territoire);
+        });
+        Collections.shuffle(territoireList);
+
+        int i=0;
+        while(territoireList.size()>0){
+            donnerTerritoireUnJoueur(territoireList.remove(0), users.get(i));
+            if(i<users.size()-1){
+                i++;
+            }else{
+                i=0;
+            }
+        }
+    }
+
+    private void donnerTerritoireUnJoueur(Territoire territoire, Joueur joueur) {
+        try {
+            joueur.ajouterTerritoire(territoire);
+        } catch (ExceptionTerritoireStillHavePossesseur exceptionTerritoireStillHavePossesseur) {
+            LOGGER.info("Le territoire "+ territoire.getNom()+" appartient déja à "+territoire.getPossesseur().getNom()+" et vient d'être attribué à "+ joueur.getNom());
+            exceptionTerritoireStillHavePossesseur.printStackTrace();
+        }
+    }
+
+    private void donnerRenfortsDeBase() {
+        for (Joueur joueur:users) {
+            try {
+                joueur.ajouterRenforts((10-users.size())*5);
+            } catch (ExceptionNegativeRenforts exceptionNegativeRenforts) {
+                LOGGER.info("Problème initialisation des renforts, il y a plus de 9 joueurs, hors la limite est de 6 normalement.");
+                exceptionNegativeRenforts.printStackTrace();
+            }
+        }
+    }
+
+    private void donnerMissionTousLesJoueurs() {
+        List<Mission> missionsList = new ArrayList<>();
+        missionRepository.findAll().forEach(mission -> {
+            missionsList.add(mission);
+        });
+
+        Collections.shuffle(missionsList);
+        Mission givenMission;
+        for (Joueur joueur:users
+             ) {
+            donnerMissionUnJoueur(missionsList.remove(0), joueur);
+        }
+    }
+
+    private void donnerMissionUnJoueur(Mission mission, Joueur joueur) {
+        joueur.setMission(mission);
     }
 }
 

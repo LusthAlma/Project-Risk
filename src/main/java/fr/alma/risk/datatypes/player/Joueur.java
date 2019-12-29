@@ -50,6 +50,10 @@ public class Joueur {
         return mission;
     }
 
+    public void setMission(Mission mission) {
+        this.mission = mission;
+    }
+
     public int getRenfortsAPlacer() {
         return renfortsAPlacer;
     }
