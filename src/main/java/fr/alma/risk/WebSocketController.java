@@ -59,11 +59,29 @@ public class WebSocketController {
 
     @MessageMapping("/ready")
     public void readyToStart(@Header("simpSessionId") String sessionId){
-        if(!check.contains(sessionId)){
-            check.add(sessionId);
-            template.convertAndSend("/game-lobby", "le joueur " + check.size() + " est prêt");
+        boolean isConnected=false;
+        Joueur currentPlayer = null;
+        int playerIndex=-1;
+
+        for(int i=0;i<users.size();i++){
+            if(users.get(i).getSessionId()==sessionId){
+                isConnected = true;
+                currentPlayer = users.get(i);
+                playerIndex = i;
+            }
         }
-        LOGGER.info("vous êtes déjà prêt");
+        if(isConnected){
+            if(!check.contains(sessionId)){
+                check.add(sessionId);
+                template.convertAndSend("/game-lobby", "le joueur " + (playerIndex+1) + " est prêt");
+            }else{
+                LOGGER.info(currentPlayer.getNom() +"est déjà prêt");
+            }
+        }else{
+            LOGGER.info("Vous devez être connecté pour pouvoir être prêt.");
+        }
+
+
     }
 
     @MessageMapping("/connect")
