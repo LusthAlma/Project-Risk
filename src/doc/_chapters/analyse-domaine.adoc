@@ -77,8 +77,8 @@ include::use-case-deploiement-unites.adoc[leveloffset=+2]
 ''''
 
 ==== Déploiement d'une unité
-include::use-case-deploiement-unite-seule.adoc[leveloffset=+2]
-//TO DO
+include::use-case-deploiement-unite.adoc[leveloffset=+2]
+//fait
 
 ''''
 
