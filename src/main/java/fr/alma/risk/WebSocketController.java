@@ -7,6 +7,7 @@ import fr.alma.risk.datatypes.map.Territoire;
 import fr.alma.risk.datatypes.mission.Mission;
 import fr.alma.risk.datatypes.player.Joueur;
 import fr.alma.risk.exception.ExceptionNegativeRenforts;
+import fr.alma.risk.exception.ExceptionTerritoireStillHavePossesseur;
 import fr.alma.risk.jpaclasses.accessingdatamysql.ContinentRepository;
 import fr.alma.risk.jpaclasses.accessingdatamysql.MissionRepository;
 import fr.alma.risk.jpaclasses.accessingdatamysql.TerritoireRepository;
@@ -152,9 +153,39 @@ public class WebSocketController {
 
 
         donnerMissionTousLesJoueurs();
+
+        donnerTerritoiresTousLesJoueurs();
+
         donnerRenfortsDeBase();
 
 
+    }
+
+    private void donnerTerritoiresTousLesJoueurs() {
+        List<Territoire> territoireList = new ArrayList<>();
+        territoireRepository.findAll().forEach(territoire -> {
+            territoireList.add(territoire);
+        });
+        Collections.shuffle(territoireList);
+
+        int i=0;
+        while(territoireList.size()>0){
+            donnerTerritoireUnJoueur(territoireList.remove(0), users.get(i));
+            if(i<users.size()-1){
+                i++;
+            }else{
+                i=0;
+            }
+        }
+    }
+
+    private void donnerTerritoireUnJoueur(Territoire territoire, Joueur joueur) {
+        try {
+            joueur.ajouterTerritoire(territoire);
+        } catch (ExceptionTerritoireStillHavePossesseur exceptionTerritoireStillHavePossesseur) {
+            LOGGER.info("Le territoire "+ territoire.getNom()+" appartient déja à "+territoire.getPossesseur().getNom()+" et vient d'être attribué à "+ joueur.getNom());
+            exceptionTerritoireStillHavePossesseur.printStackTrace();
+        }
     }
 
     private void donnerRenfortsDeBase() {
