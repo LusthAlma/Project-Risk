@@ -24,7 +24,7 @@ public class ContinentController {
 
 
     @GetMapping(path="/allContinent")
-    public @ResponseBody Iterable<Continent> getAllMissions() {
+    public @ResponseBody Iterable<Continent> getAllContinents() {
         return continentRepository.findAll();
     }
 }

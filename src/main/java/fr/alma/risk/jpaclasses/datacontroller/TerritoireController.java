@@ -23,7 +23,7 @@ public class TerritoireController {
 
 
     @GetMapping(path="/allTerritoire")
-    public @ResponseBody Iterable<Territoire> getAllMissions() {
+    public @ResponseBody Iterable<Territoire> getAllTerritoires() {
         return territoireRepository.findAll();
     }
 }

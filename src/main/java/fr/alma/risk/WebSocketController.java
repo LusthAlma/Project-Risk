@@ -16,9 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.jws.soap.SOAPBinding;
 import java.awt.*;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
+import java.util.*;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -36,10 +34,13 @@ public class WebSocketController {
     @Autowired
     private final SimpMessagingTemplate template;
 
+    private static Map<Color,String> colorMap = new HashMap<>();
+
     private static List<Color> colorsList = new ArrayList<>(Arrays.asList(Color.yellow, Color.red, Color.blue, Color.black, Color.pink, Color.green));
 
-
     private List<Joueur> users = new ArrayList<>();
+
+    private Map<String, Joueur> usersMap = new HashMap<>();
 
     private List<String> check = new ArrayList<>();
 
@@ -49,6 +50,7 @@ public class WebSocketController {
     }
 
     private static final Logger LOGGER = Logger.getLogger(WebSocketController.class.getName());
+
 
 
     @MessageMapping("/send/message")
@@ -86,16 +88,18 @@ public class WebSocketController {
 
     @MessageMapping("/connect")
     public void connectToGame(@Header("simpSessionId") String sessionId, String message) {
+        initializeColors();
         boolean ready = false;
-        if(users.size() < 6) {
+        if(users.size() < 6 && !usersMap.containsKey(sessionId)) {
             LOGGER.info("The user " + message + "is now connected");
             Joueur j = new Joueur(message, colorsList.get(users.size()), sessionId);
+            usersMap.put(sessionId,j);
 
-            template.convertAndSend("/game-lobby", new SimpleDateFormat("HH:mm:ss").format(new Date()) + "Le joueur " + message + " rentre en jeu avec la couleur " + colorsList.get(users.size()).toString());
+            template.convertAndSend("/game-lobby", new SimpleDateFormat("HH:mm:ss").format(new Date()) + "Le joueur " + message + " rentre en jeu avec la couleur " + colorMap.get(colorsList.get(users.size())));
             users.add(j);
         }
         else
-            template.convertAndSend("/game-lobby", "Le lobby est plein");
+            template.convertAndSend("/game-lobby", "Le lobby est plein ou vous etes deja connecte");
 
         while(!ready){
             try {
@@ -114,9 +118,15 @@ public class WebSocketController {
         check.clear();
 
 
+    }
 
-
-
+    public void initializeColors(){
+        colorMap.put(Color.yellow,"Jaune");
+        colorMap.put(Color.red,"Rouge");
+        colorMap.put(Color.black,"Noire");
+        colorMap.put(Color.blue,"Bleu");
+        colorMap.put(Color.green,"Verte");
+        colorMap.put(Color.pink,"Rose");
 
     }
 }
