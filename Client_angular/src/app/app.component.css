@@ -13,10 +13,9 @@
 .footer{
   background: #cccccc;
   margin: 0 auto;
-  position: absolute;
+  position: sticky;
   bottom: 0;
-  height: 10vh;
-  width: 100vw;
+    width: 100vw;
 }
 .send-button{
   margin: 0 auto;
@@ -24,18 +23,46 @@
   width: 50%;
 }
 input{
-  float: right;
-  height: 30px;
-  border-radius: 15px;
-  font-size: 1.5em;
+  height: 20px;
+  border-radius: 10px;
 }
 .send{
-  float: right;
   background: url("../assets/images/send.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 30px;
-  width: 30px;
-  margin-left: 5px;
+  margin:10px;
+  vertical-align:middle;
+  background-size:contain;
+  background-repeat:no-repeat;
+  height:30px;
+  width:30px;
+}
+
+#connect{
+  display:inline-block;
+}
+
+#ready{
+  font-size:18px;
+  margin:1%;
+}
+
+
+.btn{
+  font-size:16px;
+  border-radius:5px;
+  border-width: thin;
+  margin-left:5px;
+    margin-right:5px;
 
 }
+
+#input_message{
+  width:80%;
+  height:30px;
+  margin:10px;
+}
+
+body{
+margin:0;
+}
+
+

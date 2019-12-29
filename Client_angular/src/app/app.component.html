@@ -8,14 +8,12 @@
     <div class="col-md-6">
         <form class="form-inline">
             <div class="form-group">
-              <label for="input_connect"> Pseudo :</label>
+              <label for="input_connect"> Pseudo : </label>
               <input  id="input_connect" type="text" #input_connect>
-              <br>
               <button id="connect" class="btn btn-default" type="button" (click)="connect(input_connect.value)">Connect</button>
+              <button id="disconnect" class="btn btn-default" type="button" (click)="disconnect()">Disconnect</button>
               <br>
-              <button id="Ready" class="btn btn-default" type="button" (click)="readyToStart()">Ready</button>
-              <br>
-              <button id="Disconnect" class="btn btn-default" type="button" (click)="disconnect()">Disconnect</button>
+              <button id="ready" class="btn btn-default" type="button" (click)="readyToStart()">Ready</button>
             </div>
           </form>
       </div>
