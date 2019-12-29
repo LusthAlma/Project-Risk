@@ -3,15 +3,17 @@ package fr.alma.risk;
 import fr.alma.risk.datatypes.Plateau;
 import fr.alma.risk.datatypes.player.Joueur;
 
+import java.util.List;
 import java.util.Set;
 
 public class Partie {
 
     private int id;
-    private Set<Joueur> joueurs;
+    private List<Joueur> joueurs;
     private Plateau plateau;
 
-    public Partie(int id) {
+    public Partie(int id, List<Joueur> joueurs) {
+        this.joueurs=joueurs;
         this.id = id;
     }
 
@@ -19,7 +21,7 @@ public class Partie {
         return id;
     }
 
-    public Set<Joueur> getJoueurs() {
+    public List<Joueur> getJoueurs() {
         return joueurs;
     }
 

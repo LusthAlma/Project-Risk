@@ -42,6 +42,14 @@ init(){
 
     }
 
+    disconnect(){
+      if(this.stompClient != null){
+        this.stompClient.disconnect();
+      }
+      console.log("Disconnected from websocket connection")
+
+    }
+
     readyToStart(){
       this.stompClient.send("/app/ready", {})
     }

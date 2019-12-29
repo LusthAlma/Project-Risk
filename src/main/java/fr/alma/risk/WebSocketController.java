@@ -51,6 +51,8 @@ public class WebSocketController {
 
     private static final Logger LOGGER = Logger.getLogger(WebSocketController.class.getName());
 
+    private static Partie jeu;
+
 
 
     @MessageMapping("/send/message")
@@ -62,25 +64,20 @@ public class WebSocketController {
     @MessageMapping("/ready")
     public void readyToStart(@Header("simpSessionId") String sessionId){
         boolean isConnected=false;
-        Joueur currentPlayer = null;
-        int playerIndex=-1;
-
-        for(int i=0;i<users.size();i++){
-            if(users.get(i).getSessionId()==sessionId){
-                isConnected = true;
-                currentPlayer = users.get(i);
-                playerIndex = i;
-            }
+        if(usersMap.containsKey(sessionId)){
+            isConnected=true;
         }
+
         if(isConnected){
+            String currentPlayer = usersMap.get(sessionId).getNom();
             if(!check.contains(sessionId)){
                 check.add(sessionId);
-                template.convertAndSend("/game-lobby", "le joueur " + (playerIndex+1) + " est prêt");
+                template.convertAndSend("/game-lobby",  currentPlayer + " est pret");
             }else{
-                LOGGER.info(currentPlayer.getNom() +"est déjà prêt");
+                LOGGER.info(currentPlayer + "est déjà pret");
             }
         }else{
-            LOGGER.info("Vous devez être connecté pour pouvoir être prêt.");
+            LOGGER.info("Vous devez etre connecté pour pouvoir etre pret.");
         }
 
 
@@ -114,8 +111,10 @@ public class WebSocketController {
 
         template.convertAndSend("/game-lobby", "La partie va commencer");
         /* Jeu.start() */
+        List<Joueur> temp = new ArrayList<>(users);
         users.clear();
         check.clear();
+        initialisation(temp);
 
 
     }
@@ -128,6 +127,11 @@ public class WebSocketController {
         colorMap.put(Color.green,"Verte");
         colorMap.put(Color.pink,"Rose");
 
+    }
+
+    public void initialisation(List<Joueur> joueurs){
+        LOGGER.info("Initialisation de la partie");
+        jeu = new Partie(1, joueurs);
     }
 }
 

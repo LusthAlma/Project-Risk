@@ -4,16 +4,22 @@
     {{title}}!
   </h1>
   
-  
-  
-  <label for="input_connect">WebSocket connection:</label>
-  <input  id="input_connect" type="text" #input_connect>
-  <br>
-  <button id="connect" class="btn btn-default" type="button" (click)="connect(input_connect.value)">Connect</button>
-  
-  <br>
-
-  <button id="Ready" class="btn btn-default" type="button" (click)="readyToStart()">Ready</button>
+  <div class="row">
+    <div class="col-md-6">
+        <form class="form-inline">
+            <div class="form-group">
+              <label for="input_connect"> Pseudo :</label>
+              <input  id="input_connect" type="text" #input_connect>
+              <br>
+              <button id="connect" class="btn btn-default" type="button" (click)="connect(input_connect.value)">Connect</button>
+              <br>
+              <button id="Ready" class="btn btn-default" type="button" (click)="readyToStart()">Ready</button>
+              <br>
+              <button id="Disconnect" class="btn btn-default" type="button" (click)="disconnect()">Disconnect</button>
+            </div>
+          </form>
+      </div>
+    </div>
   
   <div class="game-lobby-container">
     <div class="game-lobby">
