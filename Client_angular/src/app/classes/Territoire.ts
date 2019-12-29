@@ -1,19 +1,31 @@
 export class Territoire {
-  nom: string;
-  possesseur: string;
-  nbUnites: number;
+  private nom: string;
+  private possesseur: string;
+  private nbUnites: number;
 
-  constructor(nom:string) {
+  public constructor(nom:string) {
     this.nom=nom;
     this.possesseur=null;
     this.nbUnites=0;
   }
 
-  setNbUnite(nb:number):void {
+  public getNom(): string {
+    return this.nom;
+  }
+
+  public getPossesseur(): string {
+    return this.possesseur;
+  }
+
+  public getNbUnites(): number {
+    return this.nbUnites;
+  }
+
+  public setNbUnites(nb:number):void {
     this.nbUnites=nb;
   }
 
-  setPossesseur(nouv:string) {
+  public setPossesseur(nouv:string) {
     this.possesseur=nouv;
   }
 }

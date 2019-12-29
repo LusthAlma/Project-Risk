@@ -2,14 +2,14 @@ import { Territoire } from './Territoire';
 
 export class Joueur {
 
-        nom: string;
-        couleur: string;
-        mission: string;
-        tourEnCours: boolean;
-        renfortsAPlacer: number;
-        territoiresPossedes: Set<Territoire>;
+        private nom: string;
+        private couleur: string;
+        private mission: string;
+        private tourEnCours: boolean;
+        private renfortsAPlacer: number;
+        private territoiresPossedes: Set<Territoire>;
 
-        constructor(nom: string, couleur:string, mission: string, unitesDeBase: number, territoiresDeBase: Set<Territoire>) {
+        public constructor(nom: string, couleur:string, mission: string, unitesDeBase: number, territoiresDeBase: Set<Territoire>) {
                 this.nom=nom;
                 this.couleur=couleur;
                 this.mission=mission;
@@ -18,24 +18,32 @@ export class Joueur {
                 this.territoiresPossedes=territoiresDeBase;
         }
 
-        ajoutTerritoire(terr: Territoire):void {
+        public getNom(): string {
+                return this.nom;
+        }
+
+        public getRenforts(): number {
+                return this.renfortsAPlacer;
+        }
+
+        public ajoutTerritoire(terr: Territoire):void {
                 this.territoiresPossedes.add(terr);
                 terr.setPossesseur(this.nom);
         }
 
-        enleveTerritoire(terr:Territoire):void {
+        public enleveTerritoire(terr:Territoire):void {
                 this.territoiresPossedes.delete(terr);
         }
 
-        debuterTour():void {
+        public debuterTour():void {
                 this.tourEnCours=true;
         }
 
-        finirTour():void {
+        public finirTour():void {
                 this.tourEnCours=false;
         }
 
-        donnerRenforts(renforts: number) {
+        public donnerRenforts(renforts: number) {
                 this.renfortsAPlacer+=renforts;
         }
 

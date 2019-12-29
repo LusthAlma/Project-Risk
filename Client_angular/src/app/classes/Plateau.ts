@@ -2,17 +2,17 @@ import { Territoire } from './Territoire';
 
 export class Plateau {
 
-  carte: Set<Territoire>;
+  private carte: Set<Territoire>;
 
-  constructor(initPlateau:Set<Territoire>) {
+  public constructor(initPlateau:Set<Territoire>) {
     this.carte=initPlateau;
   }
 
-  mettreAJour(nouvPlateau: Set<Territoire>):void {
+  public mettreAJour(nouvPlateau: Set<Territoire>):void {
     //Replace the elements in the carte attribute
     this.carte.forEach(function(carteValue){
       nouvPlateau.forEach(function(nouvValue){
-        if (carteValue.nom=nouvValue.nom) {
+        if (carteValue.getNom()===nouvValue.getNom()) {
           this.carte.remove(carteValue);
           this.carte.add(nouvValue);
         }
