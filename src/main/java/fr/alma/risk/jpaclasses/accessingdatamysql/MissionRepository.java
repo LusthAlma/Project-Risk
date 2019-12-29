@@ -37,4 +37,18 @@ public interface MissionRepository extends CrudRepository<Mission, Integer> {
      */
     @Query(value = "SELECT * FROM missions WHERE dtype = 'MissionConqueteTerritoire'",nativeQuery = true)
     public List<MissionConqueteTerritoire> findMissionConqueteTerritoire();
+
+    /**
+     *
+     * @return
+     */
+    @Query(value = "SELECT * FROM missions WHERE id = :missionid",nativeQuery = true)
+    public Mission findMissionById(@Param("missionid") long id);
+
+    /**
+     * Requête permettant de retrouver le nombre de missions dans le repository
+     * @return le nombre de mission
+     */
+    @Query(value = "SELECT COUNT(*) FROM missions",nativeQuery = true)
+    public Integer nbMission();
 }

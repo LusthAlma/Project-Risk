@@ -109,6 +109,9 @@ public class AccessingDataMySqlApplication {
             missionRepository.findMissionConqueteTerritoire().forEach(missionConqueteTerritoire -> {
                 log.info(missionConqueteTerritoire.getObjectif());
             });
+
+
+            log.info(missionRepository.nbMission()+" missions");
         };
     }
 
