@@ -156,7 +156,7 @@ public class WebSocketController {
 
         donnerTerritoiresTousLesJoueurs();
 
-        donnerRenfortsDeBase();
+        donnerRenfortsAuxJoueurs();
 
 
     }
@@ -177,6 +177,7 @@ public class WebSocketController {
                 i=0;
             }
         }
+        template.convertAndSend("/game-lobby", "Les territoires ont été distribués aux joueurs");
     }
 
     private void donnerTerritoireUnJoueur(Territoire territoire, Joueur joueur) {
@@ -188,14 +189,19 @@ public class WebSocketController {
         }
     }
 
-    private void donnerRenfortsDeBase() {
+    private void donnerRenfortsAuxJoueurs() {
         for (Joueur joueur:users) {
-            try {
-                joueur.ajouterRenforts((10-users.size())*5);
-            } catch (ExceptionNegativeRenforts exceptionNegativeRenforts) {
-                LOGGER.info("Problème initialisation des renforts, il y a plus de 9 joueurs, hors la limite est de 6 normalement.");
-                exceptionNegativeRenforts.printStackTrace();
-            }
+            donnerRenfortUnJoueur(joueur);
+        }
+    }
+
+    private void donnerRenfortUnJoueur(Joueur joueur) {
+        try {
+            joueur.ajouterRenforts((10-users.size())*5);
+            template.convertAndSend("/game-lobby", "Le joueur "+joueur.getNom()+" a reçu ses " + (10-users.size())*5 +" renforts.");
+        } catch (ExceptionNegativeRenforts exceptionNegativeRenforts) {
+            LOGGER.info("Problème initialisation des renforts, il y a plus de 9 joueurs, hors la limite est de 6 normalement.");
+            exceptionNegativeRenforts.printStackTrace();
         }
     }
 
@@ -215,6 +221,7 @@ public class WebSocketController {
 
     private void donnerMissionUnJoueur(Mission mission, Joueur joueur) {
         joueur.setMission(mission);
+        template.convertAndSend("/game-lobby", "Le joueur "+joueur.getNom()+" a reçu sa mission");
     }
 }
 
