@@ -63,7 +63,7 @@ public class WebSocketController {
     @MessageMapping("/send/message")
     public void onReceivedMessage(String message) throws Exception {
         Thread.sleep(1000); // simulated delay
-        this.template.convertAndSend("/game-lobby", new SimpleDateFormat("HH:mm:ss").format(new Date()) + message);
+        this.template.convertAndSend("/game-lobby", new SimpleDateFormat("HH:mm:ss").format(new Date()) + "" + message);
     }
 
     @MessageMapping("/ready")
@@ -118,6 +118,7 @@ public class WebSocketController {
         /* Jeu.start() */
         List<Joueur> temp = new ArrayList<>(users);
         users.clear();
+        usersMap.clear();
         check.clear();
         initialisation(temp);
 
