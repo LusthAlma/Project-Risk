@@ -17,7 +17,7 @@
 
 Le jeu attribue à chaque joueur une couleur différente. Les unités et territoires de chaque joueur sont de couleur correspondante.
 
-*Niveau:* <Enter Use Case Goal Level here>
+*Niveau:* Fonction principale
 
 *Acteur Principal*
 
@@ -67,11 +67,4 @@ Attribution des couleurs dans une partie avec 3 joueurs.
 
 image:couleur-snap.png[]
 
-
-
-
-=== To do
-
-[arabic]
-. Trouver le niveau du use case.
 

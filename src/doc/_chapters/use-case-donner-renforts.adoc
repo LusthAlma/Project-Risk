@@ -16,7 +16,7 @@
 
 Un joueur débute son tour. Un nombre de nouvelles unités lui sont attribuées, suivant le total de territoires qu'il possède. Des unités supplémentaires sont attribuées si ce joueur possède tous les territoires d'un ou plusieurs continents. Le joueur doit placer ces unités sur les territoires qu'il contrôle de son choix avant de pouvoir effectuer une autre action.
 
-*Niveau:* 
+*Niveau:* Fonction principale
 
 *Acteur Principal*
 
@@ -97,8 +97,3 @@ Obtention de renforts par un joueur possédant uniquement 2 territoires.
 
 
 image:donner-renforts-snap.png[]
-
-=== To do
-
-[arabic]
-. Ajouter le level du use case.

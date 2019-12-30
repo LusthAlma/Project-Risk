@@ -4,7 +4,6 @@
 |===
 |Date |Auteur |Description
 | 28/12/19 | Roy Kévin | Creation du Use Case
-
 |===
 
 *Use Case:* Déploiement d'une unité.
@@ -15,7 +14,7 @@
 
 Un Joueur a décidé de placer une unité sur un territoire, celle-ci est donc placée.
 
-*Niveau:* 
+*Niveau:* Sous-fonction
 
 *Acteur Principal*
 

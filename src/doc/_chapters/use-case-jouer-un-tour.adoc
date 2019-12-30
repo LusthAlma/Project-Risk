@@ -15,7 +15,7 @@
 
 Un joueur joue son tour, il reçoit ses renforts pour gagner des unités, ensuite il peut se battre autant de fois qu'il le souhaite, puis il peut déplacer ses unités même s'il n'a pas combattu ce tour-ci.
 
-*Niveau:* 
+*Niveau:* Résumé
 
 *Acteur Principal*
 
@@ -46,6 +46,7 @@ Le joueur a obtenu ses renforts, il a pu combattre s'il le souhaitait, et a pu s
 
 *Déclenchement*
 
+Le jeu donne la main au joueur.
 
 == Scénario principal de succès
 
@@ -55,9 +56,5 @@ Le joueur a obtenu ses renforts, il a pu combattre s'il le souhaitait, et a pu s
 . Le Joueur décide de déplacer ses unités. (UC-2.3)
 . Le Joueur passe son tour. (UC-2.4)
 
-=== To do
 
-[arabic]
-. Ajouter le level du use case.
-. Mettre un trigger.
 
