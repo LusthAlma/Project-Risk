@@ -1,5 +1,7 @@
 = Project 2019: Risk
 
+par LENORMAND Tristan, LECOMTE Soline, ENET Josselin et ROY Kévin
+
 == Execution du programme
 
 === A installer :
