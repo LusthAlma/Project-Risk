@@ -46,5 +46,12 @@ public interface TerritoireRepository extends CrudRepository<Territoire, Integer
     @Query(value = "SELECT id,nom,continent_id FROM (SELECT voisin_id FROM (SELECT * FROM territoires WHERE id = :territoryid) AS t2 INNER JOIN voisins ON t2.id = voisins.territoire_id) AS t3 INNER JOIN territoires ON t3.voisin_id = territoires.id ",nativeQuery = true)
     public List<Territoire> findVoisins(@Param("territoryid") Long id);
 
+    /**
+     * Requête permettant de savoir le nombre de territoire
+     * @return renvoit le nombre de territoires
+     */
+    @Query(value = "SELECT COUNT(*) FROM territoires",nativeQuery = true)
+    public int nbTerritoire();
+
 
 }

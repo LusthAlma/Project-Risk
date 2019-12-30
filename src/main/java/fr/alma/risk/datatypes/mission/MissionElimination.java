@@ -17,7 +17,7 @@ public class MissionElimination extends Mission {
     protected MissionElimination() {}
 
     public MissionElimination(Color cible) {
-        super("Vous devez eliminer le joueur "+cible+" ou alors conquerir 25 territoire si le joueur n'est pas présent.");
+        super("Vous devez eliminer le joueur "+cible.toString()+" ou alors conquerir 25 territoire si le joueur n'est pas présent.");
         this.cible = cible;
     }
 

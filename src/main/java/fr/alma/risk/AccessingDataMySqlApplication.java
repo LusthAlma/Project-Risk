@@ -112,6 +112,8 @@ public class AccessingDataMySqlApplication {
 
 
             log.info(missionRepository.nbMission()+" missions");
+
+            log.info(territoireRepository.nbTerritoire()+" territoires");
         };
     }
 

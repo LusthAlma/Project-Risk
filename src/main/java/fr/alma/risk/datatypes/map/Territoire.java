@@ -94,4 +94,8 @@ public class Territoire {
     private boolean ajoutBasiqueVoisin(Territoire voisin){
         return this.voisins.add(voisin);
     }
+
+    public boolean hasPossesseur(){
+        return (this.possesseur!=null);
+    }
 }

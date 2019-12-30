@@ -51,7 +51,10 @@ public class WebSocketController {
 
     @Autowired
     WebSocketController(SimpMessagingTemplate template) {
+
         this.template = template;
+
+
     }
 
     private static final Logger LOGGER = Logger.getLogger(WebSocketController.class.getName());
@@ -108,7 +111,7 @@ public class WebSocketController {
                 Thread.sleep(1000);
             }
             catch (InterruptedException interupt){}
-            if (users.size() == 6 || (users.size()>= 2 && check.size() == users.size())){
+            if (users.size() == 6 || (users.size()>= 3 && check.size() == users.size())){
                 ready=true;
             }
 
@@ -153,29 +156,43 @@ public class WebSocketController {
         territoireRepository.saveAll(territoires);
 
 
-        donnerMissionTousLesJoueurs();
+        donnerMissionTousLesJoueurs(joueurs);
 
-        donnerTerritoiresTousLesJoueurs();
+        donnerTerritoiresTousLesJoueurs(joueurs);
 
-        donnerRenfortsAuxJoueurs();
+        donnerRenfortsAuxJoueurs(joueurs);
+
+        placerUniteChaqueTerritoire(joueurs);
 
 
     }
 
-    private void donnerTerritoiresTousLesJoueurs() {
+    private void placerUniteChaqueTerritoire(List<Joueur> joueurs) {
+        territoireRepository.findAll().forEach(territoire -> {
+            if(territoire.hasPossesseur()){
+                territoire.getPossesseur().placerRenfort(territoire);
+                LOGGER.info("Placement d'une unité de "+territoire.getPossesseur().getNom()+"sur le territoire "+territoire.getNom());
+            }
+        });
+        for (Joueur joueur:joueurs
+             ) {
+            template.convertAndSend("/game-lobby", "Il reste "+joueur.getRenfortsAPlacer()+"unités à placer pour le joueur "+joueur.getNom());
+        }
+    }
+
+    private void donnerTerritoiresTousLesJoueurs(List<Joueur> joueurs) {
         List<Territoire> territoireList = new ArrayList<>();
         territoireRepository.findAll().forEach(territoire -> {
             territoireList.add(territoire);
         });
         Collections.shuffle(territoireList);
 
-        int i=0;
         while(territoireList.size()>0){
-            donnerTerritoireUnJoueur(territoireList.remove(0), users.get(i));
-            if(i<users.size()-1){
-                i++;
-            }else{
-                i=0;
+            for (Joueur j:joueurs
+            ) {
+                if(territoireList.size()>0){
+                    donnerTerritoireUnJoueur(territoireList.remove(0),j);
+                }
             }
         }
         template.convertAndSend("/game-lobby", "Les territoires ont été distribués aux joueurs");
@@ -184,21 +201,22 @@ public class WebSocketController {
     private void donnerTerritoireUnJoueur(Territoire territoire, Joueur joueur) {
         try {
             joueur.ajouterTerritoire(territoire);
+            LOGGER.info("Le territoire "+ territoire.getNom()+" vient d'être attribué à "+joueur.getNom());
         } catch (ExceptionTerritoireStillHavePossesseur exceptionTerritoireStillHavePossesseur) {
             LOGGER.info("Le territoire "+ territoire.getNom()+" appartient déja à "+territoire.getPossesseur().getNom()+" et vient d'être attribué à "+ joueur.getNom());
             exceptionTerritoireStillHavePossesseur.printStackTrace();
         }
     }
 
-    private void donnerRenfortsAuxJoueurs() {
-        for (Joueur joueur:users) {
-            donnerRenfortUnJoueur(joueur);
+    private void donnerRenfortsAuxJoueurs(List<Joueur> joueurs) {
+        for (Joueur joueur:joueurs) {
+            donnerRenfortUnJoueur(joueur,joueurs);
         }
     }
 
-    private void donnerRenfortUnJoueur(Joueur joueur) {
+    private void donnerRenfortUnJoueur(Joueur joueur,List<Joueur> joueurs) {
         try {
-            joueur.ajouterRenforts((10-users.size())*5);
+            joueur.ajouterRenforts((10-joueurs.size())*5);
             template.convertAndSend("/game-lobby", "Le joueur "+joueur.getNom()+" a reçu ses " + (10-users.size())*5 +" renforts.");
         } catch (ExceptionNegativeRenforts exceptionNegativeRenforts) {
             LOGGER.info("Problème initialisation des renforts, il y a plus de 9 joueurs, hors la limite est de 6 normalement.");
@@ -206,7 +224,7 @@ public class WebSocketController {
         }
     }
 
-    private void donnerMissionTousLesJoueurs() {
+    private void donnerMissionTousLesJoueurs(List<Joueur> joueurs) {
         List<Mission> missionsList = new ArrayList<>();
         missionRepository.findAll().forEach(mission -> {
             missionsList.add(mission);
@@ -214,7 +232,7 @@ public class WebSocketController {
 
         Collections.shuffle(missionsList);
         Mission givenMission;
-        for (Joueur joueur:users
+        for (Joueur joueur:joueurs
              ) {
             donnerMissionUnJoueur(missionsList.remove(0), joueur);
         }
@@ -222,6 +240,7 @@ public class WebSocketController {
 
     private void donnerMissionUnJoueur(Mission mission, Joueur joueur) {
         joueur.setMission(mission);
+        LOGGER.info("Le joueur "+joueur.getNom()+" à pour objectif : "+mission.getObjectif());
         template.convertAndSend("/game-lobby", "Le joueur "+joueur.getNom()+" a reçu sa mission");
     }
 }

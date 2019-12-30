@@ -70,7 +70,7 @@ public abstract class Unite {
      * Regarde si l'unite est placé sur un territoire
      * @return renvoit vrai si elle a un territoire,sinon faux
      */
-    private boolean hasTerritoire(){
+    public boolean hasTerritoire(){
         return(this.territoire!=null);
     }
 
