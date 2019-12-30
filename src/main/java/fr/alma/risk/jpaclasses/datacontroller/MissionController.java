@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.*;
+
 @Controller
 @RequestMapping(path = "/mission")
 public class MissionController {
@@ -32,7 +34,7 @@ public class MissionController {
     }
 
     @PostMapping(path = "/addMissionElimination")
-    public @ResponseBody String addNewMissionElimination(@RequestParam String cible){
+    public @ResponseBody String addNewMissionElimination(@RequestParam Color cible){
         Mission newMission = new MissionElimination(cible);
         missionRepository.save(newMission);
         return "Mission d'élimination du joueur "+cible+", a été sauvegardé";

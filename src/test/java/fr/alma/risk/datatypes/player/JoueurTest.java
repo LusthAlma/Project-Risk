@@ -31,7 +31,7 @@ public class JoueurTest {
         joueurNamedTest = new Joueur("Test", Color.yellow, "12345");
         joueurNamedOther = new Joueur("Other",Color.red, "54321");
         territoireNamedTest = new Territoire("Test");
-        missionEliminationRouge = new MissionElimination("Rouge");
+        missionEliminationRouge = new MissionElimination(Color.RED);
         colorNoir = Color.BLACK;
 
     }

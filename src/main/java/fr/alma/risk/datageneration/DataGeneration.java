@@ -7,6 +7,7 @@ import fr.alma.risk.datatypes.mission.MissionConqueteContinent;
 import fr.alma.risk.datatypes.mission.MissionConqueteTerritoire;
 import fr.alma.risk.datatypes.mission.MissionElimination;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -308,12 +309,12 @@ public class DataGeneration {
 
 
         /*--------------------Mission Elimination--------------------*/
-        missions.add(new MissionElimination("Noir"));
-        missions.add(new MissionElimination("Bleu"));
-        missions.add(new MissionElimination("Rouge"));
-        missions.add(new MissionElimination("Vert"));
-        missions.add(new MissionElimination("Rose"));
-        missions.add(new MissionElimination("Jaune"));
+        missions.add(new MissionElimination(Color.BLACK));
+        missions.add(new MissionElimination(Color.BLUE));
+        missions.add(new MissionElimination(Color.RED));
+        missions.add(new MissionElimination(Color.GREEN));
+        missions.add(new MissionElimination(Color.PINK));
+        missions.add(new MissionElimination(Color.YELLOW));
 
         /*--------------------Mission Conquete Continent--------------------*/
         for(int i=0;i<continentList.size();i++){
