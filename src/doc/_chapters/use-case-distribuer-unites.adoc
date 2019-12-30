@@ -17,7 +17,7 @@
 
 Le jeu distribue des unités à chaque joueur.
 
-*Niveau:* 
+*Niveau:* Fonction principale
 
 *Acteur Principal*
 
@@ -75,11 +75,3 @@ Extension du step 1 :
 Distribution des unités dans une partie avec 3 joueurs.
 
 image:distribuer-unites-snap.png[]
-
-
-=== To do
-
-[arabic]
-
-Find possible Extensions/Variations/Special Requirements/Issues for this Use Case
-Gérer le level du UC

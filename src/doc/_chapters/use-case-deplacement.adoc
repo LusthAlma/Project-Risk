@@ -14,7 +14,7 @@
 
 Un joueur décide de déplacer certaines de ses unités depuis un de ses territoires vers un autre.
 
-*Niveau:* 
+*Niveau:* Fonction principale
 
 *Acteur principal*
 
@@ -65,93 +65,9 @@ Le joueur choisit certaines de ses unités qu'il souhaite déplacer.
 
 == Instantané
 
-Résultat d'un déplacement d'unités depuis le Congo vers l'Afrique du Nord.
+Résultat d'un déplacement d'unités depuis la Chine vers le Japon :
+
+image:deplacement-unites-snap.png[]
 
 
-[.underline]#Début:#
-[plantuml, deplacement-snap-start, png]
-----
-@startuml
-
-object joueur1 {
-        nom = "J1"
-        couleur = "vert"
-}
-
-Object unite1
-Object unite2
-Object unite3
-Object unite4
-
-Object terrDepart{
-        nom = "Congo"
-}
-
-Object terrArrivee {
-        nom = "Afrique du Nord"
-}
-
-joueur1 -- unite1 : controle
-joueur1 -- unite2 : controle
-joueur1 -- unite3 :controle
-joueur1 -- unite4 :controle
-
-
-unite1 -- terrDepart : estPositionnee
-unite2 -- terrDepart : estPositionnee
-unite3 -- terrDepart : estPositionnee
-unite4 -- terrArrivee : estPositionnee
-
-terrDepart -- terrArrivee : estVoisin
-
-@enduml
-----
-
-[.underline]#Fin:#
-[plantuml, deplacement-snap-end, png]
-----
-@startuml
-
-object joueur1 {
-        nom = "J1"
-        couleur = "vert"
-}
-
-Object unite1
-Object unite2
-Object unite3
-Object unite4
-
-Object terrDepart{
-        nom = "Congo"
-}
-
-Object terrArrivee {
-        nom = "Afrique du Nord"
-}
-
-joueur1 -- unite1 : controle
-joueur1 -- unite2 : controle
-joueur1 -- unite3 :controle
-joueur1 -- unite4 :controle
-
-
-unite1 -- terrDepart : estPositionnee
-unite2 -- terrArrivee : estPositionnee
-unite3 -- terrArrivee : estPositionnee
-unite4 -- terrArrivee : estPositionnee
-
-terrDepart -- terrArrivee : estVoisin
-
-@enduml
-----
-
-
-
-== Problèmes
-
-[arabic]
-
-1. Est-ce qu'on dit qu'on peut se déplacer vers un territoire adverse et dans ce cas on déclenche une attaque ou on sépare les deux?
-2. Où est-ce qu'on dit qu'on peut effectuer plusieurs déplacement dans un tour? Ici ou dans le UC joueur un tour? 
 
