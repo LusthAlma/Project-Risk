@@ -15,7 +15,7 @@
 
 Le jeu initialise la partie en mettant en place la préparation (Distribution des armées, Gestion des territoires, Distribution des missions, Placement des unités).
 
-*Niveau:* 
+*Niveau:* Résumé
 
 *Acteur Principal*
 
@@ -62,9 +62,4 @@ Les joueurs commandent le lancement d'une partie.
 
 
 *Fréquence:* Une fois par partie.
-
-=== To do
-
-[arabic]
-Gérer le level du UC
 

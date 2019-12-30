@@ -20,7 +20,7 @@ chaque joueur se retrouve donc avec une et une seule carte mission,
 le reste des cartes Mission est enlevé.
 
 
-*Niveau:* 
+*Niveau:* Fonction principale
 
 *Acteur Principal*
 
@@ -59,8 +59,4 @@ Initialisation
 . Le jeu répète l'instruction précédente pour tous les autres joueurs.
 . Le cas d'utilisation se termine si tous les joueurs ont reçu une mission différente.
 
-=== To do
-
-[arabic]
-. Ajouter le level du use case
 

@@ -14,7 +14,7 @@
 
 Le Joueur décide de terminer son tour, le jeu donne la main au joueur suivant.
 
-*Niveau :*
+*Niveau :* Fonction principale
 
 *Acteur principal*
 
@@ -54,11 +54,4 @@ Le joueur jouant son tour indique qu'il le termine.
 
 *Fréquence:* Une fois par tour, sauf si les conditions de victoire sont remplies, auquel cas la partie s'interrompt sans que le joueur passe son tour.
 
-
-[arabic]
-
-=== To do
-
-[arabic]
-. trouver le niveau du use case.
 

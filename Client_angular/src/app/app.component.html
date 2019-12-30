@@ -130,7 +130,7 @@
 
     
     <div class="col-md-3">
-      <div class="overflow-auto">
+      <div class="scroll">
         <div class="game-lobby">
           <div class="message"></div>
         </div>
@@ -142,9 +142,8 @@
         <div class="form-group">
           <label for="input_message">Messages</label>
           <input type="text" class="form-control" id="input_message" #input_message>
+          <button class="btn btn-primary" id="send" (click)="sendMessage(input_message.value)">Send</button>
         </div>
-        <br>
-        <button class="btn btn-primary" id="send" (click)="sendMessage(input_message.value)">Send</button>
       </form>
     </div>
   </div>

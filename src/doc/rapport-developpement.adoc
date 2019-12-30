@@ -44,6 +44,5 @@ include::{includedir}/conception-detaillee.adoc[leveloffset=+1]
 
 == Conclusion
 
-Points forts de votre projet
-
-Limites (points faibles) de votre projet
+La conception de notre projet nous parait cohérente avec les bonnes pratiques évoquées en cours : la structure de notre application semble relativement claire et le tout semble être maintenable et extensible sans difficulté majeure.
+Cependant, de par l'utilisation de nouveaux outils (Angular, Spring...) et une organisation au mieux hasardeuse, nous n'avons pas pu mener à son terme le développement du système. Même si cela avait été le cas, certains points auraient sans doute mérités quelques améliorations. Par exemple, il est probable qu'il y aurait eu des failles de sécurité, permettant à des clients d'effectuer des actions qui devraient normalement leur être interdites, comme interagir avec d'autres parties, etc...

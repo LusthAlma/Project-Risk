@@ -16,7 +16,7 @@
 
 Le Jeu donne une mission à un joueur.
 
-*Niveau:* 
+*Niveau:* Sous-fonction
 
 *Acteur Principal*
 
@@ -60,7 +60,3 @@ Donner Mission Tous Les Joueurs.
 
 image:donner-mission-unique-snap.png[]
 
-=== To do
-
-[arabic]
-. Ajouter le level du use case.

@@ -17,7 +17,7 @@
 Chaque joueur choisit de placer un nombre d'unités strictement supérieur à 1 sur chacun
 de ses territoires jusqu'à qu'il n'ait plus d'unités en sa possession.
 
-*Niveau:* 
+*Niveau:* Fonction principale
 
 *Acteur Principal*
 
