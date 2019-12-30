@@ -169,6 +169,10 @@ public class WebSocketController {
 
         placerUniteChaqueTerritoire(joueurs);
 
+        for(Joueur joueur: joueurs ){
+            template.convertAndSend("queue/reply_maj-user"+joueur.getSessionId(), joueur);
+        }
+
 
     }
 
@@ -253,6 +257,7 @@ public class WebSocketController {
         joueur.setMission(mission);
 
         LOGGER.info("Le joueur "+joueur.getNom()+" a pour objectif : "+mission.getObjectif());
+
         template.convertAndSend("/queue/reply-user" + joueur.getSessionId(),"Vous venez de recevoir votre  mission : " + mission.getObjectif());
 
     }

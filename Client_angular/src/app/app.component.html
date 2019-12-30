@@ -27,6 +27,34 @@
         <br>
         <button class ="btn btn-danger" id="disconnect" (click)="disconnect()">Disconnect</button>
 
+        <br>
+        <br>
+        <button class ="btn btn-secondary" id="placeUnits" (click)="placeUnits()">Place Units</button>
+
+        <br>
+        <br>
+        <button class ="btn btn-secondary" id="move" (click)="move()">Move Units</button>
+
+        <br>
+        <br>
+        <button class ="btn btn-secondary" id="attack" (click)="attack()">Attack Country</button>
+        <br>
+        <br>
+
+        <form class="form-inline">
+          <div class="form-group">
+            <input type="text" class="form-control" id="input_defend" #input_defend>
+            <label for="input_defend">Number to defend</label>
+          </div>
+          <br>
+          <button class ="btn btn-secondary" id="defense" (click)="defense()">Defend</button>
+        </form>
+        
+        <br>
+        <br>
+        <button class ="btn btn-secondary" id="endTurn" (click)="endTurn()">End Turn</button>
+
+
       </form>
       
     </div>

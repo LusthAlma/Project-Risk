@@ -9,13 +9,8 @@ export class Joueur {
         private renfortsAPlacer: number;
         private territoiresPossedes: Set<Territoire>;
 
-        public constructor(nom: string, couleur:string, mission: string, unitesDeBase: number, territoiresDeBase: Set<Territoire>) {
-                this.nom=nom;
-                this.couleur=couleur;
-                this.mission=mission;
-                this.tourEnCours=false;
-                this.renfortsAPlacer=unitesDeBase;
-                this.territoiresPossedes=territoiresDeBase;
+        public constructor() {
+             
         }
 
         public getNom(): string {

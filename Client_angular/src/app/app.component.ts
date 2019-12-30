@@ -18,9 +18,10 @@ export class AppComponent {
   private client: Joueur;
   private plateau: Plateau;
   text: string;
-  text2: string;
+  
 
   constructor(){
+      this.client=new Joueur();
       this.init();
 }
 
@@ -35,6 +36,12 @@ init(){
             console.log(message.body);
           }
         });
+
+        that.stompClient.subscribe("/user/queue/reply_maj", (joueur) => {
+          this.client.ajoutTerritoire(JSON.parse(joueur.body).getTerritoiresPossedes())
+        });
+
+        
 
       });
     }
@@ -87,8 +94,8 @@ init(){
     }
 
     showName(id: string){
-       this.text = id;
-       
+       // this.text = id + ',Nombre armées : ' + this.findArmy(id) + 'Possédé par ' + this.findOwner(id);
+       this.text = id
 
     }
 
@@ -98,6 +105,26 @@ init(){
       highlight.setAttribute( 'd', outline );
 
       
+
+    }
+
+    findArmy(id : string){
+      this.plateau.getCarte().forEach(territoire => {
+        if (territoire.getNom() == id){
+          return territoire.getNbUnites();
+
+        } 
+           }  )
+
+    }
+
+    findOwner(id : string){
+      this.plateau.getCarte().forEach(territoire => {
+        if (territoire.getNom() == id){
+          return territoire.getPossesseur();
+
+        } 
+           }  )
 
     }
 
