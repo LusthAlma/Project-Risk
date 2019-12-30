@@ -44,19 +44,28 @@ public class Continent {
         return renfortsBonus;
     }
 
+    /**
+     * Permet de savoir si le continent contient ou non le territoire.
+     * @param territoire dont on vérifie l'appartenance
+     * @return vrai s'il contient le territoire, faux sinon.
+     */
+    public boolean containsTerritoire(Territoire territoire){
+        return territoires.contains(territoire);
+    };
 
     /**
-     * permet de changer l'attribut continent d'un territoire en this
-     * @param territoire dont on change l'attribut continent
+     * Permet de savoir si le continent contient les territoires
+     * @param territoires dont on vérifie l'appartenance
+     * @return vrai s'il contient tous les territoires, faux sinon
      */
+    public boolean containsAllTerritoire(Set<Territoire> territoires){
+        return territoires.containsAll(territoires);
+    }
+
     private void setAllContinentParameterOfTerritoireToThis(Territoire territoire) {
         territoire.setContinent(this);
     }
 
-    /**
-     * permet de changer l'attribut continent de plusieurs territoires en this
-     * @param territoires dont on change l'attribut continent
-     */
     private void setAllContinentParameterOfTerritoireToThis(Set<Territoire> territoires) {
         for (Territoire territoire:territoires
              ) {
@@ -64,18 +73,10 @@ public class Continent {
         }
     }
 
-    /**
-     * permet de changer l'attribut continent d'un territoire en null
-     * @param territoire dont on change l'attribut continent
-     */
     private void setAllContinentParmeterOFTerritoireToNull(Territoire territoire){
         territoire.setContinent(null);
     }
 
-    /**
-     * permet de changer l'attribut continent de plusieurs territoires en null
-     * @param territoires dont on change l'attribut continent
-     */
     private void setAllContinentParmeterOFTerritoireToNull(Set<Territoire> territoires){
         for (Territoire territoire:territoires
         ) {
@@ -133,18 +134,15 @@ public class Continent {
      * @return renvoit vrai s'ils étaient présent et ont donc été retirés
      */
     public boolean removeTerritoire(Set<Territoire> territoires){
-        if(this.territoires.remove(territoires)){
-            setAllContinentParmeterOFTerritoireToNull(territoires);
-            return true;
-        }else{
-            return false;
+        boolean res=true;
+        for (Territoire territoire:territoires
+             ) {
+            res = res && this.territoires.remove(territoire);
+            setAllContinentParmeterOFTerritoireToNull(territoire);
         }
+        return res;
     }
 
-    /**
-     * Verifie si tous les territoires du continent ont bien ce continent en tant que continent
-     * @return renvoit vrai si tous les territoires on this en tant que continent
-     */
     private boolean allTerritoireHasThisAsContinent(){
         for (Territoire territore:territoires
              ) {

@@ -63,6 +63,8 @@ public class WebSocketController {
 
 
 
+
+
     @MessageMapping("/send/message")
     public void onReceivedMessage(String message) throws Exception {
         Thread.sleep(1000); // simulated delay

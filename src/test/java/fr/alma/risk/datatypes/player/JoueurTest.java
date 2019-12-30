@@ -12,9 +12,13 @@ import fr.alma.risk.exception.ExceptionNegativeRenforts;
 import fr.alma.risk.exception.ExceptionTerritoireStillHavePossesseur;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mockito;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import java.awt.*;
 
+@RunWith(MockitoJUnitRunner.class)
 public class JoueurTest {
 
     private Joueur joueurNamedTest;
@@ -30,8 +34,8 @@ public class JoueurTest {
     public void setup(){
         joueurNamedTest = new Joueur("Test", Color.yellow, "12345");
         joueurNamedOther = new Joueur("Other",Color.red, "54321");
-        territoireNamedTest = new Territoire("Test");
-        missionEliminationRouge = new MissionElimination(Color.RED);
+        territoireNamedTest = Mockito.mock(Territoire.class);
+        missionEliminationRouge = Mockito.mock(MissionElimination.class);
         colorNoir = Color.BLACK;
 
     }

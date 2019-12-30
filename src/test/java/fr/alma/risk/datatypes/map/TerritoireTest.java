@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import fr.alma.risk.datatypes.map.Territoire;
 import org.junit.Before;
 import org.junit.Test;
+import  org.mockito.runners.MockitoJUnitRunner;
+
 
 public class TerritoireTest {
 
