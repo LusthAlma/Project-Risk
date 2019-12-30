@@ -78,7 +78,7 @@ init(){
 
     placeUnits(terr: Territoire, nbUnites: number) {
       if (nbUnites>this.client.getRenforts() || nbUnites<0) {
-        $(".game-lobby").append("<div class='message'>Nombre d'unités inappropriées.</div>")
+        $(".game-lobby").append("<div class='message'>Nombre d'unités inapproprié.</div>")
       } else {
         //send to the server
         //this.stompClient.send("/app/placeUnits", {}, terr.getNom(), nbUnites);
