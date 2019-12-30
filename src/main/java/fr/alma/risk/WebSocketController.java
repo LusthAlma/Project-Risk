@@ -61,9 +61,9 @@ public class WebSocketController {
 
     private static Partie jeu;
 
-
-
-
+    public List<Joueur> getUsers() {
+        return users;
+    }
 
     @MessageMapping("/send/message")
     public void onReceivedMessage(String message) throws Exception {
@@ -130,7 +130,7 @@ public class WebSocketController {
 
     }
 
-    public void initializeColors(){
+    private void initializeColors(){
         colorMap.put(Color.yellow,"Jaune");
         colorMap.put(Color.red,"Rouge");
         colorMap.put(Color.black,"Noire");
@@ -140,7 +140,7 @@ public class WebSocketController {
 
     }
 
-    public void initialisation(List<Joueur> joueurs){
+    private void initialisation(List<Joueur> joueurs){
         LOGGER.info("Initialisation de la partie");
         jeu = new Partie(1, joueurs);
 
