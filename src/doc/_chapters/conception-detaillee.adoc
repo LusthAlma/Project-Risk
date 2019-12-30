@@ -7,7 +7,7 @@ Nous commencerons par détailler le composant GameServer, puis WebClient.
 
 == Le composant WebServer
 
-image:
+image:detailled_design_gameserver.png[]
 
 Nous pouvons décomposer la structure de ce composant de la façon suivante :
 
@@ -29,3 +29,13 @@ Nous pouvons décomposer la structure de ce composant de la façon suivante :
 
 
 == Le composant WebClient
+
+image:detailled_design_webclient.png[]
+
+Nous avons ici une structure relativement identique à celle présente dans le composant Serveur. Cependant, moins d'informations ont à être stockées car il ne s'agit ici que de garder ce qui est utile à l'utilisateur, les opérations étant effectuées sur le serveur.
+
+* classe Territoire : contient les informations susceptibles d'affecter les décisions des joueurs, comme le nom, le possesseur et le nombre d'unités présentes. Pas besoin de la liste des voisins car ce sera le serveur qui s'occupera de vérifier la validité des déplacements.
+* classe Plateau : contient l'ensemble des territoires qui composent la carte.
+* classe Joueur : stocke uniquement les informations sur le client, tel que le pseudo, sa mission sous forme d'une simple chaîne, etc... Il n'y a pas besoin de créer des instances pour les autres joueurs car la seule information importante les concernant est les territoires et unités qu'ils possèdent, ce qui est déjà renseigné dans la classe Territoire.
+* classe ClientFacade : on peut ici faire un simple parallèle avec la classe ServerFacade du composant GameServer. Les méthodes proposées par le composant sont clairement indiquées et guident l'implémentation.
+* interface NetworkExchanger : à l'instar de celle présente dans le composant GameServer, permet de gérer la communication entre le client et le serveur.
