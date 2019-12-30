@@ -5,68 +5,68 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import fr.alma.risk.datatypes.player.Joueur;
 import fr.alma.risk.datatypes.map.Territoire;
-import fr.alma.risk.datatypes.unite.Unite;
-import fr.alma.risk.datatypes.unite.UniteSimple;
 import fr.alma.risk.exception.ExceptionRisk;
 import fr.alma.risk.exception.ExceptionTerritoryCantBeEmpty;
 import fr.alma.risk.exception.ExceptionUniteHasNoTerritory;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mockito;
+import org.mockito.runners.MockitoJUnitRunner;
 
-import java.awt.*;
-
-
+@RunWith(MockitoJUnitRunner.class)
 public class UniteTest {
 
-    private Joueur joueurNamedTest;
+    private Joueur joueurMock;
     private Unite uniteSimpleWithJoueurNamedTest1;
     private Unite uniteSimpleWithJoueurNamedTest2;
-    private Territoire testTerritoireNamedPlacer;
-    private Territoire testTerritoireNamedArriver;
+    private Territoire territoirMockDepart;
+    private Territoire territoireMockArriver;
 
     @Before
     public void setup(){
-        joueurNamedTest = new Joueur("Test", Color.black,"12345");
-        uniteSimpleWithJoueurNamedTest1 = new UniteSimple(joueurNamedTest);
-        uniteSimpleWithJoueurNamedTest2 = new UniteSimple(joueurNamedTest);
+        joueurMock = Mockito.mock(Joueur.class);
+        uniteSimpleWithJoueurNamedTest1 = new UniteSimple(joueurMock);
+        uniteSimpleWithJoueurNamedTest2 = new UniteSimple(joueurMock);
 
-        testTerritoireNamedPlacer = new Territoire("Placer");
-        testTerritoireNamedArriver = new Territoire("Arriver");
+        territoirMockDepart = Mockito.mock(Territoire.class);
+        territoireMockArriver = Mockito.mock(Territoire.class);
+
     }
 
     @Test
     public void testPlacerChangeSetTerritory(){
-        uniteSimpleWithJoueurNamedTest1.placer(testTerritoireNamedPlacer);
-        assertEquals(uniteSimpleWithJoueurNamedTest1.getTerritoire(),testTerritoireNamedPlacer);
+        uniteSimpleWithJoueurNamedTest1.placer(territoirMockDepart);
+        assertEquals(uniteSimpleWithJoueurNamedTest1.getTerritoire(), territoirMockDepart);
     }
 
     @Test
     public void testPlacerAddUniteToTerritorySetofUnite(){
-        uniteSimpleWithJoueurNamedTest1.placer(testTerritoireNamedPlacer);
-        assertTrue(testTerritoireNamedPlacer.getUnitesDeployees().contains(uniteSimpleWithJoueurNamedTest1));
+        uniteSimpleWithJoueurNamedTest1.placer(territoirMockDepart);
+        assertTrue(territoirMockDepart.getUnitesDeployees().contains(uniteSimpleWithJoueurNamedTest1));
 
     }
 
     @Test
     public void testDeplacerChangeTerritoireIfPreviousTerritoireNotEmpty() throws ExceptionRisk {
-        uniteSimpleWithJoueurNamedTest1.placer(testTerritoireNamedPlacer);
-        uniteSimpleWithJoueurNamedTest2.placer(testTerritoireNamedPlacer);
-        uniteSimpleWithJoueurNamedTest1.deplacer(testTerritoireNamedArriver);
-        assertEquals(uniteSimpleWithJoueurNamedTest1.getTerritoire(), testTerritoireNamedArriver);
+        uniteSimpleWithJoueurNamedTest1.placer(territoirMockDepart);
+        uniteSimpleWithJoueurNamedTest2.placer(territoirMockDepart);
+        uniteSimpleWithJoueurNamedTest1.deplacer(territoireMockArriver);
+        assertEquals(uniteSimpleWithJoueurNamedTest1.getTerritoire(), territoireMockArriver);
     }
 
     @Test
     public void testDeplacerThrowsExceptionUniteHasNotTerritoryIfUniteHasNoTerritory(){
         assertThrows(ExceptionUniteHasNoTerritory.class,()->{
-           uniteSimpleWithJoueurNamedTest1.deplacer(testTerritoireNamedArriver);
+           uniteSimpleWithJoueurNamedTest1.deplacer(territoireMockArriver);
         });
     }
 
     @Test
     public void testDeplacerThrowsExceptionTerritoryCantBeEmptyIfTerritoryFromStartBecomeEmptyWithoutUnite(){
-        uniteSimpleWithJoueurNamedTest1.placer(testTerritoireNamedPlacer);
+        uniteSimpleWithJoueurNamedTest1.placer(territoirMockDepart);
         assertThrows(ExceptionTerritoryCantBeEmpty.class,()->{
-            uniteSimpleWithJoueurNamedTest1.deplacer(testTerritoireNamedArriver);
+            uniteSimpleWithJoueurNamedTest1.deplacer(territoireMockArriver);
         });
     }
 

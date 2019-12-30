@@ -1,6 +1,6 @@
 = Conception préliminaire
 
-== Introdutcion
+== Introduction
 
 Cette partie correspond à la "conception préliminaire" du projet. Elle comprend la division de la solution en différents composants, l'explication des fonctionnalités attendues de chaque composant, la spécification des interfaces fournies par chaque composant, ainsi que des diagrammes de séquence qui valident ces interfaces.
 

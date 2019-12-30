@@ -26,7 +26,7 @@ public class AccessingDataMySqlApplication {
         SpringApplication.run(AccessingDataMySqlApplication.class, args);
     }
 
-
+/*
     @Bean
     public CommandLineRunner demo(MissionRepository missionRepository, TerritoireRepository territoireRepository, ContinentRepository continentRepository) {
         return (args) -> {
@@ -116,5 +116,5 @@ public class AccessingDataMySqlApplication {
             log.info(territoireRepository.nbTerritoire()+" territoires");
         };
     }
-
+*/
 }

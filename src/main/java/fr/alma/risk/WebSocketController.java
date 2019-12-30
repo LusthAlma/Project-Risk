@@ -55,21 +55,21 @@ public class WebSocketController {
 
         this.template = template;
 
-
     }
 
     private static final Logger LOGGER = Logger.getLogger(WebSocketController.class.getName());
 
     private static Partie jeu;
 
-
-
-
+    public List<Joueur> getUsers() {
+        return users;
+    }
 
     @MessageMapping("/send/message")
     public void onReceivedMessage(String message) throws Exception {
         Thread.sleep(1000); // simulated delay
-        this.template.convertAndSend("/user/queue/reply", new SimpleDateFormat("HH:mm:ss").format(new Date()) + "" + message);
+        this.template.convertAndSend("/user/queue/reply", new SimpleDateFormat("HH:mm:ss").format(new Date()) + " : " + message);
+
     }
 
     @MessageMapping("/ready")
@@ -121,7 +121,8 @@ public class WebSocketController {
 
         }
 
-        template.convertAndSend("/user/queue/reply", "La partie va commencer");
+        template.convertAndSend("/user/queue/reply", "La partie va commencer...");
+
         /* Jeu.start() */
         List<Joueur> temp = new ArrayList<>(users);
         users.clear();
@@ -132,17 +133,17 @@ public class WebSocketController {
 
     }
 
-    public void initializeColors(){
+    private void initializeColors(){
         colorMap.put(Color.yellow,"Jaune");
         colorMap.put(Color.red,"Rouge");
-        colorMap.put(Color.black,"Noire");
+        colorMap.put(Color.black,"Noir");
         colorMap.put(Color.blue,"Bleu");
-        colorMap.put(Color.green,"Verte");
+        colorMap.put(Color.green,"Vert");
         colorMap.put(Color.pink,"Rose");
 
     }
 
-    public void initialisation(List<Joueur> joueurs){
+    private void initialisation(List<Joueur> joueurs){
         LOGGER.info("Initialisation de la partie");
         jeu = new Partie(1, joueurs);
 
@@ -175,12 +176,14 @@ public class WebSocketController {
         territoireRepository.findAll().forEach(territoire -> {
             if(territoire.hasPossesseur()){
                 territoire.getPossesseur().placerRenfort(territoire);
-                LOGGER.info("Placement d'une unité de "+territoire.getPossesseur().getNom()+"sur le territoire "+territoire.getNom());
+                LOGGER.info("Placement d'une unité de "+territoire.getPossesseur().getNom()+" sur le territoire "+territoire.getNom());
             }
         });
         for (Joueur joueur:joueurs
              ) {
-            template.convertAndSend("/user/queue/reply", "Il reste "+joueur.getRenfortsAPlacer()+"unités à placer pour le joueur "+joueur.getNom());
+
+            template.convertAndSend("/user/queue/reply", "Il reste "+joueur.getRenfortsAPlacer()+" unités à placer pour le joueur "+joueur.getNom());
+
         }
     }
 
@@ -200,7 +203,8 @@ public class WebSocketController {
                 }
             }
         }
-        template.convertAndSend("/user/queue/reply", "Les territoires ont été distribués aux joueurs");
+        template.convertAndSend("/user/queue/reply", "Les territoires ont été distribués aux joueurs.");
+
     }
 
     @SendTo("/user/queue/reply")
@@ -239,9 +243,7 @@ public class WebSocketController {
         });
 
         Collections.shuffle(missionsList);
-        Mission givenMission;
-        for (Joueur joueur:joueurs
-             ) {
+        for (Joueur joueur:joueurs) {
             donnerMissionUnJoueur(missionsList.remove(0), joueur);
         }
     }
@@ -249,8 +251,12 @@ public class WebSocketController {
     @SendTo("/user/queue/reply")
     private void donnerMissionUnJoueur(Mission mission, Joueur joueur) {
         joueur.setMission(mission);
-        LOGGER.info("Le joueur "+joueur.getNom()+" à pour objectif : "+mission.getObjectif());
+
+        LOGGER.info("Le joueur "+joueur.getNom()+" a pour objectif : "+mission.getObjectif());
         template.convertAndSend("/queue/reply-user" + joueur.getSessionId(),"Vous venez de recevoir la mission" + mission.getObjectif());
+
     }
+
+
 }
 
