@@ -1,5 +1,31 @@
 = Conception détaillée
 
+Il s'agira dans cette partie de préciser la structure interne des composants mis en évidence dans la section précédente. Cela doit se faire 
+de manière indépendante de l'implémentation finale.  
+
+Nous commencerons par détailler le composant GameServer, puis WebClient.
+
 == Le composant WebServer
+
+image:
+
+Nous pouvons décomposer la structure de ce composant de la façon suivante :
+
+* composants permettant de sauvegarder l'état du jeu :
+
+** classe Joueur : permet de visualiser l'état d'un joueur durant une partie, les ressources qu'il possède (territoires, unités...), son objectif, etc...
+** classe abstraite Mission : contient un explication de l'objectif en français. A tout moment, on doit pouvoir vérifier si un joueur a complété la mission qui lui a été attribuée, ce qui implique une vérification différente pour chaque sorte de mission. Nous avons décidé d'implémenter trois types de missions différentes : celles de conquête de continent, de conquête de territoires et d'élimination de joueur.
+** classe Territoire : correspond à une des régions composant la carte, avec le joueur qui le possède et le nombre d'unités présentes. Il contient également un ensemble de voisins, qui permettra de valider ou non les actions effectuées par les joueurs.
+** classe Continent : contient un ensemble de territoires défini préalablement par les règles du jeu. On peut vérifier aisément si un joueur possède tous les territoires d'un continent en parcourant cet ensemble.
+** classe abstraite Unité : représente une force possédée par un joueur et déplaçable sur les différentes régions du plateau. Selon les règles qu'on décide d'appliquer, il peut exister différents types d'unités, chacune possédant une puissance différente. Hormis cela, elles ont toutes le même comportement. Ici, nous avons fait le choix de n'utiliser que des unités basiques, c'est-à-dire ayant toute une puissance égale à 1, dans la classe UnitéSimple. Il serait cependant aisé d'ajouter d'autres types en étendant la classe Unité.
+** classe Plateau : contient tous les territoires existants, qui forment ensemble le plateau avec lequel les joueurs vont pouvoir interagir.
+** classe Partie : possède un identifiant unique, permet de pouvoir faire tourner plusieurs parties à la fois. Cependant, cette structure implique que toutes les méthodes appelées par le client doivent contenir l'identifiant de leur partie. Nous n'avons pas implémenté cette possibilité dans notre projet.
+** classe Lobby : contient un ensemble de maximum 6 pseudos de joueurs en attente d'une partie. Lorsqu'un joueur se connecte au serveur, il peut décider de rejoindre un lobby actif ou en créer un nouveau. Lorsque tous les joueurs d'un lobby sont prêts, une nouvelle partie est lancée avec ces joueurs et le lobby est supprimé. Ceci non plus n'a pas été implémenté.
+
+* composants permettant l'interaction entre les clients et le serveur :
+
+** interface NetworkExchanger : permet de recevoir les appels de méthodes de la part des clients et également d'en envoyer. Pour répondre aux exigences de ce projet, cette interface est implémentée par une classe gérant les échanges via WebSocket, mais il sera là encore facile d'ajouter d'autres formes de communication.
+** classe ServerFacade : implémente toutes les méthodes décrites dans l'interface GameServer dans la partie conception préliminaire, grâce à l'utilisation du Design Pattern Façade. Cela permet de mettre en évidence les comportements qui doivent être proposés par le composant.
+
 
 == Le composant WebClient
