@@ -26,7 +26,7 @@ public class AccessingDataMySqlApplication {
         SpringApplication.run(AccessingDataMySqlApplication.class, args);
     }
 
-/*
+/* Cette partie de code permettait de tester nos différentes méthodes pourn sauvegarder dans un repository ou pour chercher des éléments dans ceux-ci.
     @Bean
     public CommandLineRunner demo(MissionRepository missionRepository, TerritoireRepository territoireRepository, ContinentRepository continentRepository) {
         return (args) -> {
