@@ -19,4 +19,6 @@ export class Plateau {
       })
     })
   }
+
+  public getCarte(){return this.carte;}
 }
