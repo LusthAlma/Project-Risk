@@ -212,7 +212,7 @@ public class WebSocketController {
         try {
             joueur.ajouterTerritoire(territoire);
             LOGGER.info("Le territoire "+ territoire.getNom()+" vient d'être attribué à "+joueur.getNom());
-            template.convertAndSend("/queue/reply-user"+joueur.getSessionId(),"Le territoire "+ territoire.getNom()+ " vient de vous etre attribue");
+            template.convertAndSend("/queue/reply-user"+joueur.getSessionId(),"Le territoire "+ territoire.getNom()+ " vous est attribué.");
         } catch (ExceptionTerritoireStillHavePossesseur exceptionTerritoireStillHavePossesseur) {
             LOGGER.info("Le territoire "+ territoire.getNom()+" appartient déja à "+territoire.getPossesseur().getNom()+" et vient d'être attribué à "+ joueur.getNom());
             exceptionTerritoireStillHavePossesseur.printStackTrace();
@@ -253,7 +253,7 @@ public class WebSocketController {
         joueur.setMission(mission);
 
         LOGGER.info("Le joueur "+joueur.getNom()+" a pour objectif : "+mission.getObjectif());
-        template.convertAndSend("/queue/reply-user" + joueur.getSessionId(),"Vous venez de recevoir la mission" + mission.getObjectif());
+        template.convertAndSend("/queue/reply-user" + joueur.getSessionId(),"Vous venez de recevoir votre  mission : " + mission.getObjectif());
 
     }
 
