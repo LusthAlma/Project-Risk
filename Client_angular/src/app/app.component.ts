@@ -29,12 +29,13 @@ init(){
     this.stompClient = Stomp.over(ws);
     let that = this;
     this.stompClient.connect({}, function(frame) {
-        that.stompClient.subscribe("/game-lobby", (message) => {
+        that.stompClient.subscribe("/user/queue/reply", (message) => {
           if(message.body) {
             $(".game-lobby").append("<div class='message'>"+message.body+"</div>")
             console.log(message.body);
           }
         });
+
       });
     }
 

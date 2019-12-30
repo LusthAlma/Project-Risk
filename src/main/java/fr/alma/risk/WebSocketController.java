@@ -14,6 +14,7 @@ import fr.alma.risk.jpaclasses.accessingdatamysql.TerritoireRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -68,7 +69,7 @@ public class WebSocketController {
     @MessageMapping("/send/message")
     public void onReceivedMessage(String message) throws Exception {
         Thread.sleep(1000); // simulated delay
-        this.template.convertAndSend("/game-lobby", new SimpleDateFormat("HH:mm:ss").format(new Date()) + "" + message);
+        this.template.convertAndSend("/user/queue/reply", new SimpleDateFormat("HH:mm:ss").format(new Date()) + "" + message);
     }
 
     @MessageMapping("/ready")
@@ -82,7 +83,7 @@ public class WebSocketController {
             String currentPlayer = usersMap.get(sessionId).getNom();
             if(!check.contains(sessionId)){
                 check.add(sessionId);
-                template.convertAndSend("/game-lobby",  currentPlayer + " est pret");
+                template.convertAndSend("/user/queue/reply",  currentPlayer + " est pret");
             }else{
                 LOGGER.info(currentPlayer + "est déjà pret");
             }
@@ -94,6 +95,7 @@ public class WebSocketController {
     }
 
     @MessageMapping("/connect")
+    @SendTo("/user/queue/reply")
     public void connectToGame(@Header("simpSessionId") String sessionId, String message) {
         initializeColors();
         boolean ready = false;
@@ -102,11 +104,11 @@ public class WebSocketController {
             Joueur j = new Joueur(message, colorsList.get(users.size()), sessionId);
             usersMap.put(sessionId,j);
 
-            template.convertAndSend("/game-lobby", new SimpleDateFormat("HH:mm:ss").format(new Date()) + "Le joueur " + message + " rentre en jeu avec la couleur " + colorMap.get(colorsList.get(users.size())));
+            template.convertAndSend("/user/queue/reply", new SimpleDateFormat("HH:mm:ss").format(new Date()) + "Le joueur " + message + " rentre en jeu avec la couleur " + colorMap.get(colorsList.get(users.size())));
             users.add(j);
         }
         else
-            template.convertAndSend("/game-lobby", "Le lobby est plein ou vous etes deja connecte");
+            template.convertAndSend("/queue/reply-user"+ sessionId, "Le lobby est plein ou vous etes deja connecte");
 
         while(!ready){
             try {
@@ -119,7 +121,7 @@ public class WebSocketController {
 
         }
 
-        template.convertAndSend("/game-lobby", "La partie va commencer");
+        template.convertAndSend("/user/queue/reply", "La partie va commencer");
         /* Jeu.start() */
         List<Joueur> temp = new ArrayList<>(users);
         users.clear();
@@ -178,9 +180,10 @@ public class WebSocketController {
         });
         for (Joueur joueur:joueurs
              ) {
-            template.convertAndSend("/game-lobby", "Il reste "+joueur.getRenfortsAPlacer()+"unités à placer pour le joueur "+joueur.getNom());
+            template.convertAndSend("/user/queue/reply", "Il reste "+joueur.getRenfortsAPlacer()+"unités à placer pour le joueur "+joueur.getNom());
         }
     }
+
 
     private void donnerTerritoiresTousLesJoueurs(List<Joueur> joueurs) {
         List<Territoire> territoireList = new ArrayList<>();
@@ -197,13 +200,15 @@ public class WebSocketController {
                 }
             }
         }
-        template.convertAndSend("/game-lobby", "Les territoires ont été distribués aux joueurs");
+        template.convertAndSend("/user/queue/reply", "Les territoires ont été distribués aux joueurs");
     }
 
+    @SendTo("/user/queue/reply")
     private void donnerTerritoireUnJoueur(Territoire territoire, Joueur joueur) {
         try {
             joueur.ajouterTerritoire(territoire);
             LOGGER.info("Le territoire "+ territoire.getNom()+" vient d'être attribué à "+joueur.getNom());
+            template.convertAndSend("/queue/reply-user"+joueur.getSessionId(),"Le territoire "+ territoire.getNom()+ " vient de vous etre attribue");
         } catch (ExceptionTerritoireStillHavePossesseur exceptionTerritoireStillHavePossesseur) {
             LOGGER.info("Le territoire "+ territoire.getNom()+" appartient déja à "+territoire.getPossesseur().getNom()+" et vient d'être attribué à "+ joueur.getNom());
             exceptionTerritoireStillHavePossesseur.printStackTrace();
@@ -216,10 +221,11 @@ public class WebSocketController {
         }
     }
 
+    @SendTo("/user/queue/reply")
     private void donnerRenfortUnJoueur(Joueur joueur,List<Joueur> joueurs) {
         try {
             joueur.ajouterRenforts((10-joueurs.size())*5);
-            template.convertAndSend("/game-lobby", "Le joueur "+joueur.getNom()+" a reçu ses " + (10-users.size())*5 +" renforts.");
+            template.convertAndSend("/queue/reply-user" + joueur.getSessionId(), "Vous venez de recevoir " + (10-users.size())*5 +" renforts.");
         } catch (ExceptionNegativeRenforts exceptionNegativeRenforts) {
             LOGGER.info("Problème initialisation des renforts, il y a plus de 9 joueurs, hors la limite est de 6 normalement.");
             exceptionNegativeRenforts.printStackTrace();
@@ -240,10 +246,11 @@ public class WebSocketController {
         }
     }
 
+    @SendTo("/user/queue/reply")
     private void donnerMissionUnJoueur(Mission mission, Joueur joueur) {
         joueur.setMission(mission);
         LOGGER.info("Le joueur "+joueur.getNom()+" à pour objectif : "+mission.getObjectif());
-        template.convertAndSend("/game-lobby", "Le joueur "+joueur.getNom()+" a reçu sa mission");
+        template.convertAndSend("/queue/reply-user" + joueur.getSessionId(),"Vous venez de recevoir la mission" + mission.getObjectif());
     }
 }
 
