@@ -46,3 +46,10 @@ include::{includedir}/conception-detaillee.adoc[leveloffset=+1]
 
 La conception de notre projet nous parait cohérente avec les bonnes pratiques évoquées en cours : la structure de notre application semble relativement claire et le tout semble être maintenable et extensible sans difficulté majeure.
 Cependant, de par l'utilisation de nouveaux outils (Angular, Spring...) et une organisation au mieux hasardeuse, nous n'avons pas pu mener à son terme le développement du système. Même si cela avait été le cas, certains points auraient sans doute mérités quelques améliorations. Par exemple, il est probable qu'il y aurait eu des failles de sécurité, permettant à des clients d'effectuer des actions qui devraient normalement leur être interdites, comme interagir avec d'autres parties, etc...
+
+Nous avons rencontré deux grandes difficultés durant le projet : +
+- Un soucis avec Angular que nous ne parvenions par à comprendre et que nous avons résolu au bout de deux semaines de recherche avec l'aide de Mr Bousse. +
+- Une mauvaise gestion globale du temps. Pendant la période scolaire, nous avons accordé trop de temps à la conception, et nous avons donc commencé l'implémentation avec du retard. Après la résolution du problème précédent, les vacances approchaient déjà.
+Ensuite, ne parvenant pas à nous synchroniser comme il aurait été nécessaire pendant les vacances, la résolution des petits bugs au fur et à mesure prenait bien plus de temps que prévu, et le retard s'accumulait encore. +
+Nous ne sommes donc en effet pas parvenus à aller jusqu'au bout du projet, et nous regrettons de ne pas y avoir accordé plus de temps dès le début, quitte à le favoriser sur les autres projets en cours pendant la période scolaire. Il s'agit là d'une erreur dont nous avons tous appris, et que nous prendront soin de ne pas reproduire. +
+Pour conclure, nous sommes relativement satisfait de ce que nous sommes parvenus à accomplir, mais très décus de la quantité que nous n'avons pas pu implémenter.

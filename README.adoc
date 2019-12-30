@@ -11,13 +11,13 @@ par LENORMAND Tristan, LECOMTE Soline, ENET Josselin et ROY Kévin
 - mysql
 
 === Mysql
-Il faut configurer une base de données pour mysql afin que le programme puisse l'utiliser, les différentes informations concernant la base de données sont dans le fichier /main/ressources/application.properties.
-De base la base de données à pour nom : db_risk.
+Il faut configurer une base de données pour mysql afin que le programme puisse l'utiliser. Les différentes informations concernant la base de données sont dans le fichier /main/ressources/application.properties.
+De base, la base de données a pour nom : db_risk.
 Nom d'utilisateur : riskUser.
 Mot de passe : riskPassword.
 
 === Execution
-Une fois tout configuré il faut ouvrir deux terminal, un pour executer le programme et l'autre pour executer le client angular.
+Une fois tout configuré il faut ouvrir deux terminaux, un pour executer le programme et l'autre pour executer le client angular.
 Pour le programme il suffit d'éxecuter le main dans AccessingDataMysqlApplication, et pour le client angular il faut ouvrir un invité de commande dans le dossier Client_angular et executer la commande suivant : ng serve.
 Une fois executé il faut ouvrir un navigateur et accèder à la page localhost:4200.
 
@@ -26,4 +26,12 @@ Il est préférable d'ouvrir plusieurs onglets de cette page localhost pour pouv
 Pour lancer la partie il suffit de se connecter en rentrant un pseudo dans la barre de gauche et cliquer sur le bouton connecter.
 Une fois fait avec les 3 utilisateurs, il faut cocher la case ready pour dire que les joueurs sont prêt, une fois fait la partie doit se lancer, c'est à dire que dans le chat a gauche il doit y avoir d'écrit que la partie et lancé et que l'initialisation a été effectué.
 
+=== Problèmes recontrés
+Les plus gros problèmes rencontrés étaient liés au manque de connaissance des nouvelles technologies introduites lors du projet : la compréhension de Spring et du WebSocket, la mise en place d'Angular, la prise en main de la syntaxe de TypeScript, la gestion des interactions Client-Serveur...
+De nombreux problèmes que nous ne sommes pas forcément à surmonter complètement.
 
+Les différentes méthodes des interfaces du serveur n'ont pas été réparties comme prévu lors de la conception. La structure du projet ne correspond de façon générale pas exactement à la conception, car nous avions prévu d'implémenter puis de répartir les méthodes dans les interfaces, mais dans les derniers moment nous avons préféré favoriser la fonctionnel plutot que le structurel, et donc implémenter un maximum de fonctionnalités.
+
+=== Etat actuel
+L'application actuelle, après avoir été lancée en suivant les étapes précédentes, permmet de se connecter au jeu avec plusieurs onglets, de prévenir que nous sommes près à jouer, et de lancer l'initialisation de partie. Les territoires, la couleur, les missions et les unités nous sont alors attribuées.
+Lorsque nous avons dû rendre le projet, nous étions en train de tenter de gérer le placement des unités, et donc de gérer les envois des informations entre le serveur et les différents clients. Cependant, la serialisation des informations à échanger entre client et serveur nous a posé problème, et nous ne sommes pas parvenus à le résoudre à temps.
