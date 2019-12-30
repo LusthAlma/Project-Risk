@@ -112,8 +112,8 @@ public class DataGeneration {
         Territoire alberta = new Territoire("Alberta");
         Territoire ontario = new Territoire("Ontario");
         Territoire quebec = new Territoire("Quebec");
-        Territoire etatdelouest = new Territoire("Etat de L'Ouest");
-        Territoire etatdelest = new Territoire("Etat De L'Est");
+        Territoire etatdelouest = new Territoire("Etat de LOuest");
+        Territoire etatdelest = new Territoire("Etat De LEst");
         Territoire ameriquecentrale = new Territoire("Amerique Centrale");
 
         territoireSetAmeriqueDuNord.add(alaska);

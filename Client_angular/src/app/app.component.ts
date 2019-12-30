@@ -17,6 +17,8 @@ export class AppComponent {
   private stompClient;
   private client: Joueur;
   private plateau: Plateau;
+  text: string;
+  text2: string;
 
   constructor(){
       this.init();
@@ -81,6 +83,21 @@ init(){
         //send to the server
         //this.stompClient.send("/app/placeUnits", {}, terr.getNom(), nbUnites);
       }
+    }
+
+    showName(id: string){
+       this.text = id;
+       
+
+    }
+
+    highlight(id: string){
+      const outline = document.getElementById(id).getAttribute( 'd' );
+      const highlight = document.getElementById( 'highlight' );
+      highlight.setAttribute( 'd', outline );
+
+      
+
     }
 
 }
